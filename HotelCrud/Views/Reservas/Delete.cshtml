@@ -1,0 +1,50 @@
+﻿@model HotelCrud.Models.Reserva
+@{
+    ViewData["Title"] = "Eliminar Reserva";
+}
+
+<h1>Eliminar Reserva</h1>
+
+<h3>¿Está seguro que desea eliminar esta reserva?</h3>
+<div>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-3">
+            Cliente
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.IdPersonaNavigation.Nombre)
+        </dd>
+
+        <dt class="col-sm-3">
+            Habitación
+        </dt>
+        <dd class="col-sm-9">
+            Habitación @Html.DisplayFor(model => model.IdHabitacionNavigation.Numero)
+        </dd>
+
+        <dt class="col-sm-3">
+            Fecha de Entrada
+        </dt>
+        <dd class="col-sm-9">
+            @Model.FechaEntrada?.ToString("dd/MM/yyyy")
+        </dd>
+
+        <dt class="col-sm-3">
+            Fecha de Salida
+        </dt>
+        <dd class="col-sm-9">
+            @Model.FechaSalida?.ToString("dd/MM/yyyy")
+        </dd>
+    </dl>
+
+    <form asp-action="Delete" class="mt-4">
+        <input type="hidden" asp-for="Id" />
+        <button type="submit" class="btn btn-danger">
+            <i class="fas fa-trash-alt"></i> Eliminar
+        </button>
+        <a asp-action="Index" class="btn btn-secondary">
+            <i class="fas fa-times"></i> Cancelar
+        </a>
+    </form>
+</div>

@@ -1,0 +1,104 @@
+﻿@model HotelCrud.Models.Reserva
+@{
+    ViewData["Title"] = "Crear Reserva";
+}
+
+<h1>Crear Nueva Reserva</h1>
+
+@if (!ViewData.ModelState.IsValid)
+{
+    <div class="alert alert-danger">
+        <h4>Errores de validación:</h4>
+        <ul>
+            @foreach (var error in ViewData.ModelState.Values.SelectMany(v => v.Errors))
+            {
+                <li>@error.ErrorMessage</li>
+            }
+        </ul>
+    </div>
+}
+
+<hr />
+<div class="row">
+    <div class="col-md-6">
+        <form asp-action="Create" id="reservaForm">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="form-group mb-3">
+                <label asp-for="IdPersona" class="control-label">Cliente</label>
+                <select asp-for="IdPersona" class="form-control" asp-items="ViewBag.IdPersona" required>
+                    <option value="">-- Seleccione un cliente --</option>
+                </select>
+                <span asp-validation-for="IdPersona" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="IdHabitacion" class="control-label">Habitación</label>
+                <select asp-for="IdHabitacion" class="form-control" asp-items="ViewBag.IdHabitacion" required>
+                    <option value="">-- Seleccione una habitación --</option>
+                </select>
+                <span asp-validation-for="IdHabitacion" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="FechaEntrada" class="control-label">Fecha de Entrada</label>
+                <input asp-for="FechaEntrada" class="form-control" type="date"
+                       min="@DateTime.Now.ToString("yyyy-MM-dd")"
+                       value="@DateTime.Now.ToString("yyyy-MM-dd")" required />
+                <span asp-validation-for="FechaEntrada" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="FechaSalida" class="control-label">Fecha de Salida</label>
+                <input asp-for="FechaSalida" class="form-control" type="date"
+                       min="@DateTime.Now.AddDays(1).ToString("yyyy-MM-dd")"
+                       value="@DateTime.Now.AddDays(1).ToString("yyyy-MM-dd")" required />
+                <span asp-validation-for="FechaSalida" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mt-4">
+                <button type="submit" class="btn btn-primary">
+                    <i class="fas fa-save"></i> Crear Reserva
+                </button>
+                <a asp-action="Index" class="btn btn-secondary">
+                    <i class="fas fa-arrow-left"></i> Volver al Listado
+                </a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+
+    <script>
+        $(document).ready(function() {
+            // Validación de fechas
+            $('#FechaEntrada').change(function() {
+                var fechaEntrada = new Date($(this).val());
+                var fechaSalida = new Date($('#FechaSalida').val());
+
+                if (fechaEntrada >= fechaSalida) {
+                    $('#FechaSalida').val(new Date(fechaEntrada.setDate(fechaEntrada.getDate() + 1)).toISOString().split('T')[0];
+                }
+
+                $('#FechaSalida').attr('min', $(this).val());
+            });
+
+            // Confirmación antes de enviar
+            $('#reservaForm').submit(function(e) {
+                var fechaEntrada = new Date($('#FechaEntrada').val());
+                var fechaSalida = new Date($('#FechaSalida').val());
+
+                if (fechaEntrada >= fechaSalida) {
+                    alert('La fecha de salida debe ser posterior a la fecha de entrada');
+                    e.preventDefault();
+                    return false;
+                }
+                return true;
+            });
+        });
+    </script>
+}

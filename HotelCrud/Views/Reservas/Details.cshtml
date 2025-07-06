@@ -1,0 +1,47 @@
+﻿@model HotelCrud.Models.Reserva
+@{
+    ViewData["Title"] = "Detalles de Reserva";
+}
+
+<h1>Detalles de la Reserva</h1>
+
+<div>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.IdPersonaNavigation)
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.IdPersonaNavigation.Nombre)
+        </dd>
+
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.IdHabitacionNavigation)
+        </dt>
+        <dd class="col-sm-9">
+            Habitación @Html.DisplayFor(model => model.IdHabitacionNavigation.Numero)
+        </dd>
+
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.FechaEntrada)
+        </dt>
+        <dd class="col-sm-9">
+            @Model.FechaEntrada?.ToString("dd/MM/yyyy")
+        </dd>
+
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.FechaSalida)
+        </dt>
+        <dd class="col-sm-9">
+            @Model.FechaSalida?.ToString("dd/MM/yyyy")
+        </dd>
+    </dl>
+</div>
+<div class="mt-4">
+    <a asp-action="Edit" asp-route-id="@Model?.Id" class="btn btn-warning">
+        <i class="fas fa-edit"></i> Editar
+    </a>
+    <a asp-action="Index" class="btn btn-secondary">
+        <i class="fas fa-list"></i> Volver al Listado
+    </a>
+</div>
