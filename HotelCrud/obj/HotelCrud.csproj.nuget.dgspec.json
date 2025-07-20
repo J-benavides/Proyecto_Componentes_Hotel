@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Usuario\\Documents\\Universidad2025\\Componentes\\CRUD\\HotelCrud\\HotelCrud.csproj": {}
+    "C:\\Users\\Usuario\\Documents\\Universidad2025\\Componentes\\CRUD\\ProyectoComponentes\\HotelCrud\\HotelCrud.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Usuario\\Documents\\Universidad2025\\Componentes\\CRUD\\HotelCrud\\HotelCrud.csproj": {
+    "C:\\Users\\Usuario\\Documents\\Universidad2025\\Componentes\\CRUD\\ProyectoComponentes\\HotelCrud\\HotelCrud.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Usuario\\Documents\\Universidad2025\\Componentes\\CRUD\\HotelCrud\\HotelCrud.csproj",
+        "projectUniqueName": "C:\\Users\\Usuario\\Documents\\Universidad2025\\Componentes\\CRUD\\ProyectoComponentes\\HotelCrud\\HotelCrud.csproj",
         "projectName": "HotelCrud",
-        "projectPath": "C:\\Users\\Usuario\\Documents\\Universidad2025\\Componentes\\CRUD\\HotelCrud\\HotelCrud.csproj",
+        "projectPath": "C:\\Users\\Usuario\\Documents\\Universidad2025\\Componentes\\CRUD\\ProyectoComponentes\\HotelCrud\\HotelCrud.csproj",
         "packagesPath": "C:\\Users\\Usuario\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Usuario\\Documents\\Universidad2025\\Componentes\\CRUD\\HotelCrud\\obj\\",
+        "outputPath": "C:\\Users\\Usuario\\Documents\\Universidad2025\\Componentes\\CRUD\\ProyectoComponentes\\HotelCrud\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
