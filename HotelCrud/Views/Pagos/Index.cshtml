@@ -1,0 +1,59 @@
+﻿@model IEnumerable<HotelCrud.Models.Pago>
+
+@{
+    ViewData["Title"] = "Pago";
+}
+
+<h1 class="text-3xl font-bold mb-6 text-gray-800">Lista de Pagos</h1>
+
+<p class="mb-4">
+    <a asp-action="Create" class="d-inline-block bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded-lg transition duration-300">Crear Nuevo Pago</a>
+</p>
+
+<div class="overflow-x-auto bg-white rounded-lg shadow-md">
+    <table class="min-w-full divide-y divide-gray-200">
+        <thead class="bg-gray-50">
+            <tr>
+                <th scope="col" class="px-6 py-3 text-left text-xl-start font-medium text-gray-500 text-uppercase tracking-wider">
+                    @Html.DisplayNameFor(model => model.MontoTotal)
+                </th>
+                <th scope="col" class="px-6 py-3 text-left text-xl-start font-medium text-gray-500 text-uppercase tracking-wider">
+                    @Html.DisplayNameFor(model => model.FechaPago)
+                </th>
+                <th scope="col" class="px-6 py-3 text-left text-xl-start font-medium text-gray-500 text-uppercase tracking-wider">
+                    @Html.DisplayNameFor(model => model.MetodoPago)
+                </th>
+                <th scope="col" class="px-6 py-3 text-left text-xl-start font-medium text-gray-500 text-uppercase tracking-wider">
+                    Reservación ID
+                </th>
+                <th scope="col" class="position-relative px-6 py-3">
+                    <span class="sr-only">Acciones</span>
+                </th>
+            </tr>
+        </thead>
+        <tbody class="bg-white divide-y divide-gray-200">
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td class="pc-6" py-4 whitespace-nowrap text-sm text-gray-900>
+                        @Html.DisplayFor(modelItem => item.MontoTotal)
+                    </td>
+                    <td class="pc-6" py-4 whitespace-nowrap text-sm text-gray-900>
+                        @Html.DisplayFor(modelItem => item.FechaPago)
+                    </td>
+                    <td class="pc-6" py-4 whitespace-nowrap text-sm text-gray-900>
+                        @Html.DisplayFor(modelItem => item.MetodoPago)
+                    </td>
+                    <td class="pc-6" py-4 whitespace-nowrap text-sm text-gray-900>
+                        @Html.DisplayFor(modelItem => item.IdReservacion)
+                    </td>
+                    <td class="px-6 py-4 whitespace-nowrap text-right text-sm-center font-medium">
+                        <a asp-action="Edit" asp-route-id="@item.Id" class="text-indigo-600 hover:text-indigo-900 mr-4">Editar</a>
+                        <a asp-action="Details" asp-route-id="@item.Id" class="text-blue-600 hover:text-blue-900 mr-4">Detalles</a>
+                        <a asp-action="Delete" asp-route-id="@item.Id" class="text-red-600 hover:text-red-900 mr-4">Eliminar</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
