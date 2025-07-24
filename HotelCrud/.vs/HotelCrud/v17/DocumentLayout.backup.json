@@ -1,60 +1,53 @@
 {
   "Version": 1,
-<<<<<<< HEAD
-  "WorkspaceRootPath": "C:\\Users\\jaqui\\OneDrive\\Escritorio\\Dise\u00F1o y Construcci\u00F3n de componentes\\Reposirtorio\\Proyecto_Componentes_Hotel\\HotelCrud\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{A3071365-F594-4681-9A9B-C652C2759D23}|HotelCrud.csproj|c:\\users\\jaqui\\onedrive\\escritorio\\dise\u00F1o y construcci\u00F3n de componentes\\reposirtorio\\proyecto_componentes_hotel\\hotelcrud\\views\\pagos\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{A3071365-F594-4681-9A9B-C652C2759D23}|HotelCrud.csproj|solutionrelative:views\\pagos\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A3071365-F594-4681-9A9B-C652C2759D23}|HotelCrud.csproj|c:\\users\\jaqui\\onedrive\\escritorio\\dise\u00F1o y construcci\u00F3n de componentes\\reposirtorio\\proyecto_componentes_hotel\\hotelcrud\\models\\hotelcaliforniadbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A3071365-F594-4681-9A9B-C652C2759D23}|HotelCrud.csproj|solutionrelative:models\\hotelcaliforniadbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A3071365-F594-4681-9A9B-C652C2759D23}|HotelCrud.csproj|c:\\users\\jaqui\\onedrive\\escritorio\\dise\u00F1o y construcci\u00F3n de componentes\\reposirtorio\\proyecto_componentes_hotel\\hotelcrud\\models\\pago.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A3071365-F594-4681-9A9B-C652C2759D23}|HotelCrud.csproj|solutionrelative:models\\pago.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A3071365-F594-4681-9A9B-C652C2759D23}|HotelCrud.csproj|c:\\users\\jaqui\\onedrive\\escritorio\\dise\u00F1o y construcci\u00F3n de componentes\\reposirtorio\\proyecto_componentes_hotel\\hotelcrud\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{A3071365-F594-4681-9A9B-C652C2759D23}|HotelCrud.csproj|solutionrelative:views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A3071365-F594-4681-9A9B-C652C2759D23}|HotelCrud.csproj|c:\\users\\jaqui\\onedrive\\escritorio\\dise\u00F1o y construcci\u00F3n de componentes\\reposirtorio\\proyecto_componentes_hotel\\hotelcrud\\views\\pagos\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{A3071365-F594-4681-9A9B-C652C2759D23}|HotelCrud.csproj|solutionrelative:views\\pagos\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A3071365-F594-4681-9A9B-C652C2759D23}|HotelCrud.csproj|c:\\users\\jaqui\\onedrive\\escritorio\\dise\u00F1o y construcci\u00F3n de componentes\\reposirtorio\\proyecto_componentes_hotel\\hotelcrud\\views\\pagos\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{A3071365-F594-4681-9A9B-C652C2759D23}|HotelCrud.csproj|solutionrelative:views\\pagos\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A3071365-F594-4681-9A9B-C652C2759D23}|HotelCrud.csproj|c:\\users\\jaqui\\onedrive\\escritorio\\dise\u00F1o y construcci\u00F3n de componentes\\reposirtorio\\proyecto_componentes_hotel\\hotelcrud\\controllers\\pagoscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A3071365-F594-4681-9A9B-C652C2759D23}|HotelCrud.csproj|solutionrelative:controllers\\pagoscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A3071365-F594-4681-9A9B-C652C2759D23}|HotelCrud.csproj|c:\\users\\jaqui\\onedrive\\escritorio\\dise\u00F1o y construcci\u00F3n de componentes\\reposirtorio\\proyecto_componentes_hotel\\hotelcrud\\views\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{A3071365-F594-4681-9A9B-C652C2759D23}|HotelCrud.csproj|solutionrelative:views\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A3071365-F594-4681-9A9B-C652C2759D23}|HotelCrud.csproj|c:\\users\\jaqui\\onedrive\\escritorio\\dise\u00F1o y construcci\u00F3n de componentes\\reposirtorio\\proyecto_componentes_hotel\\hotelcrud\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A3071365-F594-4681-9A9B-C652C2759D23}|HotelCrud.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A3071365-F594-4681-9A9B-C652C2759D23}|HotelCrud.csproj|c:\\users\\jaqui\\onedrive\\escritorio\\dise\u00F1o y construcci\u00F3n de componentes\\reposirtorio\\proyecto_componentes_hotel\\hotelcrud\\views\\pagos\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{A3071365-F594-4681-9A9B-C652C2759D23}|HotelCrud.csproj|solutionrelative:views\\pagos\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A3071365-F594-4681-9A9B-C652C2759D23}|HotelCrud.csproj|c:\\users\\jaqui\\onedrive\\escritorio\\dise\u00F1o y construcci\u00F3n de componentes\\reposirtorio\\proyecto_componentes_hotel\\hotelcrud\\views\\pagos\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{A3071365-F594-4681-9A9B-C652C2759D23}|HotelCrud.csproj|solutionrelative:views\\pagos\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A3071365-F594-4681-9A9B-C652C2759D23}|HotelCrud.csproj|c:\\users\\jaqui\\onedrive\\escritorio\\dise\u00F1o y construcci\u00F3n de componentes\\reposirtorio\\proyecto_componentes_hotel\\hotelcrud\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-=======
   "WorkspaceRootPath": "C:\\Users\\Usuario\\Documents\\Universidad2025\\Componentes\\CRUD\\ProyectoComponentes\\HotelCrud\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{A3071365-F594-4681-9A9B-C652C2759D23}|HotelCrud.csproj|c:\\users\\usuario\\documents\\universidad2025\\componentes\\crud\\proyectocomponentes\\hotelcrud\\views\\pagos\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A3071365-F594-4681-9A9B-C652C2759D23}|HotelCrud.csproj|solutionrelative:views\\pagos\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A3071365-F594-4681-9A9B-C652C2759D23}|HotelCrud.csproj|c:\\users\\usuario\\documents\\universidad2025\\componentes\\crud\\proyectocomponentes\\hotelcrud\\models\\hotelcaliforniadbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A3071365-F594-4681-9A9B-C652C2759D23}|HotelCrud.csproj|solutionrelative:models\\hotelcaliforniadbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A3071365-F594-4681-9A9B-C652C2759D23}|HotelCrud.csproj|c:\\users\\usuario\\documents\\universidad2025\\componentes\\crud\\proyectocomponentes\\hotelcrud\\models\\pago.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A3071365-F594-4681-9A9B-C652C2759D23}|HotelCrud.csproj|solutionrelative:models\\pago.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A3071365-F594-4681-9A9B-C652C2759D23}|HotelCrud.csproj|c:\\users\\usuario\\documents\\universidad2025\\componentes\\crud\\proyectocomponentes\\hotelcrud\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A3071365-F594-4681-9A9B-C652C2759D23}|HotelCrud.csproj|solutionrelative:views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A3071365-F594-4681-9A9B-C652C2759D23}|HotelCrud.csproj|c:\\users\\usuario\\documents\\universidad2025\\componentes\\crud\\proyectocomponentes\\hotelcrud\\views\\pagos\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A3071365-F594-4681-9A9B-C652C2759D23}|HotelCrud.csproj|solutionrelative:views\\pagos\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A3071365-F594-4681-9A9B-C652C2759D23}|HotelCrud.csproj|c:\\users\\usuario\\documents\\universidad2025\\componentes\\crud\\proyectocomponentes\\hotelcrud\\views\\pagos\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A3071365-F594-4681-9A9B-C652C2759D23}|HotelCrud.csproj|solutionrelative:views\\pagos\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A3071365-F594-4681-9A9B-C652C2759D23}|HotelCrud.csproj|c:\\users\\usuario\\documents\\universidad2025\\componentes\\crud\\proyectocomponentes\\hotelcrud\\controllers\\pagoscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A3071365-F594-4681-9A9B-C652C2759D23}|HotelCrud.csproj|solutionrelative:controllers\\pagoscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A3071365-F594-4681-9A9B-C652C2759D23}|HotelCrud.csproj|c:\\users\\usuario\\documents\\universidad2025\\componentes\\crud\\proyectocomponentes\\hotelcrud\\views\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A3071365-F594-4681-9A9B-C652C2759D23}|HotelCrud.csproj|solutionrelative:views\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A3071365-F594-4681-9A9B-C652C2759D23}|HotelCrud.csproj|c:\\users\\usuario\\documents\\universidad2025\\componentes\\crud\\proyectocomponentes\\hotelcrud\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A3071365-F594-4681-9A9B-C652C2759D23}|HotelCrud.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A3071365-F594-4681-9A9B-C652C2759D23}|HotelCrud.csproj|c:\\users\\usuario\\documents\\universidad2025\\componentes\\crud\\proyectocomponentes\\hotelcrud\\views\\pagos\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A3071365-F594-4681-9A9B-C652C2759D23}|HotelCrud.csproj|solutionrelative:views\\pagos\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A3071365-F594-4681-9A9B-C652C2759D23}|HotelCrud.csproj|c:\\users\\usuario\\documents\\universidad2025\\componentes\\crud\\proyectocomponentes\\hotelcrud\\views\\pagos\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A3071365-F594-4681-9A9B-C652C2759D23}|HotelCrud.csproj|solutionrelative:views\\pagos\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{A3071365-F594-4681-9A9B-C652C2759D23}|HotelCrud.csproj|c:\\users\\usuario\\documents\\universidad2025\\componentes\\crud\\proyectocomponentes\\hotelcrud\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
->>>>>>> Joshua
       "RelativeMoniker": "D:0:0:{A3071365-F594-4681-9A9B-C652C2759D23}|HotelCrud.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     }
   ],
@@ -65,208 +58,152 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 14,
+          "SelectedChildIndex": 6,
           "Children": [
-            {
-<<<<<<< HEAD
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:128:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:129:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:130:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:131:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
-            },
             {
               "$type": "Document",
               "DocumentIndex": 7,
               "Title": "_ViewStart.cshtml",
-              "DocumentMoniker": "C:\\Users\\jaqui\\OneDrive\\Escritorio\\Dise\u00F1o y Construcci\u00F3n de componentes\\Reposirtorio\\Proyecto_Componentes_Hotel\\HotelCrud\\Views\\_ViewStart.cshtml",
+              "DocumentMoniker": "C:\\Users\\Usuario\\Documents\\Universidad2025\\Componentes\\CRUD\\ProyectoComponentes\\HotelCrud\\Views\\_ViewStart.cshtml",
               "RelativeDocumentMoniker": "Views\\_ViewStart.cshtml",
-              "ToolTip": "C:\\Users\\jaqui\\OneDrive\\Escritorio\\Dise\u00F1o y Construcci\u00F3n de componentes\\Reposirtorio\\Proyecto_Componentes_Hotel\\HotelCrud\\Views\\_ViewStart.cshtml",
+              "ToolTip": "C:\\Users\\Usuario\\Documents\\Universidad2025\\Componentes\\CRUD\\ProyectoComponentes\\HotelCrud\\Views\\_ViewStart.cshtml",
               "RelativeToolTip": "Views\\_ViewStart.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-07-18T04:46:19.268Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-24T02:37:16.992Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
               "Title": "Pago.cs",
-              "DocumentMoniker": "C:\\Users\\jaqui\\OneDrive\\Escritorio\\Dise\u00F1o y Construcci\u00F3n de componentes\\Reposirtorio\\Proyecto_Componentes_Hotel\\HotelCrud\\Models\\Pago.cs",
+              "DocumentMoniker": "C:\\Users\\Usuario\\Documents\\Universidad2025\\Componentes\\CRUD\\ProyectoComponentes\\HotelCrud\\Models\\Pago.cs",
               "RelativeDocumentMoniker": "Models\\Pago.cs",
-              "ToolTip": "C:\\Users\\jaqui\\OneDrive\\Escritorio\\Dise\u00F1o y Construcci\u00F3n de componentes\\Reposirtorio\\Proyecto_Componentes_Hotel\\HotelCrud\\Models\\Pago.cs",
+              "ToolTip": "C:\\Users\\Usuario\\Documents\\Universidad2025\\Componentes\\CRUD\\ProyectoComponentes\\HotelCrud\\Models\\Pago.cs",
               "RelativeToolTip": "Models\\Pago.cs",
               "ViewState": "AgIAAAMAAAAAAAAAAAAAABIAAAA4AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-18T03:00:34.482Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-24T02:37:17.087Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 6,
               "Title": "PagosController.cs",
-              "DocumentMoniker": "C:\\Users\\jaqui\\OneDrive\\Escritorio\\Dise\u00F1o y Construcci\u00F3n de componentes\\Reposirtorio\\Proyecto_Componentes_Hotel\\HotelCrud\\Controllers\\PagosController.cs",
+              "DocumentMoniker": "C:\\Users\\Usuario\\Documents\\Universidad2025\\Componentes\\CRUD\\ProyectoComponentes\\HotelCrud\\Controllers\\PagosController.cs",
               "RelativeDocumentMoniker": "Controllers\\PagosController.cs",
-              "ToolTip": "C:\\Users\\jaqui\\OneDrive\\Escritorio\\Dise\u00F1o y Construcci\u00F3n de componentes\\Reposirtorio\\Proyecto_Componentes_Hotel\\HotelCrud\\Controllers\\PagosController.cs",
+              "ToolTip": "C:\\Users\\Usuario\\Documents\\Universidad2025\\Componentes\\CRUD\\ProyectoComponentes\\HotelCrud\\Controllers\\PagosController.cs",
               "RelativeToolTip": "Controllers\\PagosController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-18T03:02:55.549Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-24T02:37:17.089Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
               "Title": "Delete.cshtml",
-              "DocumentMoniker": "C:\\Users\\jaqui\\OneDrive\\Escritorio\\Dise\u00F1o y Construcci\u00F3n de componentes\\Reposirtorio\\Proyecto_Componentes_Hotel\\HotelCrud\\Views\\Pagos\\Delete.cshtml",
+              "DocumentMoniker": "C:\\Users\\Usuario\\Documents\\Universidad2025\\Componentes\\CRUD\\ProyectoComponentes\\HotelCrud\\Views\\Pagos\\Delete.cshtml",
               "RelativeDocumentMoniker": "Views\\Pagos\\Delete.cshtml",
-              "ToolTip": "C:\\Users\\jaqui\\OneDrive\\Escritorio\\Dise\u00F1o y Construcci\u00F3n de componentes\\Reposirtorio\\Proyecto_Componentes_Hotel\\HotelCrud\\Views\\Pagos\\Delete.cshtml",
+              "ToolTip": "C:\\Users\\Usuario\\Documents\\Universidad2025\\Componentes\\CRUD\\ProyectoComponentes\\HotelCrud\\Views\\Pagos\\Delete.cshtml",
               "RelativeToolTip": "Views\\Pagos\\Delete.cshtml",
               "ViewState": "AgIAABMAAAAAAAAAAAAUwCUAAAAGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-07-18T03:12:52.153Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-24T02:37:17.091Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 10,
               "Title": "Create.cshtml",
-              "DocumentMoniker": "C:\\Users\\jaqui\\OneDrive\\Escritorio\\Dise\u00F1o y Construcci\u00F3n de componentes\\Reposirtorio\\Proyecto_Componentes_Hotel\\HotelCrud\\Views\\Pagos\\Create.cshtml",
+              "DocumentMoniker": "C:\\Users\\Usuario\\Documents\\Universidad2025\\Componentes\\CRUD\\ProyectoComponentes\\HotelCrud\\Views\\Pagos\\Create.cshtml",
               "RelativeDocumentMoniker": "Views\\Pagos\\Create.cshtml",
-              "ToolTip": "C:\\Users\\jaqui\\OneDrive\\Escritorio\\Dise\u00F1o y Construcci\u00F3n de componentes\\Reposirtorio\\Proyecto_Componentes_Hotel\\HotelCrud\\Views\\Pagos\\Create.cshtml",
+              "ToolTip": "C:\\Users\\Usuario\\Documents\\Universidad2025\\Componentes\\CRUD\\ProyectoComponentes\\HotelCrud\\Views\\Pagos\\Create.cshtml",
               "RelativeToolTip": "Views\\Pagos\\Create.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAACoAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-07-18T03:12:04.734Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-24T02:37:17.093Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "HotelCaliforniaDbContext.cs",
-              "DocumentMoniker": "C:\\Users\\jaqui\\OneDrive\\Escritorio\\Dise\u00F1o y Construcci\u00F3n de componentes\\Reposirtorio\\Proyecto_Componentes_Hotel\\HotelCrud\\Models\\HotelCaliforniaDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\Usuario\\Documents\\Universidad2025\\Componentes\\CRUD\\ProyectoComponentes\\HotelCrud\\Models\\HotelCaliforniaDbContext.cs",
               "RelativeDocumentMoniker": "Models\\HotelCaliforniaDbContext.cs",
-              "ToolTip": "C:\\Users\\jaqui\\OneDrive\\Escritorio\\Dise\u00F1o y Construcci\u00F3n de componentes\\Reposirtorio\\Proyecto_Componentes_Hotel\\HotelCrud\\Models\\HotelCaliforniaDbContext.cs",
+              "ToolTip": "C:\\Users\\Usuario\\Documents\\Universidad2025\\Componentes\\CRUD\\ProyectoComponentes\\HotelCrud\\Models\\HotelCaliforniaDbContext.cs",
               "RelativeToolTip": "Models\\HotelCaliforniaDbContext.cs",
               "ViewState": "AgIAABEAAAAAAAAAAAA9wCUAAABPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-17T04:53:28.411Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-24T02:37:17.096Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Details.cshtml",
-              "DocumentMoniker": "C:\\Users\\jaqui\\OneDrive\\Escritorio\\Dise\u00F1o y Construcci\u00F3n de componentes\\Reposirtorio\\Proyecto_Componentes_Hotel\\HotelCrud\\Views\\Pagos\\Details.cshtml",
+              "DocumentMoniker": "C:\\Users\\Usuario\\Documents\\Universidad2025\\Componentes\\CRUD\\ProyectoComponentes\\HotelCrud\\Views\\Pagos\\Details.cshtml",
               "RelativeDocumentMoniker": "Views\\Pagos\\Details.cshtml",
-              "ToolTip": "C:\\Users\\jaqui\\OneDrive\\Escritorio\\Dise\u00F1o y Construcci\u00F3n de componentes\\Reposirtorio\\Proyecto_Componentes_Hotel\\HotelCrud\\Views\\Pagos\\Details.cshtml",
+              "ToolTip": "C:\\Users\\Usuario\\Documents\\Universidad2025\\Componentes\\CRUD\\ProyectoComponentes\\HotelCrud\\Views\\Pagos\\Details.cshtml",
               "RelativeToolTip": "Views\\Pagos\\Details.cshtml",
               "ViewState": "AgIAABEAAAAAAAAAAAAAwB8AAAA6AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-07-18T03:11:35.337Z",
+              "WhenOpened": "2025-07-24T02:37:17.097Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
               "Title": "_Layout.cshtml",
-              "DocumentMoniker": "C:\\Users\\jaqui\\OneDrive\\Escritorio\\Dise\u00F1o y Construcci\u00F3n de componentes\\Reposirtorio\\Proyecto_Componentes_Hotel\\HotelCrud\\Views\\Shared\\_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\Usuario\\Documents\\Universidad2025\\Componentes\\CRUD\\ProyectoComponentes\\HotelCrud\\Views\\Shared\\_Layout.cshtml",
               "RelativeDocumentMoniker": "Views\\Shared\\_Layout.cshtml",
-              "ToolTip": "C:\\Users\\jaqui\\OneDrive\\Escritorio\\Dise\u00F1o y Construcci\u00F3n de componentes\\Reposirtorio\\Proyecto_Componentes_Hotel\\HotelCrud\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\Usuario\\Documents\\Universidad2025\\Componentes\\CRUD\\ProyectoComponentes\\HotelCrud\\Views\\Shared\\_Layout.cshtml",
               "RelativeToolTip": "Views\\Shared\\_Layout.cshtml",
               "ViewState": "AgIAABoAAAAAAAAAAAAAwCgAAABbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-07-18T04:04:57.601Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-24T02:37:17.099Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
               "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\jaqui\\OneDrive\\Escritorio\\Dise\u00F1o y Construcci\u00F3n de componentes\\Reposirtorio\\Proyecto_Componentes_Hotel\\HotelCrud\\Views\\Pagos\\Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\Usuario\\Documents\\Universidad2025\\Componentes\\CRUD\\ProyectoComponentes\\HotelCrud\\Views\\Pagos\\Index.cshtml",
               "RelativeDocumentMoniker": "Views\\Pagos\\Index.cshtml",
-              "ToolTip": "C:\\Users\\jaqui\\OneDrive\\Escritorio\\Dise\u00F1o y Construcci\u00F3n de componentes\\Reposirtorio\\Proyecto_Componentes_Hotel\\HotelCrud\\Views\\Pagos\\Index.cshtml",
+              "ToolTip": "C:\\Users\\Usuario\\Documents\\Universidad2025\\Componentes\\CRUD\\ProyectoComponentes\\HotelCrud\\Views\\Pagos\\Index.cshtml",
               "RelativeToolTip": "Views\\Pagos\\Index.cshtml",
               "ViewState": "AgIAACcAAAAAAAAAAAAAADoAAAAGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-07-18T03:10:30.118Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-24T02:37:17.101Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 9,
               "Title": "Edit.cshtml",
-              "DocumentMoniker": "C:\\Users\\jaqui\\OneDrive\\Escritorio\\Dise\u00F1o y Construcci\u00F3n de componentes\\Reposirtorio\\Proyecto_Componentes_Hotel\\HotelCrud\\Views\\Pagos\\Edit.cshtml",
+              "DocumentMoniker": "C:\\Users\\Usuario\\Documents\\Universidad2025\\Componentes\\CRUD\\ProyectoComponentes\\HotelCrud\\Views\\Pagos\\Edit.cshtml",
               "RelativeDocumentMoniker": "Views\\Pagos\\Edit.cshtml",
-              "ToolTip": "C:\\Users\\jaqui\\OneDrive\\Escritorio\\Dise\u00F1o y Construcci\u00F3n de componentes\\Reposirtorio\\Proyecto_Componentes_Hotel\\HotelCrud\\Views\\Pagos\\Edit.cshtml",
+              "ToolTip": "C:\\Users\\Usuario\\Documents\\Universidad2025\\Componentes\\CRUD\\ProyectoComponentes\\HotelCrud\\Views\\Pagos\\Edit.cshtml",
               "RelativeToolTip": "Views\\Pagos\\Edit.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAACsAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-07-18T03:12:29.34Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-24T02:37:17.103Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 8,
               "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\jaqui\\OneDrive\\Escritorio\\Dise\u00F1o y Construcci\u00F3n de componentes\\Reposirtorio\\Proyecto_Componentes_Hotel\\HotelCrud\\Program.cs",
+              "DocumentMoniker": "C:\\Users\\Usuario\\Documents\\Universidad2025\\Componentes\\CRUD\\ProyectoComponentes\\HotelCrud\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "C:\\Users\\jaqui\\OneDrive\\Escritorio\\Dise\u00F1o y Construcci\u00F3n de componentes\\Reposirtorio\\Proyecto_Componentes_Hotel\\HotelCrud\\Program.cs",
+              "ToolTip": "C:\\Users\\Usuario\\Documents\\Universidad2025\\Componentes\\CRUD\\ProyectoComponentes\\HotelCrud\\Program.cs",
               "RelativeToolTip": "Program.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAqwAYAAAAYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-18T04:33:16.902Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-24T02:37:17.105Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 11,
               "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\jaqui\\OneDrive\\Escritorio\\Dise\u00F1o y Construcci\u00F3n de componentes\\Reposirtorio\\Proyecto_Componentes_Hotel\\HotelCrud\\appsettings.json",
-              "RelativeDocumentMoniker": "appsettings.json",
-              "ToolTip": "C:\\Users\\jaqui\\OneDrive\\Escritorio\\Dise\u00F1o y Construcci\u00F3n de componentes\\Reposirtorio\\Proyecto_Componentes_Hotel\\HotelCrud\\appsettings.json",
-              "RelativeToolTip": "appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAACFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-07-18T03:18:19.679Z",
-=======
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\Usuario\\Documents\\Universidad2025\\Componentes\\CRUD\\ProyectoComponentes\\HotelCrud\\appsettings.json",
               "RelativeDocumentMoniker": "appsettings.json",
               "ToolTip": "C:\\Users\\Usuario\\Documents\\Universidad2025\\Componentes\\CRUD\\ProyectoComponentes\\HotelCrud\\appsettings.json",
               "RelativeToolTip": "appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAACFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-07-20T06:21:41.221Z",
->>>>>>> Joshua
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-24T02:37:17.107Z"
             }
           ]
         }
