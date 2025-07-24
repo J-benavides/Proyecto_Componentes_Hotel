@@ -10,7 +10,7 @@
     <a asp-action="Create" class="btn btn-primary mb-3">Crear Nueva Persona</a>
 </p>
 
-<table class="table table-striped table-bordered">
+<table class="table table-striped table-bordered table-hover">
     <thead class="table-dark">
         <tr>
             <th>@Html.DisplayNameFor(model => model.Nombre)</th>
@@ -37,3 +37,31 @@
         }
     </tbody>
 </table>
+
+@section Scripts {
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <script>
+        @if (TempData["MensajeExito"] != null)
+        {
+                <text>
+                    Swal.fire({
+                        icon: 'success',
+                        title: '¡Éxito!',
+                        text: '@TempData["MensajeExito"]'
+                    });
+                </text>
+        }
+
+        @if (TempData["MensajeError"] != null)
+        {
+                <text>
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Error',
+                        text: '@TempData["MensajeError"]'
+                    });
+                </text>
+        }
+    </script>
+}

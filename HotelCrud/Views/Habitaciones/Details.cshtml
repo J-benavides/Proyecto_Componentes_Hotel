@@ -1,42 +1,22 @@
 ﻿@model HotelCrud.Models.Habitacione
-
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "Detalles de la Habitación";
 }
 
-<h1>Details</h1>
+<h2>Detalles de la Habitación</h2>
 
-<div>
-    <h4>Habitacione</h4>
-    <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Numero)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Numero)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Tipo)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Tipo)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Precio)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Precio)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Estado)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Estado)
-        </dd>
-    </dl>
+<div class="mb-3">
+    <strong>Número:</strong> @Model.Numero
 </div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+<div class="mb-3">
+    <strong>Tipo:</strong> @Model.Tipo
 </div>
+<div class="mb-3">
+    <strong>Precio:</strong> ₡@Model.Precio
+</div>
+<div class="mb-3">
+    <strong>Estado:</strong> @Model.Estado
+</div>
+
+<a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-primary">Editar</a>
+<a asp-action="Index" class="btn btn-secondary">Volver</a>

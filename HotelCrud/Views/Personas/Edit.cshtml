@@ -1,49 +1,67 @@
-﻿@model HotelCrud.Models.Persona
+﻿@model HotelCrud.Models.PersonaEditViewModel
 
 @{
-    ViewData["Title"] = "Edit";
+    ViewData["Title"] = "Editar Persona";
 }
 
-<h1>Edit</h1>
+<h1>Editar Persona</h1>
 
-<h4>Persona</h4>
 <hr />
+
 <div class="row">
-    <div class="col-md-4">
-        <form asp-action="Edit">
+    <div class="col-md-6 mx-auto">
+        <form asp-action="Edit" method="post" novalidate>
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="Id" />
-            <div class="form-group">
-                <label asp-for="Nombre" class="control-label"></label>
+
+            <div class="mb-3">
+                <label asp-for="Nombre" class="form-label"></label>
                 <input asp-for="Nombre" class="form-control" />
                 <span asp-validation-for="Nombre" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="Apellidos" class="control-label"></label>
+
+            <div class="mb-3">
+                <label asp-for="Apellidos" class="form-label"></label>
                 <input asp-for="Apellidos" class="form-control" />
                 <span asp-validation-for="Apellidos" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="Correo" class="control-label"></label>
+
+            <div class="mb-3">
+                <label asp-for="Correo" class="form-label"></label>
                 <input asp-for="Correo" class="form-control" />
                 <span asp-validation-for="Correo" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="Telefono" class="control-label"></label>
+
+            <div class="mb-3">
+                <label asp-for="Telefono" class="form-label"></label>
                 <input asp-for="Telefono" class="form-control" />
                 <span asp-validation-for="Telefono" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
+
+            <hr />
+
+            <h5>Cambiar contraseña</h5>
+
+            <div class="mb-3">
+                <label asp-for="ContrasenaActual" class="form-label"></label>
+                <input asp-for="ContrasenaActual" type="password" class="form-control" autocomplete="current-password" />
+                <span asp-validation-for="ContrasenaActual" class="text-danger"></span>
             </div>
+
+            <div class="mb-3">
+                <label asp-for="NuevaContrasena" class="form-label"></label>
+                <input asp-for="NuevaContrasena" type="password" class="form-control" autocomplete="new-password" />
+                <span asp-validation-for="NuevaContrasena" class="text-danger"></span>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+            <a asp-action="Index" class="btn btn-secondary ms-2">Volver</a>
         </form>
     </div>
 </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
-
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }

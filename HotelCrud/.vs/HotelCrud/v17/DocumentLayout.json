@@ -1,5 +1,6 @@
 {
   "Version": 1,
+<<<<<<< HEAD
   "WorkspaceRootPath": "C:\\Users\\jaqui\\OneDrive\\Escritorio\\Dise\u00F1o y Construcci\u00F3n de componentes\\Reposirtorio\\Proyecto_Componentes_Hotel\\HotelCrud\\",
   "Documents": [
     {
@@ -48,6 +49,12 @@
     },
     {
       "AbsoluteMoniker": "D:0:0:{A3071365-F594-4681-9A9B-C652C2759D23}|HotelCrud.csproj|c:\\users\\jaqui\\onedrive\\escritorio\\dise\u00F1o y construcci\u00F3n de componentes\\reposirtorio\\proyecto_componentes_hotel\\hotelcrud\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+=======
+  "WorkspaceRootPath": "C:\\Users\\Usuario\\Documents\\Universidad2025\\Componentes\\CRUD\\ProyectoComponentes\\HotelCrud\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A3071365-F594-4681-9A9B-C652C2759D23}|HotelCrud.csproj|c:\\users\\usuario\\documents\\universidad2025\\componentes\\crud\\proyectocomponentes\\hotelcrud\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+>>>>>>> Joshua
       "RelativeMoniker": "D:0:0:{A3071365-F594-4681-9A9B-C652C2759D23}|HotelCrud.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     }
   ],
@@ -61,6 +68,7 @@
           "SelectedChildIndex": 14,
           "Children": [
             {
+<<<<<<< HEAD
               "$type": "Bookmark",
               "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
             },
@@ -246,6 +254,18 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAACFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
               "WhenOpened": "2025-07-18T03:18:19.679Z",
+=======
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\Usuario\\Documents\\Universidad2025\\Componentes\\CRUD\\ProyectoComponentes\\HotelCrud\\appsettings.json",
+              "RelativeDocumentMoniker": "appsettings.json",
+              "ToolTip": "C:\\Users\\Usuario\\Documents\\Universidad2025\\Componentes\\CRUD\\ProyectoComponentes\\HotelCrud\\appsettings.json",
+              "RelativeToolTip": "appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-07-20T06:21:41.221Z",
+>>>>>>> Joshua
               "EditorCaption": ""
             }
           ]

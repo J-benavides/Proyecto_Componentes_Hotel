@@ -21,26 +21,23 @@ namespace HotelCrud.Controllers
         // GET: PersonaRols
         public async Task<IActionResult> Index()
         {
-            var hotelCaliforniaDbContext = _context.PersonaRols.Include(p => p.IdPersonaNavigation).Include(p => p.IdRolNavigation);
+            var hotelCaliforniaDbContext = _context.PersonaRols
+                .Include(p => p.IdPersonaNavigation)
+                .Include(p => p.IdRolNavigation);
             return View(await hotelCaliforniaDbContext.ToListAsync());
         }
 
         // GET: PersonaRols/Details/5
         public async Task<IActionResult> Details(int? id)
         {
-            if (id == null)
-            {
-                return NotFound();
-            }
+            if (id == null) return NotFound();
 
             var personaRol = await _context.PersonaRols
                 .Include(p => p.IdPersonaNavigation)
                 .Include(p => p.IdRolNavigation)
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (personaRol == null)
-            {
-                return NotFound();
-            }
+
+            if (personaRol == null) return NotFound();
 
             return View(personaRol);
         }
@@ -48,14 +45,12 @@ namespace HotelCrud.Controllers
         // GET: PersonaRols/Create
         public IActionResult Create()
         {
-            ViewData["IdPersona"] = new SelectList(_context.Personas, "Id", "Id");
-            ViewData["IdRol"] = new SelectList(_context.Roles, "Id", "Id");
+            ViewData["IdPersona"] = new SelectList(_context.Personas, "Id", "Nombre");
+            ViewData["IdRol"] = new SelectList(_context.Roles, "Id", "Nombre");
             return View();
         }
 
         // POST: PersonaRols/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,IdPersona,IdRol")] PersonaRol personaRol)
@@ -66,40 +61,31 @@ namespace HotelCrud.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["IdPersona"] = new SelectList(_context.Personas, "Id", "Id", personaRol.IdPersona);
-            ViewData["IdRol"] = new SelectList(_context.Roles, "Id", "Id", personaRol.IdRol);
+
+            ViewData["IdPersona"] = new SelectList(_context.Personas, "Id", "Nombre", personaRol.IdPersona);
+            ViewData["IdRol"] = new SelectList(_context.Roles, "Id", "Nombre", personaRol.IdRol);
             return View(personaRol);
         }
 
         // GET: PersonaRols/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
-            if (id == null)
-            {
-                return NotFound();
-            }
+            if (id == null) return NotFound();
 
             var personaRol = await _context.PersonaRols.FindAsync(id);
-            if (personaRol == null)
-            {
-                return NotFound();
-            }
-            ViewData["IdPersona"] = new SelectList(_context.Personas, "Id", "Id", personaRol.IdPersona);
-            ViewData["IdRol"] = new SelectList(_context.Roles, "Id", "Id", personaRol.IdRol);
+            if (personaRol == null) return NotFound();
+
+            ViewData["IdPersona"] = new SelectList(_context.Personas, "Id", "Nombre", personaRol.IdPersona);
+            ViewData["IdRol"] = new SelectList(_context.Roles, "Id", "Nombre", personaRol.IdRol);
             return View(personaRol);
         }
 
         // POST: PersonaRols/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("Id,IdPersona,IdRol")] PersonaRol personaRol)
         {
-            if (id != personaRol.Id)
-            {
-                return NotFound();
-            }
+            if (id != personaRol.Id) return NotFound();
 
             if (ModelState.IsValid)
             {
@@ -121,27 +107,22 @@ namespace HotelCrud.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["IdPersona"] = new SelectList(_context.Personas, "Id", "Id", personaRol.IdPersona);
-            ViewData["IdRol"] = new SelectList(_context.Roles, "Id", "Id", personaRol.IdRol);
+            ViewData["IdPersona"] = new SelectList(_context.Personas, "Id", "Nombre", personaRol.IdPersona);
+            ViewData["IdRol"] = new SelectList(_context.Roles, "Id", "Nombre", personaRol.IdRol);
             return View(personaRol);
         }
 
         // GET: PersonaRols/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
-            if (id == null)
-            {
-                return NotFound();
-            }
+            if (id == null) return NotFound();
 
             var personaRol = await _context.PersonaRols
                 .Include(p => p.IdPersonaNavigation)
                 .Include(p => p.IdRolNavigation)
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (personaRol == null)
-            {
-                return NotFound();
-            }
+
+            if (personaRol == null) return NotFound();
 
             return View(personaRol);
         }
@@ -155,9 +136,8 @@ namespace HotelCrud.Controllers
             if (personaRol != null)
             {
                 _context.PersonaRols.Remove(personaRol);
+                await _context.SaveChangesAsync();
             }
-
-            await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 

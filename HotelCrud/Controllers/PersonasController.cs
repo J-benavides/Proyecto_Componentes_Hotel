@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Http; // para HttpContext.Session
 using HotelCrud.Models;
 
 namespace HotelCrud.Controllers
@@ -27,17 +27,10 @@ namespace HotelCrud.Controllers
         // GET: Personas/Details/5
         public async Task<IActionResult> Details(int? id)
         {
-            if (id == null)
-            {
-                return NotFound();
-            }
+            if (id == null) return NotFound();
 
-            var persona = await _context.Personas
-                .FirstOrDefaultAsync(m => m.Id == id);
-            if (persona == null)
-            {
-                return NotFound();
-            }
+            var persona = await _context.Personas.FirstOrDefaultAsync(m => m.Id == id);
+            if (persona == null) return NotFound();
 
             return View(persona);
         }
@@ -45,16 +38,27 @@ namespace HotelCrud.Controllers
         // GET: Personas/Create
         public IActionResult Create()
         {
+            // Verificar rol en sesión
+            var rol = HttpContext.Session.GetString("Rol");
+            if (rol != "Admin")
+            {
+                // Redirigir a página de acceso denegado
+                return RedirectToAction("AccessDenied", "Cuenta");
+            }
             return View();
         }
 
         // POST: Personas/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Nombre,Apellidos,Correo,Telefono")] Persona persona)
+        public async Task<IActionResult> Create([Bind("Id,Nombre,Apellidos,Correo,Telefono,Contrasena")] Persona persona)
         {
+            var rol = HttpContext.Session.GetString("Rol");
+            if (rol != "Admin")
+            {
+                return RedirectToAction("AccessDenied", "Cuenta");
+            }
+
             if (ModelState.IsValid)
             {
                 _context.Add(persona);
@@ -67,68 +71,75 @@ namespace HotelCrud.Controllers
         // GET: Personas/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
-            if (id == null)
-            {
-                return NotFound();
-            }
+            if (id == null) return NotFound();
 
             var persona = await _context.Personas.FindAsync(id);
-            if (persona == null)
+            if (persona == null) return NotFound();
+
+            var model = new PersonaEditViewModel
             {
-                return NotFound();
-            }
-            return View(persona);
+                Id = persona.Id,
+                Nombre = persona.Nombre,
+                Apellidos = persona.Apellidos,
+                Correo = persona.Correo,
+                Telefono = persona.Telefono
+                // No enviamos contraseña por seguridad
+            };
+
+            return View(model);
         }
 
         // POST: Personas/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Nombre,Apellidos,Correo,Telefono")] Persona persona)
+        public async Task<IActionResult> Edit(int id, PersonaEditViewModel model)
         {
-            if (id != persona.Id)
-            {
-                return NotFound();
-            }
+            if (id != model.Id) return NotFound();
 
             if (ModelState.IsValid)
             {
+                var persona = await _context.Personas.FindAsync(id);
+                if (persona == null) return NotFound();
+
+                persona.Nombre = model.Nombre;
+                persona.Apellidos = model.Apellidos;
+                persona.Correo = model.Correo;
+                persona.Telefono = model.Telefono;
+
+                // Cambiar contraseña si se especifica y la actual es correcta
+                if (!string.IsNullOrEmpty(model.NuevaContrasena))
+                {
+                    if (string.IsNullOrEmpty(model.ContrasenaActual) || persona.Contrasena != model.ContrasenaActual)
+                    {
+                        ModelState.AddModelError("ContrasenaActual", "La contraseña actual es incorrecta.");
+                        return View(model);
+                    }
+                    persona.Contrasena = model.NuevaContrasena;
+                }
+
                 try
                 {
                     _context.Update(persona);
                     await _context.SaveChangesAsync();
+                    return RedirectToAction(nameof(Index));
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!PersonaExists(persona.Id))
-                    {
-                        return NotFound();
-                    }
-                    else
-                    {
-                        throw;
-                    }
+                    if (!PersonaExists(persona.Id)) return NotFound();
+                    else throw;
                 }
-                return RedirectToAction(nameof(Index));
             }
-            return View(persona);
+
+            return View(model);
         }
 
         // GET: Personas/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
-            if (id == null)
-            {
-                return NotFound();
-            }
+            if (id == null) return NotFound();
 
-            var persona = await _context.Personas
-                .FirstOrDefaultAsync(m => m.Id == id);
-            if (persona == null)
-            {
-                return NotFound();
-            }
+            var persona = await _context.Personas.FirstOrDefaultAsync(m => m.Id == id);
+            if (persona == null) return NotFound();
 
             return View(persona);
         }
@@ -138,13 +149,36 @@ namespace HotelCrud.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var persona = await _context.Personas.FindAsync(id);
-            if (persona != null)
+            try
             {
+                var persona = await _context.Personas.FindAsync(id);
+                if (persona == null)
+                {
+                    TempData["MensajeError"] = "La persona no existe.";
+                    return RedirectToAction(nameof(Index));
+                }
+
                 _context.Personas.Remove(persona);
+                await _context.SaveChangesAsync();
+
+                TempData["MensajeExito"] = "La persona se eliminó correctamente.";
+            }
+            catch (DbUpdateException ex)
+            {
+                if (ex.InnerException != null && ex.InnerException.Message.Contains("FK__PersonaRol"))
+                {
+                    TempData["MensajeError"] = "No se puede eliminar la persona porque tiene un rol asignado.";
+                }
+                else if (ex.InnerException != null && ex.InnerException.Message.Contains("FK__Reserva"))
+                {
+                    TempData["MensajeError"] = "No se puede eliminar la persona porque tiene una reserva activa.";
+                }
+                else
+                {
+                    TempData["MensajeError"] = "Ocurrió un error al intentar eliminar la persona.";
+                }
             }
 
-            await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
