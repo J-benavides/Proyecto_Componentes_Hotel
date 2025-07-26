@@ -11,47 +11,43 @@
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v2.1.9/css/unicons.css" />
     <link rel="stylesheet" href="~/css/style.css" />
 </head>
-<body>
-    <div class="section">
-        <div class="container">
-            <div class="row full-height justify-content-center">
-                <div class="col-12 text-center align-self-center py-5">
-                    <div class="section pb-5 pt-5 pt-sm-2 text-center">
-                        <h4 class="mb-4 pb-3">Regístrate</h4>
+<body class="bg-light">
+    <div class="section vh-100 d-flex justify-content-center align-items-center">
+        <div class="card shadow-sm p-4" style="max-width: 450px; width: 100%; border-radius: 10px;">
+            <h4 class="mb-4 text-center font-weight-bold text-primary">Regístrate</h4>
 
-                        @if (ViewBag.ErrorRegistro != null)
-                        {
-                            <div class="alert alert-danger" role="alert">@ViewBag.ErrorRegistro</div>
-                        }
+            @if (ViewBag.ErrorRegistro != null)
+            {
+                <div class="alert alert-danger" role="alert">@ViewBag.ErrorRegistro</div>
+            }
 
-                        <form asp-controller="Cuenta" asp-action="Registro" method="post">
-                            <div class="form-group">
-                                <input type="text" name="Nombre" class="form-style" placeholder="Nombre" required />
-                                <i class="input-icon uil uil-user"></i>
-                            </div>
-                            <div class="form-group mt-2">
-                                <input type="text" name="Apellidos" class="form-style" placeholder="Apellidos" required />
-                                <i class="input-icon uil uil-user"></i>
-                            </div>
-                            <div class="form-group mt-2">
-                                <input type="email" name="Correo" class="form-style" placeholder="Correo" required />
-                                <i class="input-icon uil uil-at"></i>
-                            </div>
-                            <div class="form-group mt-2">
-                                <input type="password" name="Contrasena" class="form-style" placeholder="Contraseña" required />
-                                <i class="input-icon uil uil-lock-alt"></i>
-                            </div>
-                            <div class="form-group mt-2">
-                                <input type="text" name="Telefono" class="form-style" placeholder="Teléfono" />
-                                <i class="input-icon uil uil-phone"></i>
-                            </div>
-                            <button type="submit" class="btn mt-4">Registrar</button>
-                        </form>
-
-                        <p class="mt-4">¿Ya tienes cuenta? <a asp-controller="Cuenta" asp-action="Login">Inicia sesión aquí</a></p>
-                    </div>
+            <form asp-controller="Cuenta" asp-action="Registro" method="post" novalidate>
+                <div class="form-group position-relative">
+                    <input type="text" name="Nombre" class="form-control pl-5" placeholder="Nombre" required />
+                    <i class="input-icon uil uil-user text-primary"></i>
                 </div>
-            </div>
+                <div class="form-group position-relative mt-3">
+                    <input type="text" name="Apellidos" class="form-control pl-5" placeholder="Apellidos" required />
+                    <i class="input-icon uil uil-user text-primary"></i>
+                </div>
+                <div class="form-group position-relative mt-3">
+                    <input type="email" name="Correo" class="form-control pl-5" placeholder="Correo" required />
+                    <i class="input-icon uil uil-at text-primary"></i>
+                </div>
+                <div class="form-group position-relative mt-3">
+                    <input type="password" name="Contrasena" class="form-control pl-5" placeholder="Contraseña" required />
+                    <i class="input-icon uil uil-lock-alt text-primary"></i>
+                </div>
+                <div class="form-group position-relative mt-3">
+                    <input type="text" name="Telefono" class="form-control pl-5" placeholder="Teléfono" />
+                    <i class="input-icon uil uil-phone text-primary"></i>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block mt-4 font-weight-bold">Registrar</button>
+            </form>
+
+            <p class="mt-4 text-center">
+                ¿Ya tienes cuenta? <a asp-controller="Cuenta" asp-action="Login" class="text-primary font-weight-bold">Inicia sesión aquí</a>
+            </p>
         </div>
     </div>
 </body>

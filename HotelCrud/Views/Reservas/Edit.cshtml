@@ -2,45 +2,51 @@
 
 @{
     ViewData["Title"] = "Editar Reserva";
+    var rol = Context.Session.GetString("Rol") ?? "";
 }
 
-<h2>Editar Reserva</h2>
+<h2 class="mb-4">@ViewData["Title"]</h2>
 
-<form asp-action="Edit" method="post">
+<form asp-action="Edit" method="post" novalidate>
     <input type="hidden" asp-for="Id" />
 
-    <div class="mb-3">
-        <label asp-for="IdPersona" class="form-label">Persona</label>
-        <select asp-for="IdPersona" class="form-select" asp-items="ViewBag.IdPersona"></select>
-        <span asp-validation-for="IdPersona" class="text-danger"></span>
-    </div>
+    @if (rol == "Admin")
+    {
+        <div class="form-group mb-3">
+            <label asp-for="IdPersona" class="form-label">Persona</label>
+            <select asp-for="IdPersona" class="form-select" asp-items="@(ViewData["IdPersona"] as SelectList)">
+                <option value="">-- Seleccione una persona --</option>
+            </select>
+            <span asp-validation-for="IdPersona" class="text-danger"></span>
+        </div>
+    }
+    else
+    {
+        <input asp-for="IdPersona" type="hidden" value="@Model.IdPersona" />
+    }
 
-    <div class="mb-3">
+    <div class="form-group mb-3">
         <label asp-for="IdHabitacion" class="form-label">Habitación</label>
-        <select asp-for="IdHabitacion" class="form-select" asp-items="ViewBag.IdHabitacion"></select>
+        <select asp-for="IdHabitacion" class="form-select" asp-items="@(ViewData["IdHabitacion"] as SelectList)">
+            <option value="">-- Seleccione una habitación --</option>
+        </select>
         <span asp-validation-for="IdHabitacion" class="text-danger"></span>
     </div>
 
-    <div class="mb-3">
-        <label asp-for="FechaEntrada" class="form-label">Fecha Entrada</label>
+    <div class="form-group mb-3">
+        <label asp-for="FechaEntrada" class="form-label"></label>
         <input asp-for="FechaEntrada" class="form-control" type="date" />
         <span asp-validation-for="FechaEntrada" class="text-danger"></span>
     </div>
 
-    <div class="mb-3">
-        <label asp-for="FechaSalida" class="form-label">Fecha Salida</label>
+    <div class="form-group mb-3">
+        <label asp-for="FechaSalida" class="form-label"></label>
         <input asp-for="FechaSalida" class="form-control" type="date" />
         <span asp-validation-for="FechaSalida" class="text-danger"></span>
     </div>
 
-    <!-- Mostrar estado habitación, solo lectura -->
-    <div class="mb-3">
-        <label class="form-label">Estado Actual de la Habitación</label>
-        <input class="form-control" value="@Model.IdHabitacionNavigation?.Estado" readonly />
-    </div>
-
-    <button type="submit" class="btn btn-primary">Guardar Cambios</button>
-    <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+    <button type="submit" class="btn btn-success">Guardar Cambios</button>
+    <a asp-action="Index" class="btn btn-secondary ms-2">Cancelar</a>
 </form>
 
 @section Scripts {

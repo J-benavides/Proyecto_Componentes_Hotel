@@ -1,11 +1,15 @@
 ﻿@model IEnumerable<HotelCrud.Models.Habitacione>
 @{
     ViewData["Title"] = "Lista de Habitaciones";
+    var rol = (string)ViewData["RolUsuario"];
 }
 
 <h2 class="mb-4">Lista de Habitaciones</h2>
 
-<a asp-action="Create" class="btn btn-success mb-3">Registrar Nueva Habitación</a>
+@if (rol == "Admin")
+{
+    <a asp-action="Create" class="btn btn-success mb-3">Registrar Nueva Habitación</a>
+}
 
 <table class="table table-bordered table-striped">
     <thead class="table-dark">
@@ -27,8 +31,12 @@
                 <td>@item.Estado</td>
                 <td>
                     <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-sm btn-info">Detalles</a>
-                    <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-sm btn-primary">Editar</a>
-                    <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-sm btn-danger">Eliminar</a>
+
+                    @if (rol == "Admin")
+                    {
+                        <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-sm btn-primary">Editar</a>
+                        <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-sm btn-danger">Eliminar</a>
+                    }
                 </td>
             </tr>
         }

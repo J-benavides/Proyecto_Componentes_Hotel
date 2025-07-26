@@ -3,25 +3,27 @@
     ViewData["Title"] = "Eliminar Habitación";
 }
 
-<h2>Eliminar Habitación</h2>
+<h2 class="mb-4 text-danger">Eliminar Habitación</h2>
 
-<h4>¿Estás seguro de que deseas eliminar esta habitación?</h4>
+<div class="card border-danger p-3 mb-3">
+    <h5>¿Estás seguro de que deseas eliminar esta habitación?</h5>
+    <dl class="row mt-3">
+        <dt class="col-sm-3">Número:</dt>
+        <dd class="col-sm-9">@Model.Numero</dd>
 
-<div class="mb-3">
-    <strong>Número:</strong> @Model.Numero
-</div>
-<div class="mb-3">
-    <strong>Tipo:</strong> @Model.Tipo
-</div>
-<div class="mb-3">
-    <strong>Precio:</strong> ₡@Model.Precio
-</div>
-<div class="mb-3">
-    <strong>Estado:</strong> @Model.Estado
-</div>
+        <dt class="col-sm-3">Tipo:</dt>
+        <dd class="col-sm-9">@Model.Tipo</dd>
 
-<form asp-action="Delete">
-    <input type="hidden" asp-for="Id" />
-    <button type="submit" class="btn btn-danger">Eliminar</button>
-    <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
-</form>
+        <dt class="col-sm-3">Precio:</dt>
+        <dd class="col-sm-9">₡@Model.Precio</dd>
+
+        <dt class="col-sm-3">Estado:</dt>
+        <dd class="col-sm-9">@Model.Estado</dd>
+    </dl>
+
+    <form asp-action="Delete" method="post">
+        <input type="hidden" asp-for="Id" />
+        <button type="submit" class="btn btn-danger">Eliminar</button>
+        <a asp-action="Index" class="btn btn-secondary ms-2">Cancelar</a>
+    </form>
+</div>

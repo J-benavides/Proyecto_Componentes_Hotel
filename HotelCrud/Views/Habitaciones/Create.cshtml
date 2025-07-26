@@ -3,9 +3,9 @@
     ViewData["Title"] = "Registrar Habitación";
 }
 
-<h2>Registrar Habitación</h2>
+<h2 class="mb-4">Registrar Habitación</h2>
 
-<form asp-action="Create" method="post">
+<form asp-action="Create" method="post" novalidate>
     <div class="form-group mb-3">
         <label asp-for="Numero" class="form-label"></label>
         <input asp-for="Numero" class="form-control" />
@@ -28,5 +28,11 @@
     <input type="hidden" asp-for="Estado" value="Disponible" />
 
     <button type="submit" class="btn btn-success">Guardar</button>
-    <a asp-action="Index" class="btn btn-secondary">Volver</a>
+    <a asp-action="Index" class="btn btn-secondary ms-2">Volver</a>
 </form>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

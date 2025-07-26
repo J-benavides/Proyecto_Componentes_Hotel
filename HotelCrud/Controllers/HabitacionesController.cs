@@ -1,10 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using HotelCrud.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using HotelCrud.Models;
+using System.Threading.Tasks;
 
 namespace HotelCrud.Controllers
 {
@@ -17,11 +15,14 @@ namespace HotelCrud.Controllers
             _context = context;
         }
 
-        // GET: AccesoDenegado
+        // GET: Habitaciones
         public async Task<IActionResult> Index()
         {
-            if (HttpContext.Session.GetString("Rol") != "Admin")
+            var rol = HttpContext.Session.GetString("Rol");
+            if (rol != "Admin" && rol != "Cliente")
                 return RedirectToAction("AccesoDenegado", "Home");
+
+            ViewData["RolUsuario"] = rol; 
 
             return View(await _context.Habitaciones.ToListAsync());
         }
@@ -30,10 +31,16 @@ namespace HotelCrud.Controllers
         // GET: Habitaciones/Details/5
         public async Task<IActionResult> Details(int? id)
         {
-            if (id == null) return NotFound();
+            var rol = HttpContext.Session.GetString("Rol");
+            if (rol != "Admin" && rol != "Cliente")
+                return RedirectToAction("AccesoDenegado", "Home");
+
+            if (id == null)
+                return NotFound();
 
             var habitacion = await _context.Habitaciones.FirstOrDefaultAsync(m => m.Id == id);
-            if (habitacion == null) return NotFound();
+            if (habitacion == null)
+                return NotFound();
 
             return View(habitacion);
         }
@@ -41,6 +48,10 @@ namespace HotelCrud.Controllers
         // GET: Habitaciones/Create
         public IActionResult Create()
         {
+            var rol = HttpContext.Session.GetString("Rol");
+            if (rol != "Admin")
+                return RedirectToAction("AccesoDenegado", "Home");
+
             return View();
         }
 
@@ -49,6 +60,10 @@ namespace HotelCrud.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,Numero,Tipo,Precio")] Habitacione habitacion)
         {
+            var rol = HttpContext.Session.GetString("Rol");
+            if (rol != "Admin")
+                return RedirectToAction("AccesoDenegado", "Home");
+
             if (ModelState.IsValid)
             {
                 habitacion.Estado = "Disponible"; // Estado por defecto
@@ -64,18 +79,50 @@ namespace HotelCrud.Controllers
         {
             if (id == null) return NotFound();
 
-            var habitacion = await _context.Habitaciones.FindAsync(id);
-            if (habitacion == null) return NotFound();
+            var reserva = await _context.Reservas.FindAsync(id);
+            if (reserva == null) return NotFound();
 
-            return View(habitacion);
+            var rol = HttpContext.Session.GetString("Rol");
+            if (rol != "Cliente" && rol != "Admin")
+                return RedirectToAction("AccesoDenegado", "Home");
+
+            // Si el usuario es cliente, solo puede editar su propia reserva
+            if (rol == "Cliente")
+            {
+                int idPersonaSesion = HttpContext.Session.GetInt32("IdPersona") ?? 0;
+                if (reserva.IdPersona != idPersonaSesion)
+                    return RedirectToAction("AccesoDenegado", "Home");
+            }
+
+            if (rol == "Admin")
+                ViewData["IdPersona"] = new SelectList(_context.Personas, "Id", "Nombre", reserva.IdPersona);
+
+            IQueryable<Habitacione> habitacionesQuery;
+            if (rol == "Admin")
+            {
+                habitacionesQuery = _context.Habitaciones; // Todas
+            }
+            else
+            {
+                habitacionesQuery = _context.Habitaciones.Where(h => h.Estado == "Disponible" || h.Id == reserva.IdHabitacion);
+            }
+            ViewData["IdHabitacion"] = new SelectList(habitacionesQuery, "Id", "Numero", reserva.IdHabitacion);
+
+            return View(reserva);
         }
+
 
         // POST: Habitaciones/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("Id,Numero,Tipo,Precio,Estado")] Habitacione habitacion)
         {
-            if (id != habitacion.Id) return NotFound();
+            var rol = HttpContext.Session.GetString("Rol");
+            if (rol != "Admin")
+                return RedirectToAction("AccesoDenegado", "Home");
+
+            if (id != habitacion.Id)
+                return NotFound();
 
             if (ModelState.IsValid)
             {
@@ -86,8 +133,10 @@ namespace HotelCrud.Controllers
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!HabitacioneExists(habitacion.Id)) return NotFound();
-                    else throw;
+                    if (!HabitacioneExists(habitacion.Id))
+                        return NotFound();
+                    else
+                        throw;
                 }
                 return RedirectToAction(nameof(Index));
             }
@@ -97,12 +146,17 @@ namespace HotelCrud.Controllers
         // GET: Habitaciones/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
-            if (id == null) return NotFound();
+            var rol = HttpContext.Session.GetString("Rol");
+            if (rol != "Admin")
+                return RedirectToAction("AccesoDenegado", "Home");
+
+            if (id == null)
+                return NotFound();
 
             var habitacion = await _context.Habitaciones.FirstOrDefaultAsync(m => m.Id == id);
-            if (habitacion == null) return NotFound();
+            if (habitacion == null)
+                return NotFound();
 
-            // Verificar si la habitación tiene reservas activas
             bool tieneReservas = await _context.Reservas.AnyAsync(r => r.IdHabitacion == id);
             if (tieneReservas)
             {
@@ -118,10 +172,14 @@ namespace HotelCrud.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var habitacion = await _context.Habitaciones.FindAsync(id);
-            if (habitacion == null) return NotFound();
+            var rol = HttpContext.Session.GetString("Rol");
+            if (rol != "Admin")
+                return RedirectToAction("AccesoDenegado", "Home");
 
-            // Validar si la habitación tiene reservas activas antes de eliminar
+            var habitacion = await _context.Habitaciones.FindAsync(id);
+            if (habitacion == null)
+                return NotFound();
+
             bool tieneReservas = await _context.Reservas.AnyAsync(r => r.IdHabitacion == id);
             if (tieneReservas)
             {

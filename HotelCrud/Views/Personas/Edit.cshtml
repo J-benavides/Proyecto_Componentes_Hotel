@@ -2,66 +2,92 @@
 
 @{
     ViewData["Title"] = "Editar Persona";
+    var rol = Context.Session.GetString("Rol") ?? "";
+    var idPersonaSesion = Context.Session.GetInt32("IdPersona") ?? 0;
+    bool esAdmin = rol == "Admin";
+    bool esCliente = rol == "Cliente";
 }
 
-<h1>Editar Persona</h1>
+<div class="container my-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-7 col-md-8 col-sm-10">
+            <div class="card shadow-sm rounded-lg">
+                <div class="card-header bg-primary text-white">
+                    <h3 class="mb-0">Editar Persona</h3>
+                </div>
+                <div class="card-body">
 
-<hr />
+                    @* Validar que cliente no pueda editar otro perfil *@
+                    @if (esCliente && Model.Id != idPersonaSesion)
+                    {
+                        <div class="alert alert-danger">
+                            No tienes permiso para editar este perfil.
+                        </div>
+                    }
+                    else
+                    {
+                        <form asp-action="Edit" method="post" novalidate>
+                            <input type="hidden" asp-for="Id" />
 
-<div class="row">
-    <div class="col-md-6 mx-auto">
-        <form asp-action="Edit" method="post" novalidate>
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="Id" />
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <label asp-for="Nombre" class="font-weight-bold"></label>
+                                    <input asp-for="Nombre" class="form-control" />
+                                    <span asp-validation-for="Nombre" class="text-danger small"></span>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label asp-for="Apellidos" class="font-weight-bold"></label>
+                                    <input asp-for="Apellidos" class="form-control" />
+                                    <span asp-validation-for="Apellidos" class="text-danger small"></span>
+                                </div>
+                            </div>
 
-            <div class="mb-3">
-                <label asp-for="Nombre" class="form-label"></label>
-                <input asp-for="Nombre" class="form-control" />
-                <span asp-validation-for="Nombre" class="text-danger"></span>
+                            <div class="form-group">
+                                <label asp-for="Correo" class="font-weight-bold"></label>
+                                <input asp-for="Correo" class="form-control" />
+                                <span asp-validation-for="Correo" class="text-danger small"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label asp-for="Telefono" class="font-weight-bold"></label>
+                                <input asp-for="Telefono" class="form-control" />
+                                <span asp-validation-for="Telefono" class="text-danger small"></span>
+                            </div>
+
+                            <hr />
+
+                            <h5 class="mb-3 text-primary">Cambiar contraseña</h5>
+
+                            <div class="form-group">
+                                <label asp-for="ContrasenaActual" class="font-weight-bold"></label>
+                                <input asp-for="ContrasenaActual" class="form-control" type="password" autocomplete="current-password" />
+                                <span asp-validation-for="ContrasenaActual" class="text-danger small"></span>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <label asp-for="NuevaContrasena" class="font-weight-bold"></label>
+                                    <input asp-for="NuevaContrasena" class="form-control" type="password" autocomplete="new-password" />
+                                    <span asp-validation-for="NuevaContrasena" class="text-danger small"></span>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label asp-for="ConfirmarNuevaContrasena" class="font-weight-bold"></label>
+                                    <input asp-for="ConfirmarNuevaContrasena" class="form-control" type="password" autocomplete="new-password" />
+                                    <span asp-validation-for="ConfirmarNuevaContrasena" class="text-danger small"></span>
+                                </div>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary btn-block font-weight-bold mt-4">
+                                Guardar cambios
+                            </button>
+                        </form>
+                    }
+                </div>
             </div>
-
-            <div class="mb-3">
-                <label asp-for="Apellidos" class="form-label"></label>
-                <input asp-for="Apellidos" class="form-control" />
-                <span asp-validation-for="Apellidos" class="text-danger"></span>
-            </div>
-
-            <div class="mb-3">
-                <label asp-for="Correo" class="form-label"></label>
-                <input asp-for="Correo" class="form-control" />
-                <span asp-validation-for="Correo" class="text-danger"></span>
-            </div>
-
-            <div class="mb-3">
-                <label asp-for="Telefono" class="form-label"></label>
-                <input asp-for="Telefono" class="form-control" />
-                <span asp-validation-for="Telefono" class="text-danger"></span>
-            </div>
-
-            <hr />
-
-            <h5>Cambiar contraseña</h5>
-
-            <div class="mb-3">
-                <label asp-for="ContrasenaActual" class="form-label"></label>
-                <input asp-for="ContrasenaActual" type="password" class="form-control" autocomplete="current-password" />
-                <span asp-validation-for="ContrasenaActual" class="text-danger"></span>
-            </div>
-
-            <div class="mb-3">
-                <label asp-for="NuevaContrasena" class="form-label"></label>
-                <input asp-for="NuevaContrasena" type="password" class="form-control" autocomplete="new-password" />
-                <span asp-validation-for="NuevaContrasena" class="text-danger"></span>
-            </div>
-
-            <button type="submit" class="btn btn-primary">Guardar Cambios</button>
-            <a asp-action="Index" class="btn btn-secondary ms-2">Volver</a>
-        </form>
+        </div>
     </div>
 </div>
 
 @section Scripts {
-    @{
-        await Html.RenderPartialAsync("_ValidationScriptsPartial");
-    }
+    <partial name="_ValidationScriptsPartial" />
 }

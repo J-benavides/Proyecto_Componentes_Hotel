@@ -1,10 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.AspNetCore.Http; // para HttpContext.Session
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity;
 using HotelCrud.Models;
 
 namespace HotelCrud.Controllers
@@ -12,6 +11,7 @@ namespace HotelCrud.Controllers
     public class PersonasController : Controller
     {
         private readonly HotelCaliforniaDbContext _context;
+        private readonly PasswordHasher<Persona> _passwordHasher = new PasswordHasher<Persona>();
 
         public PersonasController(HotelCaliforniaDbContext context)
         {
@@ -21,13 +21,37 @@ namespace HotelCrud.Controllers
         // GET: Personas
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Personas.ToListAsync());
+            var rol = HttpContext.Session.GetString("Rol");
+            var idSesion = HttpContext.Session.GetInt32("IdPersona") ?? 0;
+
+            if (rol == "Admin")
+            {
+                return View(await _context.Personas.ToListAsync());
+            }
+            else if (rol == "Cliente")
+            {
+                // Cliente no ve lista, lo redirigimos a su perfil para editar
+                if (idSesion == 0) return RedirectToAction("AccessDenied", "Cuenta");
+                return RedirectToAction("Edit", new { id = idSesion });
+            }
+            else
+            {
+                return RedirectToAction("AccessDenied", "Cuenta");
+            }
         }
 
         // GET: Personas/Details/5
         public async Task<IActionResult> Details(int? id)
         {
+            var rol = HttpContext.Session.GetString("Rol");
+            var idSesion = HttpContext.Session.GetInt32("IdPersona") ?? 0;
+
             if (id == null) return NotFound();
+
+            if (rol != "Admin" && id != idSesion)
+            {
+                return RedirectToAction("AccessDenied", "Cuenta");
+            }
 
             var persona = await _context.Personas.FirstOrDefaultAsync(m => m.Id == id);
             if (persona == null) return NotFound();
@@ -38,11 +62,9 @@ namespace HotelCrud.Controllers
         // GET: Personas/Create
         public IActionResult Create()
         {
-            // Verificar rol en sesión
             var rol = HttpContext.Session.GetString("Rol");
             if (rol != "Admin")
             {
-                // Redirigir a página de acceso denegado
                 return RedirectToAction("AccessDenied", "Cuenta");
             }
             return View();
@@ -61,6 +83,8 @@ namespace HotelCrud.Controllers
 
             if (ModelState.IsValid)
             {
+                persona.Contrasena = _passwordHasher.HashPassword(persona, persona.Contrasena!);
+
                 _context.Add(persona);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
@@ -71,7 +95,15 @@ namespace HotelCrud.Controllers
         // GET: Personas/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
+            var rol = HttpContext.Session.GetString("Rol");
+            var idSesion = HttpContext.Session.GetInt32("IdPersona") ?? 0;
+
             if (id == null) return NotFound();
+
+            if (rol != "Admin" && id != idSesion)
+            {
+                return RedirectToAction("AccessDenied", "Cuenta");
+            }
 
             var persona = await _context.Personas.FindAsync(id);
             if (persona == null) return NotFound();
@@ -83,7 +115,6 @@ namespace HotelCrud.Controllers
                 Apellidos = persona.Apellidos,
                 Correo = persona.Correo,
                 Telefono = persona.Telefono
-                // No enviamos contraseña por seguridad
             };
 
             return View(model);
@@ -94,7 +125,15 @@ namespace HotelCrud.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, PersonaEditViewModel model)
         {
+            var rol = HttpContext.Session.GetString("Rol");
+            var idSesion = HttpContext.Session.GetInt32("IdPersona") ?? 0;
+
             if (id != model.Id) return NotFound();
+
+            if (rol != "Admin" && id != idSesion)
+            {
+                return RedirectToAction("AccessDenied", "Cuenta");
+            }
 
             if (ModelState.IsValid)
             {
@@ -106,21 +145,36 @@ namespace HotelCrud.Controllers
                 persona.Correo = model.Correo;
                 persona.Telefono = model.Telefono;
 
-                // Cambiar contraseña si se especifica y la actual es correcta
                 if (!string.IsNullOrEmpty(model.NuevaContrasena))
                 {
-                    if (string.IsNullOrEmpty(model.ContrasenaActual) || persona.Contrasena != model.ContrasenaActual)
+                    if (string.IsNullOrEmpty(model.ContrasenaActual))
+                    {
+                        ModelState.AddModelError("ContrasenaActual", "La contraseña actual es requerida.");
+                        return View(model);
+                    }
+
+                    var resultadoVerificacion = _passwordHasher.VerifyHashedPassword(persona, persona.Contrasena!, model.ContrasenaActual);
+
+                    if (resultadoVerificacion == PasswordVerificationResult.Failed)
                     {
                         ModelState.AddModelError("ContrasenaActual", "La contraseña actual es incorrecta.");
                         return View(model);
                     }
-                    persona.Contrasena = model.NuevaContrasena;
+
+                    persona.Contrasena = _passwordHasher.HashPassword(persona, model.NuevaContrasena);
                 }
 
                 try
                 {
                     _context.Update(persona);
                     await _context.SaveChangesAsync();
+
+                    if (!string.IsNullOrEmpty(model.NuevaContrasena))
+                    {
+                        HttpContext.Session.Clear(); // Forzar login con nueva contraseña
+                        return RedirectToAction("Login", "Cuenta");
+                    }
+
                     return RedirectToAction(nameof(Index));
                 }
                 catch (DbUpdateConcurrencyException)
@@ -136,6 +190,10 @@ namespace HotelCrud.Controllers
         // GET: Personas/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
+            var rol = HttpContext.Session.GetString("Rol");
+            if (rol != "Admin")
+                return RedirectToAction("AccessDenied", "Cuenta");
+
             if (id == null) return NotFound();
 
             var persona = await _context.Personas.FirstOrDefaultAsync(m => m.Id == id);
@@ -149,6 +207,10 @@ namespace HotelCrud.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
+            var rol = HttpContext.Session.GetString("Rol");
+            if (rol != "Admin")
+                return RedirectToAction("AccessDenied", "Cuenta");
+
             try
             {
                 var persona = await _context.Personas.FindAsync(id);

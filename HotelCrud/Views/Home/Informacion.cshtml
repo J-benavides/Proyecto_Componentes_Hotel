@@ -1,0 +1,106 @@
+﻿@{
+    ViewData["Title"] = "Información - Hotel California";
+}
+
+<!-- Usamos Bootstrap para estilos -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<div class="container my-5">
+    <div class="text-center mb-5">
+        <h1 class="display-4 fw-bold text-primary">Hotel California</h1>
+        <p class="lead text-secondary">Bienvenido a tu hogar lejos de casa</p>
+    </div>
+
+    <div class="row gy-5">
+        <!-- Información general -->
+        <div class="col-md-7">
+            <div class="card shadow-sm p-4">
+                <h2 class="mb-4 text-primary">Información General</h2>
+
+                <h5 class="mb-3">Contacto</h5>
+                <ul class="list-unstyled mb-4">
+                    <li><strong>Dirección:</strong> 123 Calle Principal, Ciudad, Costa Rica</li>
+                    <li><strong>Teléfono:</strong> +506 1234 5678</li>
+                    <li><strong>Email:</strong> contacto@hotelcalifornia.com</li>
+                    <li><strong>Horario de atención:</strong> Lunes a Domingo, 8:00 AM - 10:00 PM</li>
+                </ul>
+
+                <h5 class="mb-3">Servicios Destacados</h5>
+                <ul class="list-group mb-4">
+                    <li class="list-group-item"><i class="bi bi-wifi"></i> WiFi gratis en todas las habitaciones</li>
+                    <li class="list-group-item"><i class="bi bi-cup-straw"></i> Desayuno buffet incluido</li>
+                    <li class="list-group-item"><i class="bi bi-barbell"></i> Gimnasio 24/7</li>
+                    <li class="list-group-item"><i class="bi bi-water"></i> Piscina y spa</li>
+                    <li class="list-group-item"><i class="bi bi-egg-fried"></i> Restaurante con menú internacional</li>
+                </ul>
+
+                <h5 class="mb-3">Políticas del Hotel</h5>
+                <ul class="list-group mb-4">
+                    <li class="list-group-item">Check-in: desde las 3:00 PM</li>
+                    <li class="list-group-item">Check-out: hasta las 12:00 PM</li>
+                    <li class="list-group-item">Cancelaciones: sin costo hasta 24 horas antes</li>
+                    <li class="list-group-item">Pet Friendly</li>
+                    <li class="list-group-item">Prohibido fumar en habitaciones</li>
+                </ul>
+
+                <h5 class="mb-3">Preguntas Frecuentes</h5>
+                <div class="accordion" id="faqAccordion">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingOne">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq1" aria-expanded="false" aria-controls="faq1">
+                                ¿Puedo cambiar mi reserva?
+                            </button>
+                        </h2>
+                        <div id="faq1" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                Sí, puedes modificar tu reserva hasta 24 horas antes de la fecha de llegada.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingTwo">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2" aria-expanded="false" aria-controls="faq2">
+                                ¿Cómo hago el check-in?
+                            </button>
+                        </h2>
+                        <div id="faq2" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                Al llegar, presenta tu identificación y la confirmación de reserva en la recepción.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <h5 class="mt-4 mb-3">Ubicación</h5>
+                <div class="ratio ratio-16x9">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3929.199023104431!2d-84.0760565845836!3d9.928069392756134!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8fa0eaf9e1d94777%3A0x674845c52c6f43ec!2sHotel%20California!5e0!3m2!1ses-419!2scr!4v1689600000000!5m2!1ses-419!2scr"
+                            style="border:0;"
+                            allowfullscreen=""
+                            loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+
+        <!-- Apartado Login/Registro -->
+        <div class="col-md-5">
+            <div class="card shadow-sm p-4">
+                <h2 class="text-primary mb-4">¿Ya tienes cuenta?</h2>
+                <p>Inicia sesión para gestionar tus reservas y disfrutar de beneficios exclusivos.</p>
+                <a href="/Cuenta/Login" class="btn btn-primary w-100 mb-4">Iniciar Sesión</a>
+
+                <hr>
+
+                <h2 class="text-primary mb-4">¿Nuevo aquí?</h2>
+                <p>Crea una cuenta rápida y fácilmente para reservar tu estancia.</p>
+                <a href="/Cuenta/Register" class="btn btn-success w-100">Registrarse</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Bootstrap JS (con Popper) para componentes interactivos -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Bootstrap Icons CDN para iconos -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">

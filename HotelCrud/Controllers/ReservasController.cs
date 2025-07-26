@@ -1,208 +1,287 @@
-﻿using System;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using HotelCrud.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using HotelCrud.Models;
+using System.Linq;
+using System.Threading.Tasks;
 
-namespace HotelCrud.Controllers
+public class ReservasController : Controller
 {
-    public class ReservasController : Controller
+    private readonly HotelCaliforniaDbContext _context;
+
+    public ReservasController(HotelCaliforniaDbContext context)
     {
-        private readonly HotelCaliforniaDbContext _context;
+        _context = context;
+    }
 
-        public ReservasController(HotelCaliforniaDbContext context)
+    // GET: Reservas
+    public async Task<IActionResult> Index()
+    {
+        var rol = HttpContext.Session.GetString("Rol");
+        if (rol != "Cliente" && rol != "Admin")
+            return RedirectToAction("AccesoDenegado", "Home");
+
+        if (rol == "Cliente")
         {
-            _context = context;
-        }
-
-        // GET: Reservas
-        public async Task<IActionResult> Index()
-        {
-            var rol = HttpContext.Session.GetString("Rol");
-            if (rol != "Cliente" && rol != "Admin")
-                return RedirectToAction("AccesoDenegado", "Home");
-
-            if (rol == "Cliente")
-            {
-                int idPersona = HttpContext.Session.GetInt32("IdPersona") ?? 0;
-                var reservasCliente = _context.Reservas
-                    .Include(r => r.IdHabitacionNavigation)
-                    .Include(r => r.IdPersonaNavigation)
-                    .Where(r => r.IdPersona == idPersona);
-                return View(await reservasCliente.ToListAsync());
-            }
-
-            return View(await _context.Reservas
+            int idPersona = HttpContext.Session.GetInt32("IdPersona") ?? 0;
+            var reservasCliente = _context.Reservas
                 .Include(r => r.IdHabitacionNavigation)
                 .Include(r => r.IdPersonaNavigation)
-                .ToListAsync());
+                .Where(r => r.IdPersona == idPersona);
+
+            return View(await reservasCliente.ToListAsync());
         }
 
-        // GET: Reservas/Details/5
-        public async Task<IActionResult> Details(int? id)
-        {
-            if (id == null)
-                return NotFound();
+        var reservasAdmin = _context.Reservas
+            .Include(r => r.IdHabitacionNavigation)
+            .Include(r => r.IdPersonaNavigation);
 
-            var reserva = await _context.Reservas
-                .Include(r => r.IdHabitacionNavigation)
-                .Include(r => r.IdPersonaNavigation)
-                .FirstOrDefaultAsync(m => m.Id == id);
+        return View(await reservasAdmin.ToListAsync());
+    }
 
-            if (reserva == null)
-                return NotFound();
+    // GET: Reservas/Details/5
+    public async Task<IActionResult> Details(int? id)
+    {
+        if (id == null) return NotFound();
 
-            return View(reserva);
-        }
+        var reserva = await _context.Reservas
+            .Include(r => r.IdHabitacionNavigation)
+            .Include(r => r.IdPersonaNavigation)
+            .FirstOrDefaultAsync(m => m.Id == id);
 
-        // GET: Reservas/Create
-        public IActionResult Create()
-        {
-            ViewData["IdHabitacion"] = new SelectList(_context.Habitaciones.Where(h => h.Estado == "Disponible"), "Id", "Numero");
+        if (reserva == null) return NotFound();
+
+        return View(reserva);
+    }
+
+    // GET: Reservas/Create
+    public IActionResult Create()
+    {
+        var rol = HttpContext.Session.GetString("Rol");
+        if (rol != "Cliente" && rol != "Admin")
+            return RedirectToAction("AccesoDenegado", "Home");
+
+        if (rol == "Admin")
             ViewData["IdPersona"] = new SelectList(_context.Personas, "Id", "Nombre");
-            return View();
+
+        ViewData["IdHabitacion"] = new SelectList(_context.Habitaciones.Where(h => h.Estado == "Disponible"), "Id", "Numero");
+        return View();
+    }
+
+    // POST: Reservas/Create
+    [HttpPost]
+    [ValidateAntiForgeryToken]
+    public async Task<IActionResult> Create([Bind("IdPersona,IdHabitacion,FechaEntrada,FechaSalida")] Reserva reserva)
+    {
+        var rol = HttpContext.Session.GetString("Rol");
+        if (rol != "Cliente" && rol != "Admin")
+            return RedirectToAction("AccesoDenegado", "Home");
+
+        if (rol == "Cliente")
+        {
+            int idPersonaSesion = HttpContext.Session.GetInt32("IdPersona") ?? 0;
+            if (idPersonaSesion == 0)
+            {
+                ModelState.AddModelError("", "Usuario no identificado en sesión.");
+                ViewData["IdHabitacion"] = new SelectList(_context.Habitaciones.Where(h => h.Estado == "Disponible"), "Id", "Numero", reserva.IdHabitacion);
+                return View(reserva);
+            }
+            reserva.IdPersona = idPersonaSesion;
         }
 
-        // POST: Reservas/Create
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,IdPersona,IdHabitacion,FechaEntrada,FechaSalida")] Reserva reserva)
+        if (reserva.FechaEntrada == default || reserva.FechaSalida == default)
         {
-            if (ModelState.IsValid)
-            {
-                try
-                {
-                    _context.Add(reserva);
+            ModelState.AddModelError("", "Debe ingresar fechas válidas de entrada y salida.");
+        }
+        else if (reserva.FechaSalida <= reserva.FechaEntrada)
+        {
+            ModelState.AddModelError("", "La fecha de salida debe ser mayor que la fecha de entrada.");
+        }
 
-                    var habitacion = await _context.Habitaciones.FindAsync(reserva.IdHabitacion);
-                    if (habitacion != null)
-                    {
-                        habitacion.Estado = "Ocupada";
-                        _context.Habitaciones.Update(habitacion);
-                    }
-
-                    await _context.SaveChangesAsync();
-                    return RedirectToAction(nameof(Index));
-                }
-                catch (Exception ex)
-                {
-                    ModelState.AddModelError("", "Error al crear la reserva: " + ex.Message);
-                }
-            }
+        if (!ModelState.IsValid)
+        {
+            if (rol == "Admin")
+                ViewData["IdPersona"] = new SelectList(_context.Personas, "Id", "Nombre", reserva.IdPersona);
 
             ViewData["IdHabitacion"] = new SelectList(_context.Habitaciones.Where(h => h.Estado == "Disponible"), "Id", "Numero", reserva.IdHabitacion);
+            return View(reserva);
+        }
+
+        var resultadoParam = new Microsoft.Data.SqlClient.SqlParameter
+        {
+            ParameterName = "@Resultado",
+            SqlDbType = System.Data.SqlDbType.Int,
+            Direction = System.Data.ParameterDirection.Output
+        };
+
+        try
+        {
+            await _context.Database.ExecuteSqlRawAsync(
+                "EXEC dbo.sp_AddReserva @IdPersona, @IdHabitacion, @FechaEntrada, @FechaSalida, @Resultado OUT",
+                new Microsoft.Data.SqlClient.SqlParameter("@IdPersona", reserva.IdPersona),
+                new Microsoft.Data.SqlClient.SqlParameter("@IdHabitacion", reserva.IdHabitacion),
+                new Microsoft.Data.SqlClient.SqlParameter("@FechaEntrada", reserva.FechaEntrada),
+                new Microsoft.Data.SqlClient.SqlParameter("@FechaSalida", reserva.FechaSalida),
+                resultadoParam);
+
+            int resultado = (int)resultadoParam.Value;
+
+            if (resultado == 1)
+                return RedirectToAction(nameof(Index));
+            else
+                ModelState.AddModelError("", "La habitación no está disponible para las fechas seleccionadas.");
+        }
+        catch (System.Exception ex)
+        {
+            ModelState.AddModelError("", "Error al crear la reserva: " + ex.Message);
+        }
+
+        if (rol == "Admin")
             ViewData["IdPersona"] = new SelectList(_context.Personas, "Id", "Nombre", reserva.IdPersona);
-            return View(reserva);
+
+        ViewData["IdHabitacion"] = new SelectList(_context.Habitaciones.Where(h => h.Estado == "Disponible"), "Id", "Numero", reserva.IdHabitacion);
+        return View(reserva);
+    }
+
+    // GET: Reservas/Edit/5
+    public async Task<IActionResult> Edit(int? id)
+    {
+        if (id == null) return NotFound();
+
+        var reserva = await _context.Reservas.FindAsync(id);
+        if (reserva == null) return NotFound();
+
+        var rol = HttpContext.Session.GetString("Rol");
+        if (rol != "Cliente" && rol != "Admin")
+            return RedirectToAction("AccesoDenegado", "Home");
+
+        // Si el usuario es cliente, solo puede editar su propia reserva
+        if (rol == "Cliente")
+        {
+            int idPersonaSesion = HttpContext.Session.GetInt32("IdPersona") ?? 0;
+            if (reserva.IdPersona != idPersonaSesion)
+                return RedirectToAction("AccesoDenegado", "Home");
         }
 
-        // GET: Reservas/Edit/5
-        public async Task<IActionResult> Edit(int? id)
-        {
-            if (id == null)
-                return NotFound();
-
-            var reserva = await _context.Reservas.FindAsync(id);
-            if (reserva == null)
-                return NotFound();
-
-            ViewData["IdHabitacion"] = new SelectList(_context.Habitaciones, "Id", "Numero", reserva.IdHabitacion);
+        if (rol == "Admin")
             ViewData["IdPersona"] = new SelectList(_context.Personas, "Id", "Nombre", reserva.IdPersona);
-            return View(reserva);
+
+        // Mostrar habitaciones disponibles o la habitación actual para permitir conservarla
+        var habitacionesQuery = _context.Habitaciones.Where(h => h.Estado == "Disponible" || h.Id == reserva.IdHabitacion);
+        ViewData["IdHabitacion"] = new SelectList(habitacionesQuery, "Id", "Numero", reserva.IdHabitacion);
+
+        return View(reserva);
+    }
+
+    // POST: Reservas/Edit/5
+    [HttpPost]
+    [ValidateAntiForgeryToken]
+    public async Task<IActionResult> Edit(int id, [Bind("Id,IdPersona,IdHabitacion,FechaEntrada,FechaSalida")] Reserva reserva)
+    {
+        if (id != reserva.Id)
+            return NotFound();
+
+        var rol = HttpContext.Session.GetString("Rol");
+        if (rol != "Cliente" && rol != "Admin")
+            return RedirectToAction("AccesoDenegado", "Home");
+
+        // Si el usuario es cliente, solo puede editar su propia reserva
+        if (rol == "Cliente")
+        {
+            int idPersonaSesion = HttpContext.Session.GetInt32("IdPersona") ?? 0;
+            if (reserva.IdPersona != idPersonaSesion)
+                return RedirectToAction("AccesoDenegado", "Home");
         }
 
-        // POST: Reservas/Edit/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,IdPersona,IdHabitacion,FechaEntrada,FechaSalida")] Reserva reserva)
+        if (reserva.FechaEntrada == default || reserva.FechaSalida == default)
         {
-            if (id != reserva.Id)
-                return NotFound();
-
-            if (ModelState.IsValid)
-            {
-                try
-                {
-                    var reservaOriginal = await _context.Reservas.AsNoTracking().FirstOrDefaultAsync(r => r.Id == id);
-                    if (reservaOriginal == null)
-                        return NotFound();
-
-                    _context.Update(reserva);
-
-                    if (reservaOriginal.IdHabitacion != reserva.IdHabitacion)
-                    {
-                        var habitacionAntigua = await _context.Habitaciones.FindAsync(reservaOriginal.IdHabitacion);
-                        if (habitacionAntigua != null)
-                            habitacionAntigua.Estado = "Disponible";
-
-                        var habitacionNueva = await _context.Habitaciones.FindAsync(reserva.IdHabitacion);
-                        if (habitacionNueva != null)
-                            habitacionNueva.Estado = "Ocupada";
-                    }
-
-                    await _context.SaveChangesAsync();
-                    return RedirectToAction(nameof(Index));
-                }
-                catch (DbUpdateConcurrencyException)
-                {
-                    if (!ReservaExists(reserva.Id))
-                        return NotFound();
-                    else
-                        throw;
-                }
-            }
-
-            ViewData["IdHabitacion"] = new SelectList(_context.Habitaciones, "Id", "Numero", reserva.IdHabitacion);
-            ViewData["IdPersona"] = new SelectList(_context.Personas, "Id", "Nombre", reserva.IdPersona);
-            return View(reserva);
+            ModelState.AddModelError("", "Debe ingresar fechas válidas de entrada y salida.");
+        }
+        else if (reserva.FechaSalida <= reserva.FechaEntrada)
+        {
+            ModelState.AddModelError("", "La fecha de salida debe ser mayor que la fecha de entrada.");
         }
 
-        // GET: Reservas/Delete/5
-        public async Task<IActionResult> Delete(int? id)
+        if (!ModelState.IsValid)
         {
-            if (id == null)
-                return NotFound();
+            if (rol == "Admin")
+                ViewData["IdPersona"] = new SelectList(_context.Personas, "Id", "Nombre", reserva.IdPersona);
 
-            var reserva = await _context.Reservas
-                .Include(r => r.IdHabitacionNavigation)
-                .Include(r => r.IdPersonaNavigation)
-                .FirstOrDefaultAsync(m => m.Id == id);
-
-            if (reserva == null)
-                return NotFound();
+            var habitacionesQuery = _context.Habitaciones.Where(h => h.Estado == "Disponible" || h.Id == reserva.IdHabitacion);
+            ViewData["IdHabitacion"] = new SelectList(habitacionesQuery, "Id", "Numero", reserva.IdHabitacion);
 
             return View(reserva);
         }
 
-        // POST: Reservas/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(int id)
+        try
         {
-            var reserva = await _context.Reservas
-                .Include(r => r.IdHabitacionNavigation)
-                .FirstOrDefaultAsync(r => r.Id == id);
-
-            if (reserva != null)
-            {
-                var habitacion = reserva.IdHabitacionNavigation;
-                if (habitacion != null)
-                {
-                    habitacion.Estado = "Disponible";
-                    _context.Habitaciones.Update(habitacion);
-                }
-
-                _context.Reservas.Remove(reserva);
-                await _context.SaveChangesAsync();
-            }
-
+            _context.Update(reserva);
+            await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
-
-        private bool ReservaExists(int id)
+        catch (DbUpdateConcurrencyException)
         {
-            return _context.Reservas.Any(e => e.Id == id);
+            if (!ReservaExists(reserva.Id))
+                return NotFound();
+            else
+                throw;
         }
+    }
+
+    // GET: Reservas/Delete/5
+    public async Task<IActionResult> Delete(int? id)
+    {
+        if (id == null) return NotFound();
+
+        var reserva = await _context.Reservas
+            .Include(r => r.IdHabitacionNavigation)
+            .Include(r => r.IdPersonaNavigation)
+            .FirstOrDefaultAsync(m => m.Id == id);
+
+        if (reserva == null) return NotFound();
+
+        var rol = HttpContext.Session.GetString("Rol");
+        if (rol != "Cliente" && rol != "Admin")
+            return RedirectToAction("AccesoDenegado", "Home");
+
+        // Si es cliente, solo puede eliminar su propia reserva
+        if (rol == "Cliente")
+        {
+            int idPersonaSesion = HttpContext.Session.GetInt32("IdPersona") ?? 0;
+            if (reserva.IdPersona != idPersonaSesion)
+                return RedirectToAction("AccesoDenegado", "Home");
+        }
+
+        return View(reserva);
+    }
+
+    // POST: Reservas/Delete/5
+    [HttpPost, ActionName("Delete")]
+    [ValidateAntiForgeryToken]
+    public async Task<IActionResult> DeleteConfirmed(int id)
+    {
+        var reserva = await _context.Reservas.FindAsync(id);
+        if (reserva == null) return NotFound();
+
+        var rol = HttpContext.Session.GetString("Rol");
+        if (rol != "Cliente" && rol != "Admin")
+            return RedirectToAction("AccesoDenegado", "Home");
+
+        // Si es cliente, solo puede eliminar su propia reserva
+        if (rol == "Cliente")
+        {
+            int idPersonaSesion = HttpContext.Session.GetInt32("IdPersona") ?? 0;
+            if (reserva.IdPersona != idPersonaSesion)
+                return RedirectToAction("AccesoDenegado", "Home");
+        }
+
+        _context.Reservas.Remove(reserva);
+        await _context.SaveChangesAsync();
+        return RedirectToAction(nameof(Index));
+    }
+
+    private bool ReservaExists(int id)
+    {
+        return _context.Reservas.Any(e => e.Id == id);
     }
 }

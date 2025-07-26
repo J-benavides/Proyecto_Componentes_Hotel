@@ -1,22 +1,113 @@
+/* Tamaño de fuente base responsivo */
 html {
-  font-size: 14px;
+    font-size: 14px;
+    position: relative;
+    min-height: 100%;
 }
 
 @media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
+    html {
+        font-size: 16px;
+    }
 }
 
-.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
-}
-
-html {
-  position: relative;
-  min-height: 100%;
-}
-
+/* Layout para footer fijo al fondo */
 body {
-  margin-bottom: 60px;
+    opacity: 1;
+    transition: opacity 0.8s ease;
+    margin: 0 0 60px; /* espacio inferior para footer */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: #f8f9fa; /* claro por defecto */
+    color: #212529;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+#page-loader {
+    transition: opacity 0.8s ease;
+}
+
+/* Contenedor principal para que main crezca y footer quede abajo */
+main {
+    flex-grow: 1;
+}
+
+/* Estilos de foco para accesibilidad y UX */
+.btn:focus,
+.btn:active:focus,
+.btn-link.nav-link:focus,
+.form-control:focus,
+.form-check-input:focus {
+    outline: none;
+    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+    border-color: #258cfb;
+}
+
+/* Modo oscuro */
+body.dark-mode {
+    background-color: #121212;
+    color: #f8f9fa;
+}
+
+/* Navbar modo oscuro */
+.navbar-dark-mode {
+    background-color: #1f1f1f !important;
+    border-bottom: 1px solid #444;
+}
+
+/* Footer claro y oscuro */
+.footer-light-mode {
+    background-color: #f8f9fa;
+    color: #212529;
+    border-top: 1px solid #ddd;
+}
+
+.footer-dark-mode {
+    background-color: #1f1f1f;
+    color: #ccc;
+    border-top: 1px solid #444;
+}
+
+/* Links en modo oscuro */
+body.dark-mode a {
+    color: #aad4ff;
+    text-decoration: underline;
+}
+
+    body.dark-mode a:hover {
+        color: #63a0ff;
+        text-decoration: none;
+    }
+
+/* Botón toggle tema */
+#toggleThemeBtn {
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+    #toggleThemeBtn:hover {
+        background-color: rgba(255, 255, 255, 0.15);
+    }
+
+/* Mejoras generales */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.container {
+    max-width: 960px;
+}
+
+.nav-link {
+    font-weight: 500;
+}
+
+.navbar-brand {
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+
+footer small {
+    font-size: 0.875rem;
 }

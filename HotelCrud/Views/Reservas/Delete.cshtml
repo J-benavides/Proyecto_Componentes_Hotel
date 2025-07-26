@@ -1,39 +1,35 @@
 ﻿@model HotelCrud.Models.Reserva
+
 @{
     ViewData["Title"] = "Eliminar Reserva";
 }
 
-<h1 class="mb-3">Eliminar Reserva</h1>
-
-<div class="alert alert-warning" role="alert">
-    <strong>¡Advertencia!</strong> Esta acción cancelará la reserva y liberará la habitación asociada.
-</div>
+<h2>@ViewData["Title"]</h2>
 
 <h4>¿Está seguro que desea eliminar esta reserva?</h4>
 
-<hr />
-<dl class="row">
-    <dt class="col-sm-3">Cliente</dt>
-    <dd class="col-sm-9">@Model.IdPersonaNavigation?.Nombre</dd>
+<div class="mb-3">
+    <label>Persona:</label>
+    <input class="form-control" value="@Model.IdPersonaNavigation?.Nombre @Model.IdPersonaNavigation?.Apellidos" readonly />
+</div>
 
-    <dt class="col-sm-3">Habitación</dt>
-    <dd class="col-sm-9">#@Model.IdHabitacionNavigation?.Numero</dd>
+<div class="mb-3">
+    <label>Habitación:</label>
+    <input class="form-control" value="@Model.IdHabitacionNavigation?.Numero" readonly />
+</div>
 
-    <dt class="col-sm-3">Fecha de Entrada</dt>
-    <dd class="col-sm-9">@Model.FechaEntrada?.ToString("dd/MM/yyyy")</dd>
+<div class="mb-3">
+    <label>Fecha Entrada:</label>
+    <input class="form-control" value="@Model.FechaEntrada?.ToString("yyyy-MM-dd")" readonly />
+</div>
 
-    <dt class="col-sm-3">Fecha de Salida</dt>
-    <dd class="col-sm-9">@Model.FechaSalida?.ToString("dd/MM/yyyy")</dd>
-</dl>
+<div class="mb-3">
+    <label>Fecha Salida:</label>
+    <input class="form-control" value="@Model.FechaSalida?.ToString("yyyy-MM-dd")" readonly />
+</div>
 
-<form asp-action="Delete" method="post" class="mt-4">
+<form asp-action="Delete" method="post">
     <input type="hidden" asp-for="Id" />
-
-    <button type="submit" class="btn btn-danger me-2">
-        <i class="fas fa-trash-alt"></i> Confirmar Eliminación
-    </button>
-
-    <a asp-action="Index" class="btn btn-secondary">
-        <i class="fas fa-arrow-left"></i> Cancelar
-    </a>
+    <button type="submit" class="btn btn-danger">Eliminar</button>
+    <a asp-action="Index" class="btn btn-secondary ms-2">Cancelar</a>
 </form>

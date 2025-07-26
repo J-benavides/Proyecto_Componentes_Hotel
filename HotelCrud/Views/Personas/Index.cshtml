@@ -44,24 +44,24 @@
     <script>
         @if (TempData["MensajeExito"] != null)
         {
-                <text>
-                    Swal.fire({
-                        icon: 'success',
-                        title: '¡Éxito!',
-                        text: '@TempData["MensajeExito"]'
-                    });
-                </text>
+                    <text>
+                        Swal.fire({
+                            icon: 'success',
+                            title: '¡Éxito!',
+                            text: '@TempData["MensajeExito"]'
+                        });
+                    </text>
         }
 
         @if (TempData["MensajeError"] != null)
         {
-                <text>
-                    Swal.fire({
-                        icon: 'error',
-                        title: 'Error',
-                        text: '@TempData["MensajeError"]'
-                    });
-                </text>
+                    <text>
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Error',
+                            text: '@TempData["MensajeError"]'
+                        });
+                    </text>
         }
     </script>
 }

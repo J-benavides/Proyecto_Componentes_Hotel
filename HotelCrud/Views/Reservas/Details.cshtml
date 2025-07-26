@@ -1,47 +1,34 @@
 ﻿@model HotelCrud.Models.Reserva
+
 @{
     ViewData["Title"] = "Detalles de Reserva";
 }
 
-<h1>Detalles de la Reserva</h1>
+<h2>@ViewData["Title"]</h2>
 
-<div>
-    <hr />
-    <dl class="row">
-        <dt class="col-sm-3">
-            @Html.DisplayNameFor(model => model.IdPersonaNavigation)
-        </dt>
-        <dd class="col-sm-9">
-            @Html.DisplayFor(model => model.IdPersonaNavigation.Nombre)
-        </dd>
-
-        <dt class="col-sm-3">
-            @Html.DisplayNameFor(model => model.IdHabitacionNavigation)
-        </dt>
-        <dd class="col-sm-9">
-            Habitación @Html.DisplayFor(model => model.IdHabitacionNavigation.Numero)
-        </dd>
-
-        <dt class="col-sm-3">
-            @Html.DisplayNameFor(model => model.FechaEntrada)
-        </dt>
-        <dd class="col-sm-9">
-            @Model.FechaEntrada?.ToString("dd/MM/yyyy")
-        </dd>
-
-        <dt class="col-sm-3">
-            @Html.DisplayNameFor(model => model.FechaSalida)
-        </dt>
-        <dd class="col-sm-9">
-            @Model.FechaSalida?.ToString("dd/MM/yyyy")
-        </dd>
-    </dl>
+<div class="mb-3">
+    <label>Persona:</label>
+    <input class="form-control" value="@Model.IdPersonaNavigation?.Nombre @Model.IdPersonaNavigation?.Apellidos" readonly />
 </div>
-<div class="mt-4">
-    <a asp-action="Edit" asp-route-id="@Model?.Id" class="btn btn-warning">
-        <i class="fas fa-edit"></i> Editar
-    </a>
-    <a asp-action="Index" class="btn btn-secondary">
-        <i class="fas fa-list"></i> Volver al Listado
-    </a>
+
+<div class="mb-3">
+    <label>Habitación:</label>
+    <input class="form-control" value="@Model.IdHabitacionNavigation?.Numero" readonly />
 </div>
+
+<div class="mb-3">
+    <label>Fecha Entrada:</label>
+    <input class="form-control" value="@Model.FechaEntrada?.ToString("yyyy-MM-dd")" readonly />
+</div>
+
+<div class="mb-3">
+    <label>Fecha Salida:</label>
+    <input class="form-control" value="@Model.FechaSalida?.ToString("yyyy-MM-dd")" readonly />
+</div>
+
+<div class="mb-3">
+    <label>Estado Habitación:</label>
+    <input class="form-control" value="@Model.IdHabitacionNavigation?.Estado" readonly />
+</div>
+
+<a asp-action="Index" class="btn btn-secondary">Volver</a>

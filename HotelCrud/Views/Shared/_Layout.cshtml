@@ -1,53 +1,106 @@
-﻿<!DOCTYPE html>
+﻿@{
+    var nombre = Context.Session.GetString("Nombre") ?? "Invitado";
+    var rol = Context.Session.GetString("Rol") ?? "";
+}
+
+<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>@ViewData["Title"] - Hotel California</title>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/HotelCrud.styles.css" asp-append-version="true" />
+    <title>@ViewData["Title"] - HotelCrud</title>
+
+    <link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
+    <link href="~/css/site.css" rel="stylesheet" asp-append-version="true" />
+    <link href="~/HotelCrud.styles.css" rel="stylesheet" asp-append-version="true" />
+
+    <style>
+        body.light-mode {
+            background-color: #f8f9fa;
+            color: #212529;
+        }
+
+        body.dark-mode {
+            background-color: #121212;
+            color: #f8f9fa;
+        }
+
+        .navbar-dark-mode {
+            background-color: #1f1f1f !important;
+        }
+
+        .footer-dark-mode {
+            background-color: #1f1f1f;
+            color: #ccc;
+        }
+
+        .footer-light-mode {
+            background-color: #f8f9fa;
+            color: #212529;
+        }
+    </style>
 </head>
-<body>
+<body class="light-mode d-flex flex-column min-vh-100">
+
     <header>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm mb-4">
-            <div class="container">
-                <a class="navbar-brand fw-bold" asp-area="" asp-controller="Home" asp-action="Index">
-                    Hotel California
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow" id="navbar">
+            <div class="container-fluid">
+                <a class="navbar-brand fw-bold" asp-controller="Home" asp-action="Index">
+                    <i class="fas fa-hotel me-2"></i>HotelCrud
                 </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-                        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li class="nav-item">
-                            <a class="nav-link" asp-area="" asp-controller="Personas" asp-action="Index">Personas</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" asp-area="" asp-controller="Habitaciones" asp-action="Index">Habitaciones</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" asp-area="" asp-controller="Reservas" asp-action="Index">Reservas</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" asp-area="" asp-controller="Roles" asp-action="Index">Roles</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" asp-area="" asp-controller="PersonaRols" asp-action="Index">PersonaRol</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" asp-area="" asp-controller="Pagos" asp-action="Index">Pagos</a>
-                        </li>
+                        @if (rol == "Admin")
+                        {
+                            <li class="nav-item"><a class="nav-link" asp-controller="Personas" asp-action="Index"><i class="fas fa-users me-1"></i>Clientes</a></li>
+                            <li class="nav-item"><a class="nav-link" asp-controller="Habitaciones" asp-action="Index"><i class="fas fa-bed me-1"></i>Habitaciones</a></li>
+                            <li class="nav-item"><a class="nav-link" asp-controller="Reservas" asp-action="Index"><i class="fas fa-calendar-check me-1"></i>Reservas</a></li>
+                            <li class="nav-item"><a class="nav-link" asp-controller="Roles" asp-action="Index"><i class="fas fa-user-tag me-1"></i>Roles</a></li>
+                            <li class="nav-item"><a class="nav-link" asp-controller="PersonaRols" asp-action="Index"><i class="fas fa-user-cog me-1"></i>PersonaRol</a></li>
+                            <li class="nav-item"><a class="nav-link" asp-controller="Home" asp-action="Informacion"><i class="fas fa-info-circle me-1"></i>Información</a></li>
+
+                        }
+                        else if (rol == "Cliente")
+                        {
+                            <li class="nav-item"><a class="nav-link" asp-controller="Personas" asp-action="Index"><i class="fas fa-users me-1"></i>Perfil</a></li>
+                            <li class="nav-item"><a class="nav-link" asp-controller="Reservas" asp-action="Index"><i class="fas fa-calendar-check me-1"></i>Mis Reservas</a></li>
+                            <li class="nav-item"><a class="nav-link" asp-controller="Habitaciones" asp-action="Index"><i class="fas fa-bed me-1"></i>Habitaciones</a></li>
+                            <li class="nav-item"><a class="nav-link" asp-controller="Home" asp-action="Informacion"><i class="fas fa-info-circle me-1"></i>Información</a></li>
+                        }
+                        else
+                        {
+                            <li class="nav-item"><a class="nav-link" asp-controller="Home" asp-action="Index"><i class="fas fa-home me-1"></i>Inicio</a></li>
+                            <li class="nav-item"><a class="nav-link" asp-controller="Home" asp-action="Informacion"><i class="fas fa-info-circle me-1"></i>Información</a></li>
+                            <li class="nav-item"><a class="nav-link" asp-controller="Cuenta" asp-action="Registro"><i class="fas fa-user-plus me-1"></i>Registrarse</a></li>
+                        }
                     </ul>
 
-                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                        <li class="nav-item">
-                            <a class="nav-link" asp-controller="Cuenta" asp-action="Registro">Registrarse</a>
+                    <ul class="navbar-nav align-items-center">
+                        <li class="nav-item me-3">
+                            <button id="toggleThemeBtn" class="btn btn-outline-light btn-sm" title="Alternar modo claro/oscuro">
+                                <i class="fas fa-moon"></i>
+                            </button>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" asp-controller="Cuenta" asp-action="Login">Iniciar Sesión</a>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="fas fa-user-circle"></i> @nombre (@rol)
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end">
+                                @if (string.IsNullOrEmpty(rol))
+                                {
+                                    <li><a class="dropdown-item" asp-controller="Cuenta" asp-action="Login">Iniciar sesión</a></li>
+                                    <li><a class="dropdown-item" asp-controller="Cuenta" asp-action="Registro">Registrarse</a></li>
+                                }
+                                else
+                                {
+                                    <li><a class="dropdown-item" asp-controller="Cuenta" asp-action="Logout">Cerrar sesión</a></li>
+                                }
+                            </ul>
                         </li>
                     </ul>
                 </div>
@@ -55,22 +108,64 @@
         </nav>
     </header>
 
-    <div class="container">
-        <main role="main" class="pb-3">
+    <main class="flex-grow-1">
+        <div class="container py-4">
             @RenderBody()
-        </main>
-    </div>
+        </div>
+    </main>
 
-    <footer class="bg-dark text-light py-3 mt-5">
+    <footer class="footer-light-mode border-top mt-auto py-3" id="footer">
         <div class="container text-center">
-            &copy; 2025 HotelCrud | <a class="text-light" asp-area="" asp-controller="Home" asp-action="Privacy">Política de Privacidad</a>
+            <small>
+                &copy; 2025 - HotelCrud | Desarrollado por TuNombre |
+                <a class="text-decoration-underline" asp-controller="Home" asp-action="Privacy">Política de privacidad</a>
+            </small>
         </div>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
+
+    <script>
+        // Alternar modo claro/oscuro
+        const toggleBtn = document.getElementById('toggleThemeBtn');
+        const body = document.body;
+        const navbar = document.getElementById('navbar');
+        const footer = document.getElementById('footer');
+
+        function setMode(mode) {
+            if (mode === 'dark') {
+                body.classList.remove('light-mode');
+                body.classList.add('dark-mode');
+                navbar.classList.remove('bg-primary');
+                navbar.classList.add('navbar-dark-mode');
+                footer.classList.remove('footer-light-mode');
+                footer.classList.add('footer-dark-mode');
+                toggleBtn.innerHTML = '<i class="fas fa-sun"></i>';
+            } else {
+                body.classList.remove('dark-mode');
+                body.classList.add('light-mode');
+                navbar.classList.remove('navbar-dark-mode');
+                navbar.classList.add('bg-primary');
+                footer.classList.remove('footer-dark-mode');
+                footer.classList.add('footer-light-mode');
+                toggleBtn.innerHTML = '<i class="fas fa-moon"></i>';
+            }
+            localStorage.setItem('theme', mode);
+        }
+
+        toggleBtn.addEventListener('click', () => {
+            const current = body.classList.contains('dark-mode') ? 'dark' : 'light';
+            setMode(current === 'dark' ? 'light' : 'dark');
+        });
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const savedMode = localStorage.getItem('theme') || 'light';
+            setMode(savedMode);
+        });
+    </script>
+
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>

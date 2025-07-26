@@ -3,20 +3,23 @@
     ViewData["Title"] = "Detalles de la Habitación";
 }
 
-<h2>Detalles de la Habitación</h2>
+<h2 class="mb-4">Detalles de la Habitación</h2>
 
-<div class="mb-3">
-    <strong>Número:</strong> @Model.Numero
-</div>
-<div class="mb-3">
-    <strong>Tipo:</strong> @Model.Tipo
-</div>
-<div class="mb-3">
-    <strong>Precio:</strong> ₡@Model.Precio
-</div>
-<div class="mb-3">
-    <strong>Estado:</strong> @Model.Estado
+<div class="card p-3 mb-3">
+    <dl class="row">
+        <dt class="col-sm-3">Número:</dt>
+        <dd class="col-sm-9">@Model.Numero</dd>
+
+        <dt class="col-sm-3">Tipo:</dt>
+        <dd class="col-sm-9">@Model.Tipo</dd>
+
+        <dt class="col-sm-3">Precio:</dt>
+        <dd class="col-sm-9">₡@Model.Precio</dd>
+
+        <dt class="col-sm-3">Estado:</dt>
+        <dd class="col-sm-9">@Model.Estado</dd>
+    </dl>
 </div>
 
-<a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-primary">Editar</a>
+<a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-primary me-2">Editar</a>
 <a asp-action="Index" class="btn btn-secondary">Volver</a>
