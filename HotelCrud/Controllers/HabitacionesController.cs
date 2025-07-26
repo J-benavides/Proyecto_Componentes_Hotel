@@ -17,7 +17,7 @@ namespace HotelCrud.Controllers
             _context = context;
         }
 
-        // GET: Habitaciones
+        // GET: AccesoDenegado
         public async Task<IActionResult> Index()
         {
             if (HttpContext.Session.GetString("Rol") != "Admin")
