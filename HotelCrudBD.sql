@@ -1,6 +1,20 @@
 USE [HotelCaliforniaDB]
 GO
-/****** Object:  Table [dbo].[Habitaciones]    Script Date: 5/7/2025 19:44:43 ******/
+/****** Object:  Table [dbo].[__EFMigrationsHistory]    Script Date: 29/7/2025 21:42:21 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[__EFMigrationsHistory](
+	[MigrationId] [nvarchar](150) NOT NULL,
+	[ProductVersion] [nvarchar](32) NOT NULL,
+ CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY CLUSTERED 
+(
+	[MigrationId] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Habitaciones]    Script Date: 29/7/2025 21:42:22 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -17,7 +31,24 @@ PRIMARY KEY CLUSTERED
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[PersonaRol]    Script Date: 5/7/2025 19:44:43 ******/
+/****** Object:  Table [dbo].[Pagos]    Script Date: 29/7/2025 21:42:22 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Pagos](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[IdReservacion] [int] NOT NULL,
+	[MontoTotal] [decimal](10, 2) NULL,
+	[FechaPago] [date] NULL,
+	[MetodoPago] [nvarchar](50) NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[PersonaRol]    Script Date: 29/7/2025 21:42:22 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -32,7 +63,7 @@ PRIMARY KEY CLUSTERED
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Personas]    Script Date: 5/7/2025 19:44:43 ******/
+/****** Object:  Table [dbo].[Personas]    Script Date: 29/7/2025 21:42:22 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -43,13 +74,15 @@ CREATE TABLE [dbo].[Personas](
 	[Apellidos] [nvarchar](50) NOT NULL,
 	[Correo] [nvarchar](100) NULL,
 	[Telefono] [nvarchar](20) NULL,
+	[Usuario] [nvarchar](100) NOT NULL,
+	[Contrasena] [nvarchar](255) NOT NULL,
 PRIMARY KEY CLUSTERED 
 (
 	[Id] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Reservas]    Script Date: 5/7/2025 19:44:43 ******/
+/****** Object:  Table [dbo].[Reservas]    Script Date: 29/7/2025 21:42:22 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -66,7 +99,7 @@ PRIMARY KEY CLUSTERED
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Roles]    Script Date: 5/7/2025 19:44:43 ******/
+/****** Object:  Table [dbo].[Roles]    Script Date: 29/7/2025 21:42:22 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -81,6 +114,15 @@ PRIMARY KEY CLUSTERED
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
+ALTER TABLE [dbo].[Personas] ADD  DEFAULT ('') FOR [Usuario]
+GO
+ALTER TABLE [dbo].[Personas] ADD  DEFAULT ('') FOR [Contrasena]
+GO
+ALTER TABLE [dbo].[Pagos]  WITH CHECK ADD  CONSTRAINT [FK_Pago_Reservacion] FOREIGN KEY([IdReservacion])
+REFERENCES [dbo].[Reservas] ([Id])
+GO
+ALTER TABLE [dbo].[Pagos] CHECK CONSTRAINT [FK_Pago_Reservacion]
+GO
 ALTER TABLE [dbo].[PersonaRol]  WITH CHECK ADD FOREIGN KEY([IdPersona])
 REFERENCES [dbo].[Personas] ([Id])
 GO
@@ -93,7 +135,7 @@ GO
 ALTER TABLE [dbo].[Reservas]  WITH CHECK ADD FOREIGN KEY([IdPersona])
 REFERENCES [dbo].[Personas] ([Id])
 GO
-/****** Object:  StoredProcedure [dbo].[sp_AddHabitacion]    Script Date: 5/7/2025 19:44:43 ******/
+/****** Object:  StoredProcedure [dbo].[sp_AddHabitacion]    Script Date: 29/7/2025 21:42:22 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -109,7 +151,7 @@ BEGIN
     VALUES (@Numero, @Tipo, @Precio, @Estado);
 END;
 GO
-/****** Object:  StoredProcedure [dbo].[sp_AddPersona]    Script Date: 5/7/2025 19:44:43 ******/
+/****** Object:  StoredProcedure [dbo].[sp_AddPersona]    Script Date: 29/7/2025 21:42:22 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -126,7 +168,7 @@ BEGIN
     VALUES (@Nombre, @Apellidos, @Correo, @Telefono);
 END;
 GO
-/****** Object:  StoredProcedure [dbo].[sp_AddReserva]    Script Date: 5/7/2025 19:44:43 ******/
+/****** Object:  StoredProcedure [dbo].[sp_AddReserva]    Script Date: 29/7/2025 21:42:22 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -135,19 +177,50 @@ CREATE PROCEDURE [dbo].[sp_AddReserva]
     @IdPersona INT,
     @IdHabitacion INT,
     @FechaEntrada DATE,
-    @FechaSalida DATE
+    @FechaSalida DATE,
+    @Resultado INT OUTPUT
 AS
 BEGIN
-    INSERT INTO Reservas (IdPersona, IdHabitacion, FechaEntrada, FechaSalida)
-    VALUES (@IdPersona, @IdHabitacion, @FechaEntrada, @FechaSalida);
+    SET NOCOUNT ON;
+    BEGIN TRY
+        BEGIN TRANSACTION;
 
-    -- Actualizar estado de la habitación a "Ocupada"
-    UPDATE Habitaciones
-    SET Estado = 'Ocupada'
-    WHERE Id = @IdHabitacion;
+        -- Verifica que no exista reserva solapada para la misma habitación
+        IF EXISTS (
+            SELECT 1 FROM Reservas
+            WHERE IdHabitacion = @IdHabitacion
+              AND (
+                    (@FechaEntrada BETWEEN FechaEntrada AND FechaSalida)
+                 OR (@FechaSalida BETWEEN FechaEntrada AND FechaSalida)
+                 OR (FechaEntrada BETWEEN @FechaEntrada AND @FechaSalida)
+                 OR (FechaSalida BETWEEN @FechaEntrada AND @FechaSalida)
+                  )
+        )
+        BEGIN
+            SET @Resultado = 0; -- No disponible
+            ROLLBACK TRANSACTION;
+            RETURN;
+        END
+
+        -- Inserta la reserva
+        INSERT INTO Reservas (IdPersona, IdHabitacion, FechaEntrada, FechaSalida)
+        VALUES (@IdPersona, @IdHabitacion, @FechaEntrada, @FechaSalida);
+
+        -- Actualiza estado habitación
+        UPDATE Habitaciones
+        SET Estado = 'Ocupada'
+        WHERE Id = @IdHabitacion;
+
+        COMMIT TRANSACTION;
+        SET @Resultado = 1; -- Éxito
+    END TRY
+    BEGIN CATCH
+        ROLLBACK TRANSACTION;
+        SET @Resultado = 0; -- Error
+    END CATCH
 END;
 GO
-/****** Object:  StoredProcedure [dbo].[sp_AddRol]    Script Date: 5/7/2025 19:44:43 ******/
+/****** Object:  StoredProcedure [dbo].[sp_AddRol]    Script Date: 29/7/2025 21:42:22 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -162,7 +235,7 @@ BEGIN
     VALUES (@Nombre, @Descripcion);
 END;
 GO
-/****** Object:  StoredProcedure [dbo].[sp_AsignarRolAPersona]    Script Date: 5/7/2025 19:44:43 ******/
+/****** Object:  StoredProcedure [dbo].[sp_AsignarRolAPersona]    Script Date: 29/7/2025 21:42:22 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -176,7 +249,7 @@ BEGIN
     VALUES (@IdPersona, @IdRol);
 END;
 GO
-/****** Object:  StoredProcedure [dbo].[sp_DeleteHabitacion]    Script Date: 5/7/2025 19:44:43 ******/
+/****** Object:  StoredProcedure [dbo].[sp_DeleteHabitacion]    Script Date: 29/7/2025 21:42:22 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -188,7 +261,7 @@ BEGIN
     DELETE FROM Habitaciones WHERE Id = @Id;
 END;
 GO
-/****** Object:  StoredProcedure [dbo].[sp_DeletePersona]    Script Date: 5/7/2025 19:44:43 ******/
+/****** Object:  StoredProcedure [dbo].[sp_DeletePersona]    Script Date: 29/7/2025 21:42:22 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -201,7 +274,7 @@ BEGIN
     DELETE FROM Personas WHERE Id = @Id;
 END;
 GO
-/****** Object:  StoredProcedure [dbo].[sp_DeleteReserva]    Script Date: 5/7/2025 19:44:43 ******/
+/****** Object:  StoredProcedure [dbo].[sp_DeleteReserva]    Script Date: 29/7/2025 21:42:22 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -225,7 +298,7 @@ BEGIN
     WHERE Id = @IdHabitacion;
 END;
 GO
-/****** Object:  StoredProcedure [dbo].[sp_DeleteRol]    Script Date: 5/7/2025 19:44:43 ******/
+/****** Object:  StoredProcedure [dbo].[sp_DeleteRol]    Script Date: 29/7/2025 21:42:22 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -238,7 +311,7 @@ BEGIN
     DELETE FROM Roles WHERE Id = @Id;
 END;
 GO
-/****** Object:  StoredProcedure [dbo].[sp_EliminarRolDePersona]    Script Date: 5/7/2025 19:44:43 ******/
+/****** Object:  StoredProcedure [dbo].[sp_EliminarRolDePersona]    Script Date: 29/7/2025 21:42:22 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -252,7 +325,7 @@ BEGIN
     WHERE IdPersona = @IdPersona AND IdRol = @IdRol;
 END;
 GO
-/****** Object:  StoredProcedure [dbo].[sp_GetAllHabitaciones]    Script Date: 5/7/2025 19:44:43 ******/
+/****** Object:  StoredProcedure [dbo].[sp_GetAllHabitaciones]    Script Date: 29/7/2025 21:42:22 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -263,7 +336,7 @@ BEGIN
     SELECT * FROM Habitaciones;
 END;
 GO
-/****** Object:  StoredProcedure [dbo].[sp_GetAllPersonas]    Script Date: 5/7/2025 19:44:43 ******/
+/****** Object:  StoredProcedure [dbo].[sp_GetAllPersonas]    Script Date: 29/7/2025 21:42:22 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -275,7 +348,7 @@ BEGIN
     SELECT * FROM Personas;
 END;
 GO
-/****** Object:  StoredProcedure [dbo].[sp_GetAllReservas]    Script Date: 5/7/2025 19:44:43 ******/
+/****** Object:  StoredProcedure [dbo].[sp_GetAllReservas]    Script Date: 29/7/2025 21:42:22 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -290,7 +363,7 @@ BEGIN
     INNER JOIN Habitaciones h ON r.IdHabitacion = h.Id;
 END;
 GO
-/****** Object:  StoredProcedure [dbo].[sp_GetAllRoles]    Script Date: 5/7/2025 19:44:43 ******/
+/****** Object:  StoredProcedure [dbo].[sp_GetAllRoles]    Script Date: 29/7/2025 21:42:22 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -302,7 +375,7 @@ BEGIN
     SELECT * FROM Roles;
 END;
 GO
-/****** Object:  StoredProcedure [dbo].[sp_GetHabitacion]    Script Date: 5/7/2025 19:44:43 ******/
+/****** Object:  StoredProcedure [dbo].[sp_GetHabitacion]    Script Date: 29/7/2025 21:42:22 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -314,7 +387,7 @@ BEGIN
     SELECT * FROM Habitaciones WHERE Id = @Id;
 END;
 GO
-/****** Object:  StoredProcedure [dbo].[sp_GetReserva]    Script Date: 5/7/2025 19:44:43 ******/
+/****** Object:  StoredProcedure [dbo].[sp_GetReserva]    Script Date: 29/7/2025 21:42:22 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -326,7 +399,7 @@ BEGIN
     SELECT * FROM Reservas WHERE Id = @Id;
 END;
 GO
-/****** Object:  StoredProcedure [dbo].[sp_GetRolesPorPersona]    Script Date: 5/7/2025 19:44:43 ******/
+/****** Object:  StoredProcedure [dbo].[sp_GetRolesPorPersona]    Script Date: 29/7/2025 21:42:22 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -341,7 +414,7 @@ BEGIN
     WHERE pr.IdPersona = @IdPersona;
 END;
 GO
-/****** Object:  StoredProcedure [dbo].[sp_UpdateHabitacion]    Script Date: 5/7/2025 19:44:43 ******/
+/****** Object:  StoredProcedure [dbo].[sp_UpdateHabitacion]    Script Date: 29/7/2025 21:42:22 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -362,7 +435,7 @@ BEGIN
     WHERE Id = @Id;
 END;
 GO
-/****** Object:  StoredProcedure [dbo].[sp_UpdatePersona]    Script Date: 5/7/2025 19:44:43 ******/
+/****** Object:  StoredProcedure [dbo].[sp_UpdatePersona]    Script Date: 29/7/2025 21:42:22 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -384,7 +457,7 @@ BEGIN
     WHERE Id = @Id;
 END;
 GO
-/****** Object:  StoredProcedure [dbo].[sp_UpdateReserva]    Script Date: 5/7/2025 19:44:43 ******/
+/****** Object:  StoredProcedure [dbo].[sp_UpdateReserva]    Script Date: 29/7/2025 21:42:22 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -405,7 +478,7 @@ BEGIN
     WHERE Id = @Id;
 END;
 GO
-/****** Object:  StoredProcedure [dbo].[sp_UpdateRol]    Script Date: 5/7/2025 19:44:43 ******/
+/****** Object:  StoredProcedure [dbo].[sp_UpdateRol]    Script Date: 29/7/2025 21:42:22 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
