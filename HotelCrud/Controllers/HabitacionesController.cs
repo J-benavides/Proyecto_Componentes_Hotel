@@ -1,6 +1,5 @@
 ﻿using HotelCrud.Models;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using System.Threading.Tasks;
 
@@ -22,11 +21,10 @@ namespace HotelCrud.Controllers
             if (rol != "Admin" && rol != "Cliente")
                 return RedirectToAction("AccesoDenegado", "Home");
 
-            ViewData["RolUsuario"] = rol; 
+            ViewData["RolUsuario"] = rol;
 
             return View(await _context.Habitaciones.ToListAsync());
         }
-
 
         // GET: Habitaciones/Details/5
         public async Task<IActionResult> Details(int? id)
@@ -66,7 +64,7 @@ namespace HotelCrud.Controllers
 
             if (ModelState.IsValid)
             {
-                habitacion.Estado = "Disponible"; // Estado por defecto
+                habitacion.Estado = "Disponible";
                 _context.Add(habitacion);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
@@ -74,43 +72,23 @@ namespace HotelCrud.Controllers
             return View(habitacion);
         }
 
+        // ✅ CORREGIDO: Editar una habitación
         // GET: Habitaciones/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
-            if (id == null) return NotFound();
-
-            var reserva = await _context.Reservas.FindAsync(id);
-            if (reserva == null) return NotFound();
-
             var rol = HttpContext.Session.GetString("Rol");
-            if (rol != "Cliente" && rol != "Admin")
+            if (rol != "Admin")
                 return RedirectToAction("AccesoDenegado", "Home");
 
-            // Si el usuario es cliente, solo puede editar su propia reserva
-            if (rol == "Cliente")
-            {
-                int idPersonaSesion = HttpContext.Session.GetInt32("IdPersona") ?? 0;
-                if (reserva.IdPersona != idPersonaSesion)
-                    return RedirectToAction("AccesoDenegado", "Home");
-            }
+            if (id == null)
+                return NotFound();
 
-            if (rol == "Admin")
-                ViewData["IdPersona"] = new SelectList(_context.Personas, "Id", "Nombre", reserva.IdPersona);
+            var habitacion = await _context.Habitaciones.FindAsync(id);
+            if (habitacion == null)
+                return NotFound();
 
-            IQueryable<Habitacione> habitacionesQuery;
-            if (rol == "Admin")
-            {
-                habitacionesQuery = _context.Habitaciones; // Todas
-            }
-            else
-            {
-                habitacionesQuery = _context.Habitaciones.Where(h => h.Estado == "Disponible" || h.Id == reserva.IdHabitacion);
-            }
-            ViewData["IdHabitacion"] = new SelectList(habitacionesQuery, "Id", "Numero", reserva.IdHabitacion);
-
-            return View(reserva);
+            return View(habitacion);
         }
-
 
         // POST: Habitaciones/Edit/5
         [HttpPost]

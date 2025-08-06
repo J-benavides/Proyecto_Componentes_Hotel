@@ -1,67 +1,45 @@
-﻿@model HotelCrud.Models.Reserva
+﻿@model HotelCrud.Models.Habitacione
 
 @{
-    ViewData["Title"] = "Editar Reserva";
-    var rol = Context.Session.GetString("Rol") ?? "";
-    var idPersonaSesion = Context.Session.GetInt32("IdPersona") ?? 0;
+    ViewData["Title"] = "Editar Habitación";
 }
 
-<div class="container my-5">
-    <div class="row justify-content-center">
-        <div class="col-md-7 col-sm-10">
-            <div class="card shadow-sm rounded-lg">
-                <div class="card-header bg-primary text-white">
-                    <h3 class="mb-0">@ViewData["Title"]</h3>
-                </div>
-                <div class="card-body">
-                    <form asp-action="Edit" method="post" novalidate>
-                        <input type="hidden" asp-for="Id" />
+<h2 class="mb-4">@ViewData["Title"]</h2>
 
-                        @if (rol == "Admin")
-                        {
-                            <div class="mb-3">
-                                <label asp-for="IdPersona" class="form-label fw-bold">Persona</label>
-                                <select asp-for="IdPersona" class="form-select" asp-items="ViewBag.IdPersona"></select>
-                                <span asp-validation-for="IdPersona" class="text-danger small"></span>
-                            </div>
-                        }
-                        else
-                        {
-                            <!-- Input hidden con valor para cliente -->
-                            <input asp-for="IdPersona" type="hidden" value="@idPersonaSesion" />
-                        }
+<form asp-action="Edit">
+    <input type="hidden" asp-for="Id" />
 
-                        <div class="mb-3">
-                            <label asp-for="IdHabitacion" class="form-label fw-bold">Habitación</label>
-                            <select asp-for="IdHabitacion" class="form-select" asp-items="ViewBag.IdHabitacion"></select>
-                            <span asp-validation-for="IdHabitacion" class="text-danger small"></span>
-                        </div>
-
-                        <div class="mb-3">
-                            <label asp-for="FechaEntrada" class="form-label fw-bold">Fecha Entrada</label>
-                            <input asp-for="FechaEntrada" class="form-control" type="date" />
-                            <span asp-validation-for="FechaEntrada" class="text-danger small"></span>
-                        </div>
-
-                        <div class="mb-3">
-                            <label asp-for="FechaSalida" class="form-label fw-bold">Fecha Salida</label>
-                            <input asp-for="FechaSalida" class="form-control" type="date" />
-                            <span asp-validation-for="FechaSalida" class="text-danger small"></span>
-                        </div>
-
-                        <div class="mb-4">
-                            <label class="form-label fw-bold">Estado Actual de la Habitación</label>
-                            <input class="form-control" value="@Model.IdHabitacionNavigation?.Estado" readonly />
-                        </div>
-
-                        <button type="submit" class="btn btn-primary btn-block fw-bold">Guardar Cambios</button>
-                        <a asp-action="Index" class="btn btn-secondary btn-block mt-2">Cancelar</a>
-                    </form>
-                </div>
-            </div>
-        </div>
+    <div class="mb-3">
+        <label asp-for="Numero" class="form-label"></label>
+        <input asp-for="Numero" class="form-control" />
+        <span asp-validation-for="Numero" class="text-danger small"></span>
     </div>
-</div>
+
+    <div class="mb-3">
+        <label asp-for="Tipo" class="form-label"></label>
+        <input asp-for="Tipo" class="form-control" />
+        <span asp-validation-for="Tipo" class="text-danger small"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Precio" class="form-label"></label>
+        <input asp-for="Precio" class="form-control" />
+        <span asp-validation-for="Precio" class="text-danger small"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Estado" class="form-label"></label>
+        <select asp-for="Estado" class="form-select">
+            <option value="Disponible">Disponible</option>
+            <option value="Ocupado">Ocupado</option>
+            <option value="Mantenimiento">Mantenimiento</option>
+        </select>
+        <span asp-validation-for="Estado" class="text-danger small"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Guardar</button>
+    <a asp-action="Index" class="btn btn-secondary ms-2">Cancelar</a>
+</form>
 
 @section Scripts {
     <partial name="_ValidationScriptsPartial" />
