@@ -1,0 +1,38 @@
+﻿@model HotelCrud.Models.Pagos
+
+@{
+    ViewData["Title"] = "Detalles del Pago";
+    var rol = Context.Session.GetString("Rol") ?? "";
+}
+
+<div class="container my-4">
+    <h2 class="mb-4">@ViewData["Title"]</h2>
+
+    <div class="mb-3">
+        <label>Monto Total:</label>
+        <input class="form-control" value="@Model.MontoTotal.ToString("C")" readonly />
+    </div>
+
+    <div class="mb-3">
+        <label>Fecha de Pago:</label>
+        <input class="form-control" value="@Model.FechaPago?.ToString("yyyy-MM-dd")" readonly />
+    </div>
+
+    <div class="mb-3">
+        <label>Método de Pago:</label>
+        <input class="form-control" value="@Model.MetodoPago" readonly />
+    </div>
+
+    <div class="mb-3">
+        <label>Persona:</label>
+        <input class="form-control" value="@Model.IdReservacion" readonly />
+    </div>
+
+    <div>
+        @if (rol == "Admin")
+        {
+            <a asp-action="Edit" asp-route-id="@Model?.Id" class="btn btn-primary me-2">Editar</a>
+        }
+        <a asp-action="Index" class="btn btn-secondary">Volver</a>
+    </div>
+</div>

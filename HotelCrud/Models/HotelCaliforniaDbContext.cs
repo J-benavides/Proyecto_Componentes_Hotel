@@ -25,9 +25,11 @@ public partial class HotelCaliforniaDbContext : DbContext
 
     public virtual DbSet<Role> Roles { get; set; }
 
+    public virtual DbSet<Pagos> Pagos { get; set; }
+
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see https://go.microsoft.com/fwlink/?LinkId=723263.
-        => optionsBuilder.UseSqlServer("Server=JOSHUADESKTOP\\SQLEXPRESS02; Database=HotelCaliforniaDB; Integrated Security=True; TrustServerCertificate=True;");
+        => optionsBuilder.UseSqlServer("Server=DESKTOP-001594K\\SQLEXPRESS;Database=HotelCaliforniaDB;Integrated Security=True;TrustServerCertificate=True;");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -81,6 +83,13 @@ public partial class HotelCaliforniaDbContext : DbContext
                 .HasForeignKey(d => d.IdPersona)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK__Reservas__IdPers__534D60F1");
+        });
+
+        modelBuilder.Entity<Pagos>(entity =>
+        {
+            entity.HasOne(p => p.IdReservacionNavigation)
+                  .WithMany()
+                  .HasForeignKey(p => p.IdReservacion);
         });
 
         modelBuilder.Entity<Role>(entity =>
