@@ -1,65 +1,51 @@
 ﻿@model IEnumerable<HotelCrud.Models.Pagos>
-
 @{
     ViewData["Title"] = "Pagos";
     var rol = Context.Session.GetString("Rol") ?? "";
-    var idPersona = Context.Session.GetInt32("IdPersona") ?? 0;
+    decimal totalIngresos = ViewBag.TotalIngresos != null ? (decimal)ViewBag.TotalIngresos : 0m;
 }
 
-<div class="container my-4">
-    <h2 class="mb-4">@((rol == "Admin") ? "Lista de Pagos" : "Mis Pagos")</h2>
+<h2>@ViewData["Title"]</h2>
 
-    <div class="mb-3">
-        @if (rol == "Admin" || rol == "Cliente")
+@if (rol == "Admin")
+{
+    <div class="alert alert-info">
+        <strong>Total Ingresos:</strong> @totalIngresos.ToString("C")
+    </div>
+}
+
+@if (rol == "Cliente")
+{
+    <a asp-action="Create" class="btn btn-primary mb-3">Realizar Pago</a>
+}
+
+<table class="table table-striped table-bordered">
+    <thead class="table-dark">
+        <tr>
+            <th>ID Reserva</th>
+            <th>Cliente</th>
+            <th>Habitación</th>
+            <th>Monto Total</th>
+            <th>Fecha Pago</th>
+            <th>Método de Pago</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var pago in Model)
         {
-            <a class="btn btn-success" asp-action="Create">
-                <i class="uil uil-plus me-1"></i> Nuevo Pago
-            </a>
+            <tr>
+                <td>@pago.IdReservacion</td>
+                <td>@pago.IdReservacionNavigation.IdPersonaNavigation?.Nombre</td>
+                <td>@pago.IdReservacionNavigation.IdHabitacionNavigation?.Numero</td>
+                <td>@(pago.MontoTotal?.ToString("C") ?? "-")</td>
+                <td>@pago.FechaPago?.ToString("yyyy-MM-dd")</td>
+                <td>@pago.MetodoPago</td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@pago.Id" class="btn btn-info btn-sm">Detalles</a>
+                    <a asp-action="Delete" asp-route-id="@pago.Id" class="btn btn-danger btn-sm">Cancelar</a>
+                </td>
+            </tr>
         }
-    </div>
-
-    <div class="table-responsive">
-        <table class="table table-striped table-hover align-middle">
-            <thead class="table-dark">
-                <tr>
-                    @if (rol == "Admin")
-                    {
-                        <th>Persona</th>
-                    }
-                    <th>Monto Total</th>
-                    <th>Fecha de Pago</th>
-                    <th>Método de Pago</th>
-                    <th>Acciones</th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach (var item in Model)
-                {
-                    <tr>
-                        @if (rol == "Cliente")
-                        {
-                            <td>@item.IdReservacionNavigation?.IdPersonaNavigation?.Nombre @item.IdReservacionNavigation?.IdPersonaNavigation?.Apellidos</td>
-                        }
-                        <td>@item.MontoTotal.ToString("C")</td>
-                        <td>@item.FechaPago?.ToString("yyyy-MM-dd")</td>
-                        <td>@item.MetodoPago</td>
-                        <td>
-                            <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-sm btn-info me-1" title="Detalles">
-                                <i class="uil uil-eye"></i>
-                            </a>
-                            @if (rol == "Cliente")
-                            {
-                                <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-sm btn-primary me-1" title="Editar">
-                                    <i class="uil uil-edit"></i>
-                                </a>
-                                <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-sm btn-danger" title="Eliminar">
-                                    <i class="uil uil-trash-alt"></i>
-                                </a>
-                            }
-                        </td>
-                    </tr>
-                }
-            </tbody>
-        </table>
-    </div>
-</div>
+    </tbody>
+</table>

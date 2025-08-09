@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
+using HotelCrud.Models;
 
 namespace HotelCrud.Models;
 
@@ -95,4 +96,6 @@ public partial class HotelCaliforniaDbContext : DbContext
     }
 
     partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
+
+public DbSet<HotelCrud.Models.Pagos> Pagos { get; set; } = default!;
 }

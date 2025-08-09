@@ -2,37 +2,56 @@
 
 @{
     ViewData["Title"] = "Detalles del Pago";
-    var rol = Context.Session.GetString("Rol") ?? "";
 }
 
-<div class="container my-4">
-    <h2 class="mb-4">@ViewData["Title"]</h2>
+<h2 class="mb-4">@ViewData["Title"]</h2>
 
-    <div class="mb-3">
-        <label>Monto Total:</label>
-        <input class="form-control" value="@Model.MontoTotal.ToString("C")" readonly />
-    </div>
+<div class="card">
+    <div class="card-body">
+        <dl class="row">
 
-    <div class="mb-3">
-        <label>Fecha de Pago:</label>
-        <input class="form-control" value="@Model.FechaPago?.ToString("yyyy-MM-dd")" readonly />
-    </div>
+            <dt class="col-sm-3">ID Pago</dt>
+            <dd class="col-sm-9">@Model.Id</dd>
 
-    <div class="mb-3">
-        <label>Método de Pago:</label>
-        <input class="form-control" value="@Model.MetodoPago" readonly />
-    </div>
+            <dt class="col-sm-3">ID Reserva</dt>
+            <dd class="col-sm-9">@Model.IdReservacion</dd>
 
-    <div class="mb-3">
-        <label>Persona:</label>
-        <input class="form-control" value="@Model.IdReservacion" readonly />
-    </div>
+            <dt class="col-sm-3">Cliente</dt>
+            <dd class="col-sm-9">@Model.IdReservacionNavigation.IdPersonaNavigation?.Nombre</dd>
 
-    <div>
-        @if (rol == "Admin")
-        {
-            <a asp-action="Edit" asp-route-id="@Model?.Id" class="btn btn-primary me-2">Editar</a>
-        }
-        <a asp-action="Index" class="btn btn-secondary">Volver</a>
+            <dt class="col-sm-3">Habitación</dt>
+            <dd class="col-sm-9">@Model.IdReservacionNavigation.IdHabitacionNavigation?.Numero</dd>
+
+            <dt class="col-sm-3">Monto Total</dt>
+            <dd class="col-sm-9">@Model.MontoTotal?.ToString("C")</dd>
+
+            <dt class="col-sm-3">Fecha Pago</dt>
+            <dd class="col-sm-9">@Model.FechaPago?.ToString("yyyy-MM-dd")</dd>
+
+            <dt class="col-sm-3">Método de Pago</dt>
+            <dd class="col-sm-9">@Model.MetodoPago</dd>
+
+            @if (!string.IsNullOrEmpty(Model.NumeroTarjeta))
+            {
+                var numeroLimpio = Model.NumeroTarjeta.Replace(" ", "");
+                var longitud = numeroLimpio.Length;
+                var ultimos4 = longitud > 4 ? numeroLimpio.Substring(longitud - 4) : numeroLimpio;
+                var enmascarado = new string('*', Math.Max(0, longitud - 4)) + ultimos4;
+
+                <dt class="col-sm-3">Número de Tarjeta</dt>
+                <dd class="col-sm-9">@enmascarado</dd>
+
+                <dt class="col-sm-3">CVV</dt>
+                <dd class="col-sm-9">***</dd>
+
+                <dt class="col-sm-3">Nombre en la Tarjeta</dt>
+                <dd class="col-sm-9">@Model.NombreTarjeta</dd>
+
+                <dt class="col-sm-3">Fecha de Expiración</dt>
+                <dd class="col-sm-9">@Model.FechaExpiracion</dd>
+            }
+        </dl>
     </div>
 </div>
+
+<a asp-action="Index" class="btn btn-secondary mt-3">Volver</a>

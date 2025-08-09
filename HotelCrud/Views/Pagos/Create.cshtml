@@ -1,52 +1,105 @@
 ﻿@model HotelCrud.Models.Pagos
 
 @{
-    ViewData["Title"] = "Crear Pago";
+    ViewData["Title"] = "Realizar Pago";
 }
 
-<div class="container my-4">
-    <h2 class="mb-4">@ViewData["Title"]</h2>
+<h2 class="mb-4">@ViewData["Title"]</h2>
 
-    <form asp-action="Create" method="post" novalidate>
-        <div asp-validation-summary="ModelOnly" class="text-danger mb-4"></div>
+<form asp-action="Create" method="post" novalidate>
+    <div asp-validation-summary="ModelOnly" class="alert alert-danger"></div>
 
-        <div class="form-group mb-3">
+    @if (ViewData["IdReservacion"] != null)
+    {
+        <div class="mb-3">
             <label asp-for="IdReservacion" class="form-label">Reservación</label>
-            <select asp-for="IdReservacion" class="form-select" asp-items="ViewBag.IdReservacion">
+            <select asp-for="IdReservacion" class="form-select" asp-items="@(ViewData["IdReservacion"] as SelectList)">
                 <option value="">-- Seleccione una reservación --</option>
             </select>
             <span asp-validation-for="IdReservacion" class="text-danger"></span>
         </div>
+    }
+    else
+    {
+        <input asp-for="IdReservacion" type="hidden" />
+        <div class="alert alert-info p-3 mb-4 rounded">
+            <strong>Reserva:</strong> @ViewData["ReservaDescripcion"] <br />
+            <strong>Monto a pagar:</strong> ₡@ViewData["MontoReserva"]
+        </div>
+    }
 
-        <div class="form-group mb-3">
-            <label asp-for="MontoTotal" class="form-label"></label>
-            <input asp-for="MontoTotal" class="form-control" />
-            <span asp-validation-for="MontoTotal" class="text-danger"></span>
+    <div class="mb-3">
+        <label asp-for="MetodoPago" class="form-label">Método de Pago</label>
+        <select asp-for="MetodoPago" id="MetodoPago" class="form-select" required>
+            <option value="">-- Seleccione --</option>
+            <option value="Transferencia">Transferencia</option>
+            <option value="Tarjeta">Tarjeta</option>
+        </select>
+        <span asp-validation-for="MetodoPago" class="text-danger"></span>
+    </div>
+
+    <div id="tarjeta-info" class="border rounded p-3 mb-4 bg-light" style="display:none;">
+        <h5 class="mb-3">Información de la Tarjeta</h5>
+
+        <div class="mb-3">
+            <label asp-for="NombreTarjeta" class="form-label">Nombre en la tarjeta</label>
+            <input asp-for="NombreTarjeta" class="form-control" placeholder="Nombre como aparece en la tarjeta" />
+            <span asp-validation-for="NombreTarjeta" class="text-danger"></span>
         </div>
 
-        <div class="form-group mb-3">
-            <label asp-for="FechaPago" class="form-label"></label>
-            <input asp-for="FechaPago" class="form-control" type="date" />
-            <span asp-validation-for="FechaPago" class="text-danger"></span>
+        <div class="mb-3">
+            <label asp-for="NumeroTarjeta" class="form-label">Número de Tarjeta</label>
+            <input asp-for="NumeroTarjeta" class="form-control" maxlength="19" placeholder="1234 5678 9012 3456" autocomplete="off" />
+            <span asp-validation-for="NumeroTarjeta" class="text-danger"></span>
         </div>
 
-        <div class="form-group mb-3">
-            <label asp-for="MetodoPago" class="form-label"></label>
-            <input asp-for="MetodoPago" class="form-control" />
-            <span asp-validation-for="MetodoPago" class="text-danger"></span>
+        <div class="row">
+            <div class="col-md-6 mb-3">
+                <label asp-for="CVV" class="form-label">CVV</label>
+                <input asp-for="CVV" class="form-control" maxlength="4" placeholder="123" autocomplete="off" />
+                <span asp-validation-for="CVV" class="text-danger"></span>
+            </div>
+            <div class="col-md-6 mb-3">
+                <label asp-for="FechaExpiracion" class="form-label">Fecha de expiración</label>
+                <input asp-for="FechaExpiracion" type="month" class="form-control" />
+                <span asp-validation-for="FechaExpiracion" class="text-danger"></span>
+            </div>
         </div>
+    </div>
 
-        <button type="submit" class="btn btn-success">
-            <i class="uil uil-check me-1"></i> Guardar
-        </button>
-        <a asp-action="Index" class="btn btn-secondary ms-2">
-            <i class="uil uil-times-circle me-1"></i> Cancelar
-        </a>
-    </form>
-</div>
+    <button type="submit" class="btn btn-success px-4">Pagar</button>
+    <a asp-action="Index" class="btn btn-outline-secondary ms-3">Cancelar</a>
+</form>
 
 @section Scripts {
-    @{
-        await Html.RenderPartialAsync("_ValidationScriptsPartial");
-    }
+    <partial name="_ValidationScriptsPartial" />
+    <script>
+        const metodoPago = document.getElementById("MetodoPago");
+        const tarjetaInfo = document.getElementById("tarjeta-info");
+
+        function toggleTarjetaFields() {
+            if (metodoPago.value === "Tarjeta") {
+                tarjetaInfo.style.display = "block";
+            } else {
+                tarjetaInfo.style.display = "none";
+                // Limpiar campos tarjeta cuando no se muestra
+                tarjetaInfo.querySelectorAll("input").forEach(input => input.value = "");
+            }
+        }
+
+        if (metodoPago) {
+            metodoPago.addEventListener("change", toggleTarjetaFields);
+            toggleTarjetaFields();
+        }
+
+        // Formatear número tarjeta a grupos de 4 dígitos
+        const numeroTarjetaInput = document.querySelector('input[name="NumeroTarjeta"]');
+        if (numeroTarjetaInput) {
+            numeroTarjetaInput.addEventListener("input", function (e) {
+                let val = e.target.value.replace(/\D/g, '').slice(0, 16);
+                let formatted = val.match(/.{1,4}/g);
+                e.target.value = formatted ? formatted.join(' ') : '';
+            });
+        }
+    </script>
 }

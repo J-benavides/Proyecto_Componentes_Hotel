@@ -1,41 +1,39 @@
 ﻿@model HotelCrud.Models.Pagos
-
 @{
-    ViewData["Title"] = "Eliminar Pago";
+    ViewData["Title"] = "Cancelar Pago";
 }
 
-<div class="container my-4">
-    <h2 class="mb-4">@ViewData["Title"]</h2>
+<h2>@ViewData["Title"]</h2>
 
-    <h4>¿Está seguro que desea eliminar este pago?</h4>
+<h4>¿Seguro que quieres cancelar este pago?</h4>
 
-    <div class="mb-3">
-        <label>Monto Total:</label>
-        <input class="form-control" value="@Model.MontoTotal.ToString("C")" readonly />
-    </div>
+<div>
+    <dl class="row">
+        <dt class="col-sm-3">ID Pago</dt>
+        <dd class="col-sm-9">@Model.Id</dd>
 
-    <div class="mb-3">
-        <label>Fecha de Pago:</label>
-        <input class="form-control" value="@Model.FechaPago?.ToString("yyyy-MM-dd")" readonly />
-    </div>
+        <dt class="col-sm-3">ID Reserva</dt>
+        <dd class="col-sm-9">@Model.IdReservacion</dd>
 
-    <div class="mb-3">
-        <label>Método de Pago:</label>
-        <input class="form-control" value="@Model.MetodoPago" readonly />
-    </div>
+        <dt class="col-sm-3">Cliente</dt>
+        <dd class="col-sm-9">@Model.IdReservacionNavigation.IdPersonaNavigation?.Nombre</dd>
 
-    <div class="mb-3">
-        <label>Persona:</label>
-        <input class="form-control" value="@Model.IdReservacion" readonly />
-    </div>
+        <dt class="col-sm-3">Habitación</dt>
+        <dd class="col-sm-9">@Model.IdReservacionNavigation.IdHabitacionNavigation?.Numero</dd>
 
-    <form asp-action="Delete" method="post">
-        <input type="hidden" asp-for="Id" />
-        <button type="submit" class="btn btn-danger">
-            <i class="uil uil-trash-alt me-1"></i> Eliminar
-        </button>
-        <a asp-action="Index" class="btn btn-secondary ms-2">
-            <i class="uil uil-times-circle me-1"></i> Cancelar
-        </a>
-    </form>
+        <dt class="col-sm-3">Monto Total</dt>
+        <dd class="col-sm-9">@Model.MontoTotal?.ToString("C")</dd>
+
+        <dt class="col-sm-3">Fecha Pago</dt>
+        <dd class="col-sm-9">@Model.FechaPago?.ToString("yyyy-MM-dd")</dd>
+
+        <dt class="col-sm-3">Método de Pago</dt>
+        <dd class="col-sm-9">@Model.MetodoPago</dd>
+    </dl>
 </div>
+
+<form asp-action="DeleteConfirmed" method="post">
+    <input type="hidden" asp-for="Id" />
+    <button type="submit" class="btn btn-danger">Cancelar Pago</button>
+    <a asp-action="Index" class="btn btn-secondary ms-2">Volver</a>
+</form>
