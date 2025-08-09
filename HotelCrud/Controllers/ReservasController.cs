@@ -155,7 +155,6 @@ public class ReservasController : Controller
         if (rol != "Cliente" && rol != "Admin")
             return RedirectToAction("AccesoDenegado", "Home");
 
-        // Si el usuario es cliente, solo puede editar su propia reserva
         if (rol == "Cliente")
         {
             int idPersonaSesion = HttpContext.Session.GetInt32("IdPersona") ?? 0;
@@ -166,7 +165,6 @@ public class ReservasController : Controller
         if (rol == "Admin")
             ViewData["IdPersona"] = new SelectList(_context.Personas, "Id", "Nombre", reserva.IdPersona);
 
-        // Mostrar habitaciones disponibles o la habitación actual para permitir conservarla
         var habitacionesQuery = _context.Habitaciones.Where(h => h.Estado == "Disponible" || h.Id == reserva.IdHabitacion);
         ViewData["IdHabitacion"] = new SelectList(habitacionesQuery, "Id", "Numero", reserva.IdHabitacion);
 
@@ -185,7 +183,6 @@ public class ReservasController : Controller
         if (rol != "Cliente" && rol != "Admin")
             return RedirectToAction("AccesoDenegado", "Home");
 
-        // Si el usuario es cliente, solo puede editar su propia reserva
         if (rol == "Cliente")
         {
             int idPersonaSesion = HttpContext.Session.GetInt32("IdPersona") ?? 0;

@@ -20,7 +20,6 @@
     }
     else
     {
-        <!-- El cliente solo puede reservar para sí mismo -->
         <input asp-for="IdPersona" type="hidden" value="@Context.Session.GetInt32("IdPersona")" />
     }
 

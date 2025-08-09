@@ -3,16 +3,52 @@
   "WorkspaceRootPath": "C:\\Users\\Usuario\\Documents\\Universidad2025\\Componentes\\CRUD\\ProyectoComponentes\\HotelCrud\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{A3071365-F594-4681-9A9B-C652C2759D23}|HotelCrud.csproj|c:\\users\\usuario\\documents\\universidad2025\\componentes\\crud\\proyectocomponentes\\hotelcrud\\views\\habitaciones\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A3071365-F594-4681-9A9B-C652C2759D23}|HotelCrud.csproj|solutionrelative:views\\habitaciones\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A3071365-F594-4681-9A9B-C652C2759D23}|HotelCrud.csproj|c:\\users\\usuario\\documents\\universidad2025\\componentes\\crud\\proyectocomponentes\\hotelcrud\\views\\reservas\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A3071365-F594-4681-9A9B-C652C2759D23}|HotelCrud.csproj|solutionrelative:views\\reservas\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A3071365-F594-4681-9A9B-C652C2759D23}|HotelCrud.csproj|c:\\users\\usuario\\documents\\universidad2025\\componentes\\crud\\proyectocomponentes\\hotelcrud\\views\\reservas\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A3071365-F594-4681-9A9B-C652C2759D23}|HotelCrud.csproj|solutionrelative:views\\reservas\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A3071365-F594-4681-9A9B-C652C2759D23}|HotelCrud.csproj|c:\\users\\usuario\\documents\\universidad2025\\componentes\\crud\\proyectocomponentes\\hotelcrud\\views\\reservas\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A3071365-F594-4681-9A9B-C652C2759D23}|HotelCrud.csproj|solutionrelative:views\\reservas\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A3071365-F594-4681-9A9B-C652C2759D23}|HotelCrud.csproj|c:\\users\\usuario\\documents\\universidad2025\\componentes\\crud\\proyectocomponentes\\hotelcrud\\views\\reservas\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A3071365-F594-4681-9A9B-C652C2759D23}|HotelCrud.csproj|solutionrelative:views\\reservas\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A3071365-F594-4681-9A9B-C652C2759D23}|HotelCrud.csproj|c:\\users\\usuario\\documents\\universidad2025\\componentes\\crud\\proyectocomponentes\\hotelcrud\\views\\habitaciones\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A3071365-F594-4681-9A9B-C652C2759D23}|HotelCrud.csproj|solutionrelative:views\\habitaciones\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{A3071365-F594-4681-9A9B-C652C2759D23}|HotelCrud.csproj|c:\\users\\usuario\\documents\\universidad2025\\componentes\\crud\\proyectocomponentes\\hotelcrud\\views\\habitaciones\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{A3071365-F594-4681-9A9B-C652C2759D23}|HotelCrud.csproj|solutionrelative:views\\habitaciones\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A3071365-F594-4681-9A9B-C652C2759D23}|HotelCrud.csproj|c:\\users\\usuario\\documents\\universidad2025\\componentes\\crud\\proyectocomponentes\\hotelcrud\\models\\habitacione.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A3071365-F594-4681-9A9B-C652C2759D23}|HotelCrud.csproj|solutionrelative:models\\habitacione.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A3071365-F594-4681-9A9B-C652C2759D23}|HotelCrud.csproj|c:\\users\\usuario\\documents\\universidad2025\\componentes\\crud\\proyectocomponentes\\hotelcrud\\views\\habitaciones\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A3071365-F594-4681-9A9B-C652C2759D23}|HotelCrud.csproj|solutionrelative:views\\habitaciones\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A3071365-F594-4681-9A9B-C652C2759D23}|HotelCrud.csproj|c:\\users\\usuario\\documents\\universidad2025\\componentes\\crud\\proyectocomponentes\\hotelcrud\\views\\habitaciones\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A3071365-F594-4681-9A9B-C652C2759D23}|HotelCrud.csproj|solutionrelative:views\\habitaciones\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A3071365-F594-4681-9A9B-C652C2759D23}|HotelCrud.csproj|c:\\users\\usuario\\documents\\universidad2025\\componentes\\crud\\proyectocomponentes\\hotelcrud\\controllers\\reservascontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A3071365-F594-4681-9A9B-C652C2759D23}|HotelCrud.csproj|solutionrelative:controllers\\reservascontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A3071365-F594-4681-9A9B-C652C2759D23}|HotelCrud.csproj|c:\\users\\usuario\\documents\\universidad2025\\componentes\\crud\\proyectocomponentes\\hotelcrud\\controllers\\habitacionescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A3071365-F594-4681-9A9B-C652C2759D23}|HotelCrud.csproj|solutionrelative:controllers\\habitacionescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A3071365-F594-4681-9A9B-C652C2759D23}|HotelCrud.csproj|c:\\users\\usuario\\documents\\universidad2025\\componentes\\crud\\proyectocomponentes\\hotelcrud\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A3071365-F594-4681-9A9B-C652C2759D23}|HotelCrud.csproj|solutionrelative:views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A3071365-F594-4681-9A9B-C652C2759D23}|HotelCrud.csproj|c:\\users\\usuario\\documents\\universidad2025\\componentes\\crud\\proyectocomponentes\\hotelcrud\\controllers\\cuentacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -21,10 +57,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{A3071365-F594-4681-9A9B-C652C2759D23}|HotelCrud.csproj|c:\\users\\usuario\\documents\\universidad2025\\componentes\\crud\\proyectocomponentes\\hotelcrud\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{A3071365-F594-4681-9A9B-C652C2759D23}|HotelCrud.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A3071365-F594-4681-9A9B-C652C2759D23}|HotelCrud.csproj|c:\\users\\usuario\\documents\\universidad2025\\componentes\\crud\\proyectocomponentes\\hotelcrud\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{A3071365-F594-4681-9A9B-C652C2759D23}|HotelCrud.csproj|solutionrelative:views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A3071365-F594-4681-9A9B-C652C2759D23}|HotelCrud.csproj|c:\\users\\usuario\\documents\\universidad2025\\componentes\\crud\\proyectocomponentes\\hotelcrud\\views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -47,14 +79,6 @@
       "RelativeMoniker": "D:0:0:{A3071365-F594-4681-9A9B-C652C2759D23}|HotelCrud.csproj|solutionrelative:controllers\\personascontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A3071365-F594-4681-9A9B-C652C2759D23}|HotelCrud.csproj|c:\\users\\usuario\\documents\\universidad2025\\componentes\\crud\\proyectocomponentes\\hotelcrud\\controllers\\reservascontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A3071365-F594-4681-9A9B-C652C2759D23}|HotelCrud.csproj|solutionrelative:controllers\\reservascontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A3071365-F594-4681-9A9B-C652C2759D23}|HotelCrud.csproj|c:\\users\\usuario\\documents\\universidad2025\\componentes\\crud\\proyectocomponentes\\hotelcrud\\views\\habitaciones\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{A3071365-F594-4681-9A9B-C652C2759D23}|HotelCrud.csproj|solutionrelative:views\\habitaciones\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{A3071365-F594-4681-9A9B-C652C2759D23}|HotelCrud.csproj|c:\\users\\usuario\\documents\\universidad2025\\componentes\\crud\\proyectocomponentes\\hotelcrud\\views\\home\\informacion.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{A3071365-F594-4681-9A9B-C652C2759D23}|HotelCrud.csproj|solutionrelative:views\\home\\informacion.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
@@ -65,26 +89,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{A3071365-F594-4681-9A9B-C652C2759D23}|HotelCrud.csproj|c:\\users\\usuario\\documents\\universidad2025\\componentes\\crud\\proyectocomponentes\\hotelcrud\\views\\reservas\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{A3071365-F594-4681-9A9B-C652C2759D23}|HotelCrud.csproj|solutionrelative:views\\reservas\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A3071365-F594-4681-9A9B-C652C2759D23}|HotelCrud.csproj|c:\\users\\usuario\\documents\\universidad2025\\componentes\\crud\\proyectocomponentes\\hotelcrud\\views\\reservas\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{A3071365-F594-4681-9A9B-C652C2759D23}|HotelCrud.csproj|solutionrelative:views\\reservas\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A3071365-F594-4681-9A9B-C652C2759D23}|HotelCrud.csproj|c:\\users\\usuario\\documents\\universidad2025\\componentes\\crud\\proyectocomponentes\\hotelcrud\\views\\reservas\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{A3071365-F594-4681-9A9B-C652C2759D23}|HotelCrud.csproj|solutionrelative:views\\reservas\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A3071365-F594-4681-9A9B-C652C2759D23}|HotelCrud.csproj|c:\\users\\usuario\\documents\\universidad2025\\componentes\\crud\\proyectocomponentes\\hotelcrud\\views\\reservas\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{A3071365-F594-4681-9A9B-C652C2759D23}|HotelCrud.csproj|solutionrelative:views\\reservas\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A3071365-F594-4681-9A9B-C652C2759D23}|HotelCrud.csproj|c:\\users\\usuario\\documents\\universidad2025\\componentes\\crud\\proyectocomponentes\\hotelcrud\\views\\reservas\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{A3071365-F594-4681-9A9B-C652C2759D23}|HotelCrud.csproj|solutionrelative:views\\reservas\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A3071365-F594-4681-9A9B-C652C2759D23}|HotelCrud.csproj|c:\\users\\usuario\\documents\\universidad2025\\componentes\\crud\\proyectocomponentes\\hotelcrud\\views\\habitaciones\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{A3071365-F594-4681-9A9B-C652C2759D23}|HotelCrud.csproj|solutionrelative:views\\habitaciones\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A3071365-F594-4681-9A9B-C652C2759D23}|HotelCrud.csproj|c:\\users\\usuario\\documents\\universidad2025\\componentes\\crud\\proyectocomponentes\\hotelcrud\\views\\roles\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -135,14 +139,6 @@
       "RelativeMoniker": "D:0:0:{A3071365-F594-4681-9A9B-C652C2759D23}|HotelCrud.csproj|solutionrelative:models\\dashboardviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A3071365-F594-4681-9A9B-C652C2759D23}|HotelCrud.csproj|c:\\users\\usuario\\documents\\universidad2025\\componentes\\crud\\proyectocomponentes\\hotelcrud\\views\\habitaciones\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{A3071365-F594-4681-9A9B-C652C2759D23}|HotelCrud.csproj|solutionrelative:views\\habitaciones\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A3071365-F594-4681-9A9B-C652C2759D23}|HotelCrud.csproj|c:\\users\\usuario\\documents\\universidad2025\\componentes\\crud\\proyectocomponentes\\hotelcrud\\views\\habitaciones\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{A3071365-F594-4681-9A9B-C652C2759D23}|HotelCrud.csproj|solutionrelative:views\\habitaciones\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{A3071365-F594-4681-9A9B-C652C2759D23}|HotelCrud.csproj|c:\\users\\usuario\\documents\\universidad2025\\componentes\\crud\\proyectocomponentes\\hotelcrud\\views\\personas\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{A3071365-F594-4681-9A9B-C652C2759D23}|HotelCrud.csproj|solutionrelative:views\\personas\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
@@ -170,11 +166,227 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 8,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 6,
+              "Title": "Edit.cshtml",
+              "DocumentMoniker": "C:\\Users\\Usuario\\Documents\\Universidad2025\\Componentes\\CRUD\\ProyectoComponentes\\HotelCrud\\Views\\Habitaciones\\Edit.cshtml",
+              "RelativeDocumentMoniker": "Views\\Habitaciones\\Edit.cshtml",
+              "ToolTip": "C:\\Users\\Usuario\\Documents\\Universidad2025\\Componentes\\CRUD\\ProyectoComponentes\\HotelCrud\\Views\\Habitaciones\\Edit.cshtml",
+              "RelativeToolTip": "Views\\Habitaciones\\Edit.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-07-26T04:42:13.33Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "ReservasController.cs",
+              "DocumentMoniker": "C:\\Users\\Usuario\\Documents\\Universidad2025\\Componentes\\CRUD\\ProyectoComponentes\\HotelCrud\\Controllers\\ReservasController.cs",
+              "RelativeDocumentMoniker": "Controllers\\ReservasController.cs",
+              "ToolTip": "C:\\Users\\Usuario\\Documents\\Universidad2025\\Componentes\\CRUD\\ProyectoComponentes\\HotelCrud\\Controllers\\ReservasController.cs*",
+              "RelativeToolTip": "Controllers\\ReservasController.cs*",
+              "ViewState": "AgIAAAABAAAAAAAAAAAowLkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-26T03:48:11.386Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Delete.cshtml",
+              "DocumentMoniker": "C:\\Users\\Usuario\\Documents\\Universidad2025\\Componentes\\CRUD\\ProyectoComponentes\\HotelCrud\\Views\\Habitaciones\\Delete.cshtml",
+              "RelativeDocumentMoniker": "Views\\Habitaciones\\Delete.cshtml",
+              "ToolTip": "C:\\Users\\Usuario\\Documents\\Universidad2025\\Componentes\\CRUD\\ProyectoComponentes\\HotelCrud\\Views\\Habitaciones\\Delete.cshtml",
+              "RelativeToolTip": "Views\\Habitaciones\\Delete.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-07-26T04:42:03.104Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "C:\\Users\\Usuario\\Documents\\Universidad2025\\Componentes\\CRUD\\ProyectoComponentes\\HotelCrud\\Views\\Habitaciones\\Create.cshtml",
+              "RelativeDocumentMoniker": "Views\\Habitaciones\\Create.cshtml",
+              "ToolTip": "C:\\Users\\Usuario\\Documents\\Universidad2025\\Componentes\\CRUD\\ProyectoComponentes\\HotelCrud\\Views\\Habitaciones\\Create.cshtml",
+              "RelativeToolTip": "Views\\Habitaciones\\Create.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAA7AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-07-26T04:41:58.117Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Details.cshtml",
+              "DocumentMoniker": "C:\\Users\\Usuario\\Documents\\Universidad2025\\Componentes\\CRUD\\ProyectoComponentes\\HotelCrud\\Views\\Habitaciones\\Details.cshtml",
+              "RelativeDocumentMoniker": "Views\\Habitaciones\\Details.cshtml",
+              "ToolTip": "C:\\Users\\Usuario\\Documents\\Universidad2025\\Componentes\\CRUD\\ProyectoComponentes\\HotelCrud\\Views\\Habitaciones\\Details.cshtml",
+              "RelativeToolTip": "Views\\Habitaciones\\Details.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-07-26T04:42:08.484Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\Usuario\\Documents\\Universidad2025\\Componentes\\CRUD\\ProyectoComponentes\\HotelCrud\\Views\\Habitaciones\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\Habitaciones\\Index.cshtml",
+              "ToolTip": "C:\\Users\\Usuario\\Documents\\Universidad2025\\Componentes\\CRUD\\ProyectoComponentes\\HotelCrud\\Views\\Habitaciones\\Index.cshtml",
+              "RelativeToolTip": "Views\\Habitaciones\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-07-26T04:42:18.558Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Details.cshtml",
+              "DocumentMoniker": "C:\\Users\\Usuario\\Documents\\Universidad2025\\Componentes\\CRUD\\ProyectoComponentes\\HotelCrud\\Views\\Reservas\\Details.cshtml",
+              "RelativeDocumentMoniker": "Views\\Reservas\\Details.cshtml",
+              "ToolTip": "C:\\Users\\Usuario\\Documents\\Universidad2025\\Componentes\\CRUD\\ProyectoComponentes\\HotelCrud\\Views\\Reservas\\Details.cshtml",
+              "RelativeToolTip": "Views\\Reservas\\Details.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-07-26T04:09:10.561Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "C:\\Users\\Usuario\\Documents\\Universidad2025\\Componentes\\CRUD\\ProyectoComponentes\\HotelCrud\\Views\\Reservas\\Create.cshtml",
+              "RelativeDocumentMoniker": "Views\\Reservas\\Create.cshtml",
+              "ToolTip": "C:\\Users\\Usuario\\Documents\\Universidad2025\\Componentes\\CRUD\\ProyectoComponentes\\HotelCrud\\Views\\Reservas\\Create.cshtml*",
+              "RelativeToolTip": "Views\\Reservas\\Create.cshtml*",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAmwBUAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-07-26T04:09:29.957Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Delete.cshtml",
+              "DocumentMoniker": "C:\\Users\\Usuario\\Documents\\Universidad2025\\Componentes\\CRUD\\ProyectoComponentes\\HotelCrud\\Views\\Reservas\\Delete.cshtml",
+              "RelativeDocumentMoniker": "Views\\Reservas\\Delete.cshtml",
+              "ToolTip": "C:\\Users\\Usuario\\Documents\\Universidad2025\\Componentes\\CRUD\\ProyectoComponentes\\HotelCrud\\Views\\Reservas\\Delete.cshtml",
+              "RelativeToolTip": "Views\\Reservas\\Delete.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-07-26T04:09:16.4Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Edit.cshtml",
+              "DocumentMoniker": "C:\\Users\\Usuario\\Documents\\Universidad2025\\Componentes\\CRUD\\ProyectoComponentes\\HotelCrud\\Views\\Reservas\\Edit.cshtml",
+              "RelativeDocumentMoniker": "Views\\Reservas\\Edit.cshtml",
+              "ToolTip": "C:\\Users\\Usuario\\Documents\\Universidad2025\\Componentes\\CRUD\\ProyectoComponentes\\HotelCrud\\Views\\Reservas\\Edit.cshtml",
+              "RelativeToolTip": "Views\\Reservas\\Edit.cshtml",
+              "ViewState": "AgIAABEAAAAAAAAAAAAmwCgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-07-26T04:09:10.763Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "HabitacionesController.cs",
+              "DocumentMoniker": "C:\\Users\\Usuario\\Documents\\Universidad2025\\Componentes\\CRUD\\ProyectoComponentes\\HotelCrud\\Controllers\\HabitacionesController.cs",
+              "RelativeDocumentMoniker": "Controllers\\HabitacionesController.cs",
+              "ToolTip": "C:\\Users\\Usuario\\Documents\\Universidad2025\\Componentes\\CRUD\\ProyectoComponentes\\HotelCrud\\Controllers\\HabitacionesController.cs",
+              "RelativeToolTip": "Controllers\\HabitacionesController.cs",
+              "ViewState": "AgIAAIkAAAAAAAAAAAAAwLIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-26T03:47:50.365Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\Usuario\\Documents\\Universidad2025\\Componentes\\CRUD\\ProyectoComponentes\\HotelCrud\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\Usuario\\Documents\\Universidad2025\\Componentes\\CRUD\\ProyectoComponentes\\HotelCrud\\Views\\Shared\\_Layout.cshtml*",
+              "RelativeToolTip": "Views\\Shared\\_Layout.cshtml*",
+              "ViewState": "AgIAAHIAAAAAAAAAAAAAAHoAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-07-26T03:03:56.808Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "CuentaController.cs",
+              "DocumentMoniker": "C:\\Users\\Usuario\\Documents\\Universidad2025\\Componentes\\CRUD\\ProyectoComponentes\\HotelCrud\\Controllers\\CuentaController.cs",
+              "RelativeDocumentMoniker": "Controllers\\CuentaController.cs",
+              "ToolTip": "C:\\Users\\Usuario\\Documents\\Universidad2025\\Componentes\\CRUD\\ProyectoComponentes\\HotelCrud\\Controllers\\CuentaController.cs",
+              "RelativeToolTip": "Controllers\\CuentaController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-26T05:12:42.302Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "PersonaEditViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\Usuario\\Documents\\Universidad2025\\Componentes\\CRUD\\ProyectoComponentes\\HotelCrud\\Models\\PersonaEditViewModel.cs",
+              "RelativeDocumentMoniker": "Models\\PersonaEditViewModel.cs",
+              "ToolTip": "C:\\Users\\Usuario\\Documents\\Universidad2025\\Componentes\\CRUD\\ProyectoComponentes\\HotelCrud\\Models\\PersonaEditViewModel.cs",
+              "RelativeToolTip": "Models\\PersonaEditViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAA1AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-26T05:31:18.356Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "Edit.cshtml",
+              "DocumentMoniker": "C:\\Users\\Usuario\\Documents\\Universidad2025\\Componentes\\CRUD\\ProyectoComponentes\\HotelCrud\\Views\\Personas\\Edit.cshtml",
+              "RelativeDocumentMoniker": "Views\\Personas\\Edit.cshtml",
+              "ToolTip": "C:\\Users\\Usuario\\Documents\\Universidad2025\\Componentes\\CRUD\\ProyectoComponentes\\HotelCrud\\Views\\Personas\\Edit.cshtml",
+              "RelativeToolTip": "Views\\Personas\\Edit.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAF0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-07-26T04:16:49.028Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "PersonasController.cs",
+              "DocumentMoniker": "C:\\Users\\Usuario\\Documents\\Universidad2025\\Componentes\\CRUD\\ProyectoComponentes\\HotelCrud\\Controllers\\PersonasController.cs",
+              "RelativeDocumentMoniker": "Controllers\\PersonasController.cs",
+              "ToolTip": "C:\\Users\\Usuario\\Documents\\Universidad2025\\Componentes\\CRUD\\ProyectoComponentes\\HotelCrud\\Controllers\\PersonasController.cs",
+              "RelativeToolTip": "Controllers\\PersonasController.cs",
+              "ViewState": "AgIAAMgAAAAAAAAAAAAkwPwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-26T03:48:10.194Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "Informacion.cshtml",
+              "DocumentMoniker": "C:\\Users\\Usuario\\Documents\\Universidad2025\\Componentes\\CRUD\\ProyectoComponentes\\HotelCrud\\Views\\Home\\Informacion.cshtml",
+              "RelativeDocumentMoniker": "Views\\Home\\Informacion.cshtml",
+              "ToolTip": "C:\\Users\\Usuario\\Documents\\Universidad2025\\Componentes\\CRUD\\ProyectoComponentes\\HotelCrud\\Views\\Home\\Informacion.cshtml",
+              "RelativeToolTip": "Views\\Home\\Informacion.cshtml",
+              "ViewState": "AgIAABMAAAAAAAAAAAAgwCkAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-07-26T04:22:28.481Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\Usuario\\Documents\\Universidad2025\\Componentes\\CRUD\\ProyectoComponentes\\HotelCrud\\Views\\Home\\Index.cshtml",
               "RelativeDocumentMoniker": "Views\\Home\\Index.cshtml",
@@ -187,130 +399,6 @@
             {
               "$type": "Document",
               "DocumentIndex": 13,
-              "Title": "Informacion.cshtml",
-              "DocumentMoniker": "C:\\Users\\Usuario\\Documents\\Universidad2025\\Componentes\\CRUD\\ProyectoComponentes\\HotelCrud\\Views\\Home\\Informacion.cshtml",
-              "RelativeDocumentMoniker": "Views\\Home\\Informacion.cshtml",
-              "ToolTip": "C:\\Users\\Usuario\\Documents\\Universidad2025\\Componentes\\CRUD\\ProyectoComponentes\\HotelCrud\\Views\\Home\\Informacion.cshtml",
-              "RelativeToolTip": "Views\\Home\\Informacion.cshtml",
-              "ViewState": "AgIAABMAAAAAAAAAAAAgwCkAAAAxAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-07-26T04:22:28.481Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "HabitacionesController.cs",
-              "DocumentMoniker": "C:\\Users\\Usuario\\Documents\\Universidad2025\\Componentes\\CRUD\\ProyectoComponentes\\HotelCrud\\Controllers\\HabitacionesController.cs",
-              "RelativeDocumentMoniker": "Controllers\\HabitacionesController.cs",
-              "ToolTip": "C:\\Users\\Usuario\\Documents\\Universidad2025\\Componentes\\CRUD\\ProyectoComponentes\\HotelCrud\\Controllers\\HabitacionesController.cs*",
-              "RelativeToolTip": "Controllers\\HabitacionesController.cs*",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAALIAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-26T03:47:50.365Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "PersonasController.cs",
-              "DocumentMoniker": "C:\\Users\\Usuario\\Documents\\Universidad2025\\Componentes\\CRUD\\ProyectoComponentes\\HotelCrud\\Controllers\\PersonasController.cs",
-              "RelativeDocumentMoniker": "Controllers\\PersonasController.cs",
-              "ToolTip": "C:\\Users\\Usuario\\Documents\\Universidad2025\\Componentes\\CRUD\\ProyectoComponentes\\HotelCrud\\Controllers\\PersonasController.cs",
-              "RelativeToolTip": "Controllers\\PersonasController.cs",
-              "ViewState": "AgIAAMgAAAAAAAAAAAAkwPwAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-26T03:48:10.194Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Edit.cshtml",
-              "DocumentMoniker": "C:\\Users\\Usuario\\Documents\\Universidad2025\\Componentes\\CRUD\\ProyectoComponentes\\HotelCrud\\Views\\Personas\\Edit.cshtml",
-              "RelativeDocumentMoniker": "Views\\Personas\\Edit.cshtml",
-              "ToolTip": "C:\\Users\\Usuario\\Documents\\Universidad2025\\Componentes\\CRUD\\ProyectoComponentes\\HotelCrud\\Views\\Personas\\Edit.cshtml",
-              "RelativeToolTip": "Views\\Personas\\Edit.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAF0AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-07-26T04:16:49.028Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "PersonaEditViewModel.cs",
-              "DocumentMoniker": "C:\\Users\\Usuario\\Documents\\Universidad2025\\Componentes\\CRUD\\ProyectoComponentes\\HotelCrud\\Models\\PersonaEditViewModel.cs",
-              "RelativeDocumentMoniker": "Models\\PersonaEditViewModel.cs",
-              "ToolTip": "C:\\Users\\Usuario\\Documents\\Universidad2025\\Componentes\\CRUD\\ProyectoComponentes\\HotelCrud\\Models\\PersonaEditViewModel.cs",
-              "RelativeToolTip": "Models\\PersonaEditViewModel.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAA1AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-26T05:31:18.356Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "_Layout.cshtml",
-              "DocumentMoniker": "C:\\Users\\Usuario\\Documents\\Universidad2025\\Componentes\\CRUD\\ProyectoComponentes\\HotelCrud\\Views\\Shared\\_Layout.cshtml",
-              "RelativeDocumentMoniker": "Views\\Shared\\_Layout.cshtml",
-              "ToolTip": "C:\\Users\\Usuario\\Documents\\Universidad2025\\Componentes\\CRUD\\ProyectoComponentes\\HotelCrud\\Views\\Shared\\_Layout.cshtml",
-              "RelativeToolTip": "Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AgIAAB4AAAAAAAAAAAAAAEQAAAAZAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-07-26T03:03:56.808Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "CuentaController.cs",
-              "DocumentMoniker": "C:\\Users\\Usuario\\Documents\\Universidad2025\\Componentes\\CRUD\\ProyectoComponentes\\HotelCrud\\Controllers\\CuentaController.cs",
-              "RelativeDocumentMoniker": "Controllers\\CuentaController.cs",
-              "ToolTip": "C:\\Users\\Usuario\\Documents\\Universidad2025\\Componentes\\CRUD\\ProyectoComponentes\\HotelCrud\\Controllers\\CuentaController.cs",
-              "RelativeToolTip": "Controllers\\CuentaController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-26T05:12:42.302Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Edit.cshtml",
-              "DocumentMoniker": "C:\\Users\\Usuario\\Documents\\Universidad2025\\Componentes\\CRUD\\ProyectoComponentes\\HotelCrud\\Views\\Habitaciones\\Edit.cshtml",
-              "RelativeDocumentMoniker": "Views\\Habitaciones\\Edit.cshtml",
-              "ToolTip": "C:\\Users\\Usuario\\Documents\\Universidad2025\\Componentes\\CRUD\\ProyectoComponentes\\HotelCrud\\Views\\Habitaciones\\Edit.cshtml*",
-              "RelativeToolTip": "Views\\Habitaciones\\Edit.cshtml*",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAoAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-07-26T04:42:13.33Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Habitacione.cs",
-              "DocumentMoniker": "C:\\Users\\Usuario\\Documents\\Universidad2025\\Componentes\\CRUD\\ProyectoComponentes\\HotelCrud\\Models\\Habitacione.cs",
-              "RelativeDocumentMoniker": "Models\\Habitacione.cs",
-              "ToolTip": "C:\\Users\\Usuario\\Documents\\Universidad2025\\Componentes\\CRUD\\ProyectoComponentes\\HotelCrud\\Models\\Habitacione.cs",
-              "RelativeToolTip": "Models\\Habitacione.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAnAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-26T06:30:30.08Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "Delete.cshtml",
-              "DocumentMoniker": "C:\\Users\\Usuario\\Documents\\Universidad2025\\Componentes\\CRUD\\ProyectoComponentes\\HotelCrud\\Views\\Reservas\\Delete.cshtml",
-              "RelativeDocumentMoniker": "Views\\Reservas\\Delete.cshtml",
-              "ToolTip": "C:\\Users\\Usuario\\Documents\\Universidad2025\\Componentes\\CRUD\\ProyectoComponentes\\HotelCrud\\Views\\Reservas\\Delete.cshtml",
-              "RelativeToolTip": "Views\\Reservas\\Delete.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACMAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-07-26T04:09:16.4Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\Usuario\\Documents\\Universidad2025\\Componentes\\CRUD\\ProyectoComponentes\\HotelCrud\\appsettings.json",
               "RelativeDocumentMoniker": "appsettings.json",
@@ -322,19 +410,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "ReservasController.cs",
-              "DocumentMoniker": "C:\\Users\\Usuario\\Documents\\Universidad2025\\Componentes\\CRUD\\ProyectoComponentes\\HotelCrud\\Controllers\\ReservasController.cs",
-              "RelativeDocumentMoniker": "Controllers\\ReservasController.cs",
-              "ToolTip": "C:\\Users\\Usuario\\Documents\\Universidad2025\\Componentes\\CRUD\\ProyectoComponentes\\HotelCrud\\Controllers\\ReservasController.cs",
-              "RelativeToolTip": "Controllers\\ReservasController.cs",
-              "ViewState": "AgIAAFUAAAAAAAAAAAAAAB8BAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-26T03:48:11.386Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 14,
               "Title": "_ViewImports.cshtml",
               "DocumentMoniker": "C:\\Users\\Usuario\\Documents\\Universidad2025\\Componentes\\CRUD\\ProyectoComponentes\\HotelCrud\\Views\\_ViewImports.cshtml",
               "RelativeDocumentMoniker": "Views\\_ViewImports.cshtml",
@@ -346,7 +422,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 17,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\Usuario\\Documents\\Universidad2025\\Componentes\\CRUD\\ProyectoComponentes\\HotelCrud\\Views\\Personas\\Index.cshtml",
               "RelativeDocumentMoniker": "Views\\Personas\\Index.cshtml",
@@ -358,43 +434,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "Details.cshtml",
-              "DocumentMoniker": "C:\\Users\\Usuario\\Documents\\Universidad2025\\Componentes\\CRUD\\ProyectoComponentes\\HotelCrud\\Views\\Reservas\\Details.cshtml",
-              "RelativeDocumentMoniker": "Views\\Reservas\\Details.cshtml",
-              "ToolTip": "C:\\Users\\Usuario\\Documents\\Universidad2025\\Componentes\\CRUD\\ProyectoComponentes\\HotelCrud\\Views\\Reservas\\Details.cshtml",
-              "RelativeToolTip": "Views\\Reservas\\Details.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAZAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-07-26T04:09:10.561Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\Usuario\\Documents\\Universidad2025\\Componentes\\CRUD\\ProyectoComponentes\\HotelCrud\\Views\\Habitaciones\\Index.cshtml",
-              "RelativeDocumentMoniker": "Views\\Habitaciones\\Index.cshtml",
-              "ToolTip": "C:\\Users\\Usuario\\Documents\\Universidad2025\\Componentes\\CRUD\\ProyectoComponentes\\HotelCrud\\Views\\Habitaciones\\Index.cshtml",
-              "RelativeToolTip": "Views\\Habitaciones\\Index.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACkAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-07-26T04:42:18.558Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "Create.cshtml",
-              "DocumentMoniker": "C:\\Users\\Usuario\\Documents\\Universidad2025\\Componentes\\CRUD\\ProyectoComponentes\\HotelCrud\\Views\\Reservas\\Create.cshtml",
-              "RelativeDocumentMoniker": "Views\\Reservas\\Create.cshtml",
-              "ToolTip": "C:\\Users\\Usuario\\Documents\\Universidad2025\\Componentes\\CRUD\\ProyectoComponentes\\HotelCrud\\Views\\Reservas\\Create.cshtml",
-              "RelativeToolTip": "Views\\Reservas\\Create.cshtml",
-              "ViewState": "AgIAAAEAAAAAAAAAAAAmwDUAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-07-26T04:09:29.957Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 21,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\Usuario\\Documents\\Universidad2025\\Componentes\\CRUD\\ProyectoComponentes\\HotelCrud\\Views\\Reservas\\Index.cshtml",
               "RelativeDocumentMoniker": "Views\\Reservas\\Index.cshtml",
@@ -406,7 +446,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 23,
               "Title": "Edit.cshtml",
               "DocumentMoniker": "C:\\Users\\Usuario\\Documents\\Universidad2025\\Componentes\\CRUD\\ProyectoComponentes\\HotelCrud\\Views\\Roles\\Edit.cshtml",
               "RelativeDocumentMoniker": "Views\\Roles\\Edit.cshtml",
@@ -418,31 +458,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
-              "Title": "Create.cshtml",
-              "DocumentMoniker": "C:\\Users\\Usuario\\Documents\\Universidad2025\\Componentes\\CRUD\\ProyectoComponentes\\HotelCrud\\Views\\Habitaciones\\Create.cshtml",
-              "RelativeDocumentMoniker": "Views\\Habitaciones\\Create.cshtml",
-              "ToolTip": "C:\\Users\\Usuario\\Documents\\Universidad2025\\Componentes\\CRUD\\ProyectoComponentes\\HotelCrud\\Views\\Habitaciones\\Create.cshtml",
-              "RelativeToolTip": "Views\\Habitaciones\\Create.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAA7AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-07-26T04:41:58.117Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "Edit.cshtml",
-              "DocumentMoniker": "C:\\Users\\Usuario\\Documents\\Universidad2025\\Componentes\\CRUD\\ProyectoComponentes\\HotelCrud\\Views\\Reservas\\Edit.cshtml",
-              "RelativeDocumentMoniker": "Views\\Reservas\\Edit.cshtml",
-              "ToolTip": "C:\\Users\\Usuario\\Documents\\Universidad2025\\Componentes\\CRUD\\ProyectoComponentes\\HotelCrud\\Views\\Reservas\\Edit.cshtml",
-              "RelativeToolTip": "Views\\Reservas\\Edit.cshtml",
-              "ViewState": "AgIAABEAAAAAAAAAAAAmwCgAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-07-26T04:09:10.763Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 25,
               "Title": "Registro.cshtml",
               "DocumentMoniker": "C:\\Users\\Usuario\\Documents\\Universidad2025\\Componentes\\CRUD\\ProyectoComponentes\\HotelCrud\\Views\\Cuenta\\Registro.cshtml",
               "RelativeDocumentMoniker": "Views\\Cuenta\\Registro.cshtml",
@@ -454,7 +470,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 26,
               "Title": "Login.cshtml",
               "DocumentMoniker": "C:\\Users\\Usuario\\Documents\\Universidad2025\\Componentes\\CRUD\\ProyectoComponentes\\HotelCrud\\Views\\Cuenta\\Login.cshtml",
               "RelativeDocumentMoniker": "Views\\Cuenta\\Login.cshtml",
@@ -466,7 +482,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 22,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\Usuario\\Documents\\Universidad2025\\Componentes\\CRUD\\ProyectoComponentes\\HotelCrud\\Views\\Roles\\Index.cshtml",
               "RelativeDocumentMoniker": "Views\\Roles\\Index.cshtml",
@@ -478,7 +494,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 24,
               "Title": "Edit.cshtml",
               "DocumentMoniker": "C:\\Users\\Usuario\\Documents\\Universidad2025\\Componentes\\CRUD\\ProyectoComponentes\\HotelCrud\\Views\\PersonaRols\\Edit.cshtml",
               "RelativeDocumentMoniker": "Views\\PersonaRols\\Edit.cshtml",
@@ -490,7 +506,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 30,
               "Title": "Reserva.cs",
               "DocumentMoniker": "C:\\Users\\Usuario\\Documents\\Universidad2025\\Componentes\\CRUD\\ProyectoComponentes\\HotelCrud\\Models\\Reserva.cs",
               "RelativeDocumentMoniker": "Models\\Reserva.cs",
@@ -502,7 +518,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 30,
+              "DocumentIndex": 31,
               "Title": "HomeController.cs",
               "DocumentMoniker": "C:\\Users\\Usuario\\Documents\\Universidad2025\\Componentes\\CRUD\\ProyectoComponentes\\HotelCrud\\Controllers\\HomeController.cs",
               "RelativeDocumentMoniker": "Controllers\\HomeController.cs",
@@ -514,7 +530,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 29,
               "Title": "PersonaRol.cs",
               "DocumentMoniker": "C:\\Users\\Usuario\\Documents\\Universidad2025\\Componentes\\CRUD\\ProyectoComponentes\\HotelCrud\\Models\\PersonaRol.cs",
               "RelativeDocumentMoniker": "Models\\PersonaRol.cs",
@@ -526,7 +542,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 28,
               "Title": "Persona.cs",
               "DocumentMoniker": "C:\\Users\\Usuario\\Documents\\Universidad2025\\Componentes\\CRUD\\ProyectoComponentes\\HotelCrud\\Models\\Persona.cs",
               "RelativeDocumentMoniker": "Models\\Persona.cs",
@@ -538,7 +554,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 27,
               "Title": "Create.cshtml",
               "DocumentMoniker": "C:\\Users\\Usuario\\Documents\\Universidad2025\\Componentes\\CRUD\\ProyectoComponentes\\HotelCrud\\Views\\Personas\\Create.cshtml",
               "RelativeDocumentMoniker": "Views\\Personas\\Create.cshtml",
@@ -550,7 +566,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 31,
+              "DocumentIndex": 32,
               "Title": "PersonaRolsController.cs",
               "DocumentMoniker": "C:\\Users\\Usuario\\Documents\\Universidad2025\\Componentes\\CRUD\\ProyectoComponentes\\HotelCrud\\Controllers\\PersonaRolsController.cs",
               "RelativeDocumentMoniker": "Controllers\\PersonaRolsController.cs",
@@ -562,7 +578,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 32,
+              "DocumentIndex": 33,
               "Title": "DashboardViewModel.cs",
               "DocumentMoniker": "C:\\Users\\Usuario\\Documents\\Universidad2025\\Componentes\\CRUD\\ProyectoComponentes\\HotelCrud\\Models\\DashboardViewModel.cs",
               "RelativeDocumentMoniker": "Models\\DashboardViewModel.cs",
@@ -574,7 +590,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 36,
+              "DocumentIndex": 35,
               "Title": "AccesoDenegado.cshtml",
               "DocumentMoniker": "C:\\Users\\Usuario\\Documents\\Universidad2025\\Componentes\\CRUD\\ProyectoComponentes\\HotelCrud\\Views\\Home\\AccesoDenegado.cshtml",
               "RelativeDocumentMoniker": "Views\\Home\\AccesoDenegado.cshtml",
@@ -586,7 +602,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 35,
+              "DocumentIndex": 34,
               "Title": "Delete.cshtml",
               "DocumentMoniker": "C:\\Users\\Usuario\\Documents\\Universidad2025\\Componentes\\CRUD\\ProyectoComponentes\\HotelCrud\\Views\\Personas\\Delete.cshtml",
               "RelativeDocumentMoniker": "Views\\Personas\\Delete.cshtml",
@@ -598,31 +614,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 34,
-              "Title": "Delete.cshtml",
-              "DocumentMoniker": "C:\\Users\\Usuario\\Documents\\Universidad2025\\Componentes\\CRUD\\ProyectoComponentes\\HotelCrud\\Views\\Habitaciones\\Delete.cshtml",
-              "RelativeDocumentMoniker": "Views\\Habitaciones\\Delete.cshtml",
-              "ToolTip": "C:\\Users\\Usuario\\Documents\\Universidad2025\\Componentes\\CRUD\\ProyectoComponentes\\HotelCrud\\Views\\Habitaciones\\Delete.cshtml",
-              "RelativeToolTip": "Views\\Habitaciones\\Delete.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-07-26T04:42:03.104Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 33,
-              "Title": "Details.cshtml",
-              "DocumentMoniker": "C:\\Users\\Usuario\\Documents\\Universidad2025\\Componentes\\CRUD\\ProyectoComponentes\\HotelCrud\\Views\\Habitaciones\\Details.cshtml",
-              "RelativeDocumentMoniker": "Views\\Habitaciones\\Details.cshtml",
-              "ToolTip": "C:\\Users\\Usuario\\Documents\\Universidad2025\\Componentes\\CRUD\\ProyectoComponentes\\HotelCrud\\Views\\Habitaciones\\Details.cshtml",
-              "RelativeToolTip": "Views\\Habitaciones\\Details.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-07-26T04:42:08.484Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 39,
+              "DocumentIndex": 38,
               "Title": "site.js",
               "DocumentMoniker": "C:\\Users\\Usuario\\Documents\\Universidad2025\\Componentes\\CRUD\\ProyectoComponentes\\HotelCrud\\wwwroot\\js\\site.js",
               "RelativeDocumentMoniker": "wwwroot\\js\\site.js",
@@ -634,7 +626,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 37,
+              "DocumentIndex": 36,
               "Title": "style.css",
               "DocumentMoniker": "C:\\Users\\Usuario\\Documents\\Universidad2025\\Componentes\\CRUD\\ProyectoComponentes\\HotelCrud\\wwwroot\\css\\style.css",
               "RelativeDocumentMoniker": "wwwroot\\css\\style.css",
@@ -646,7 +638,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 38,
+              "DocumentIndex": 37,
               "Title": "site.css",
               "DocumentMoniker": "C:\\Users\\Usuario\\Documents\\Universidad2025\\Componentes\\CRUD\\ProyectoComponentes\\HotelCrud\\wwwroot\\css\\site.css",
               "RelativeDocumentMoniker": "wwwroot\\css\\site.css",
