@@ -202,9 +202,9 @@
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\Usuario\\Documents\\Universidad2025\\Componentes\\CRUD\\ProyectoComponentes\\HotelCrud\\Views\\Pagos\\Index.cshtml",
               "RelativeDocumentMoniker": "Views\\Pagos\\Index.cshtml",
-              "ToolTip": "C:\\Users\\Usuario\\Documents\\Universidad2025\\Componentes\\CRUD\\ProyectoComponentes\\HotelCrud\\Views\\Pagos\\Index.cshtml*",
-              "RelativeToolTip": "Views\\Pagos\\Index.cshtml*",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAADMAAAAAAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\Usuario\\Documents\\Universidad2025\\Componentes\\CRUD\\ProyectoComponentes\\HotelCrud\\Views\\Pagos\\Index.cshtml",
+              "RelativeToolTip": "Views\\Pagos\\Index.cshtml",
+              "ViewState": "AgIAABgAAAAAAAAAAAAAADMAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-08-09T03:26:45.647Z",
               "EditorCaption": ""
@@ -219,8 +219,7 @@
               "RelativeToolTip": "Views\\Pagos\\Create.cshtml",
               "ViewState": "AgIAADUAAAAAAAAAAAAgwGkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-08-09T03:25:17.263Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-09T03:25:17.263Z"
             },
             {
               "$type": "Document",
@@ -232,8 +231,7 @@
               "RelativeToolTip": "Views\\Pagos\\Details.cshtml",
               "ViewState": "AgIAABIAAAAAAAAAAAAAAC0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-08-09T03:26:28.694Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-09T03:26:28.694Z"
             },
             {
               "$type": "Document",
@@ -245,8 +243,7 @@
               "RelativeToolTip": "Models\\Pagos.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-09T03:22:57.533Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-09T03:22:57.533Z"
             },
             {
               "$type": "Document",
@@ -258,8 +255,7 @@
               "RelativeToolTip": "Controllers\\PagosController.cs",
               "ViewState": "AgIAALYAAAAAAAAAAAAuwOgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-09T03:24:09.515Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-09T03:24:09.515Z"
             },
             {
               "$type": "Document",
@@ -271,8 +267,7 @@
               "RelativeToolTip": "Views\\Habitaciones\\Create.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAA7AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-07-26T04:41:58.117Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-26T04:41:58.117Z"
             },
             {
               "$type": "Document",
@@ -284,8 +279,7 @@
               "RelativeToolTip": "Views\\Habitaciones\\Edit.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAoAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-07-26T04:42:13.33Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-26T04:42:13.33Z"
             },
             {
               "$type": "Document",
@@ -297,8 +291,7 @@
               "RelativeToolTip": "Views\\Reservas\\Delete.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAACMAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-07-26T04:09:16.4Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-26T04:09:16.4Z"
             },
             {
               "$type": "Document",
@@ -310,8 +303,7 @@
               "RelativeToolTip": "Views\\Reservas\\Create.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAABxAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-07-26T04:09:29.957Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-26T04:09:29.957Z"
             },
             {
               "$type": "Document",
@@ -323,8 +315,7 @@
               "RelativeToolTip": "Views\\Pagos\\Delete.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAACcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-08-09T03:26:09.587Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-09T03:26:09.587Z"
             },
             {
               "$type": "Document",
@@ -336,8 +327,7 @@
               "RelativeToolTip": "Models\\PersonaRol.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-26T05:31:43.275Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-26T05:31:43.275Z"
             },
             {
               "$type": "Document",
@@ -349,8 +339,7 @@
               "RelativeToolTip": "Controllers\\ReservasController.cs",
               "ViewState": "AgIAAOoAAAAAAAAAAAAAwBwBAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-26T03:48:11.386Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-26T03:48:11.386Z"
             },
             {
               "$type": "Document",
@@ -362,8 +351,7 @@
               "RelativeToolTip": "Models\\Reserva.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-26T04:06:20.861Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-26T04:06:20.861Z"
             },
             {
               "$type": "Document",
@@ -375,8 +363,7 @@
               "RelativeToolTip": "Views\\Pagos\\Edit.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAC8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-08-09T03:26:32.631Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-09T03:26:32.631Z"
             },
             {
               "$type": "Document",
@@ -388,8 +375,7 @@
               "RelativeToolTip": "Models\\Persona.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-26T05:31:44.733Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-26T05:31:44.733Z"
             },
             {
               "$type": "Document",
@@ -401,8 +387,7 @@
               "RelativeToolTip": "Controllers\\HomeController.cs",
               "ViewState": "AgIAAEsAAAAAAAAAAAAmwHUAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-26T03:48:02.571Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-26T03:48:02.571Z"
             },
             {
               "$type": "Document",
@@ -414,8 +399,7 @@
               "RelativeToolTip": "Views\\Shared\\_Layout.cshtml",
               "ViewState": "AgIAACUAAAAAAAAAAAAgwEwAAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-07-26T03:03:56.808Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-26T03:03:56.808Z"
             },
             {
               "$type": "Document",
@@ -439,8 +423,7 @@
               "RelativeToolTip": "Views\\Habitaciones\\Index.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-07-26T04:42:18.558Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-26T04:42:18.558Z"
             },
             {
               "$type": "Document",
@@ -488,8 +471,7 @@
               "RelativeToolTip": "Controllers\\CuentaController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-26T05:12:42.302Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-26T05:12:42.302Z"
             },
             {
               "$type": "Document",
@@ -513,8 +495,7 @@
               "RelativeToolTip": "Views\\_ViewImports.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-07-26T06:38:57.044Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-26T06:38:57.044Z"
             },
             {
               "$type": "Document",
